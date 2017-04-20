@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JobCell" rowHeight="70" id="v8O-Os-lvp">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JobCell" rowHeight="70" id="v8O-Os-lvp" customClass="JobCell" customModule="TableTimerProgress" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v8O-Os-lvp" id="Erp-7X-XJ4">
@@ -70,6 +70,11 @@
                                                 <constraint firstItem="Jfx-RM-uVy" firstAttribute="top" secondItem="lHF-WX-fhq" secondAttribute="bottom" constant="2" id="w1u-2u-IYb"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descLbl" destination="lHF-WX-fhq" id="lG6-Nb-fTN"/>
+                                            <outlet property="mainImg" destination="ygK-dn-KF3" id="jSg-4D-21g"/>
+                                            <outlet property="timerLbl" destination="Jfx-RM-uVy" id="CbY-P6-SYw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -82,6 +87,9 @@
                             <constraint firstItem="Yqg-Xf-pvo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rwY-eh-4Sh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Yqg-Xf-pvo" id="CWV-Z0-hQf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
