@@ -13,6 +13,7 @@ class JobCell: UITableViewCell {
     @IBOutlet weak var mainImg: UIImageView!
     @IBOutlet weak var roleLbl: UILabel!
     @IBOutlet weak var descLbl: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
     
 
     override func awakeFromNib() {
@@ -27,10 +28,10 @@ class JobCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(image:UIImage, text:String) {
+    func configureCell(image:UIImage, role:String, desc:String) {
         mainImg.image = image
-        roleLbl.text = text
-        descLbl.text = text
+        roleLbl.text = role
+        descLbl.text = desc
     }
 
 }

@@ -29,9 +29,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JobCell", for: indexPath) as! JobCell
         let row = indexPath.row
-        cell.mainImg.image = #imageLiteral(resourceName: "appImg")
-        cell.roleLbl.text = "hi I'm the app label"
-        cell.descLbl.text = "time will go here"
+        cell.configureCell(image: #imageLiteral(resourceName: "appImg"), role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
+        //cell.mainImg.image = #imageLiteral(resourceName: "appImg")
+        //cell.roleLbl.text = "hi I'm the app label"
+        //cell.descLbl.text = "time will go here"
         return cell
     }
     

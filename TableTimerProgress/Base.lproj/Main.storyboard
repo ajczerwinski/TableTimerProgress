@@ -33,8 +33,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fEe-Y0-58g">
-                                                    <rect key="frame" x="80" y="32" width="287" height="35.5"/>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fEe-Y0-58g">
+                                                    <rect key="frame" x="70" y="1.5" width="303" height="66"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="66" id="8kv-7I-BbD"/>
+                                                    </constraints>
                                                 </progressView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ygK-dn-KF3">
                                                     <rect key="frame" x="2" y="2" width="66" height="66"/>
@@ -63,35 +66,29 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="fEe-Y0-58g" secondAttribute="bottom" constant="2" id="IyM-X3-Kqh"/>
+                                                <constraint firstItem="fEe-Y0-58g" firstAttribute="leading" secondItem="Erp-7X-XJ4" secondAttribute="leading" constant="70" id="1NL-v0-1Ef"/>
+                                                <constraint firstAttribute="trailing" secondItem="fEe-Y0-58g" secondAttribute="trailing" constant="2" id="DBB-em-qoW"/>
+                                                <constraint firstAttribute="bottom" secondItem="fEe-Y0-58g" secondAttribute="bottom" constant="2" id="ZpT-zY-nRy"/>
                                                 <constraint firstItem="lHF-WX-fhq" firstAttribute="trailing" secondItem="Erp-7X-XJ4" secondAttribute="trailingMargin" id="aFr-YQ-Tcn"/>
                                                 <constraint firstItem="Jfx-RM-uVy" firstAttribute="leading" secondItem="ygK-dn-KF3" secondAttribute="trailing" constant="2" id="bTx-D6-1dz"/>
                                                 <constraint firstItem="ygK-dn-KF3" firstAttribute="top" secondItem="Erp-7X-XJ4" secondAttribute="top" constant="2" id="bg8-UV-pcF"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Jfx-RM-uVy" secondAttribute="trailing" id="gpE-F5-lSH"/>
                                                 <constraint firstItem="ygK-dn-KF3" firstAttribute="leading" secondItem="Erp-7X-XJ4" secondAttribute="leading" constant="2" id="gv7-Tl-uW4"/>
                                                 <constraint firstItem="lHF-WX-fhq" firstAttribute="leading" secondItem="ygK-dn-KF3" secondAttribute="trailing" constant="2" id="ieB-dX-wP0"/>
-                                                <constraint firstItem="fEe-Y0-58g" firstAttribute="leading" secondItem="Erp-7X-XJ4" secondAttribute="leading" constant="80" id="l5i-xK-kfI"/>
-                                                <constraint firstItem="fEe-Y0-58g" firstAttribute="top" secondItem="lHF-WX-fhq" secondAttribute="bottom" constant="2" id="lDg-ge-20r"/>
-                                                <constraint firstAttribute="trailing" secondItem="fEe-Y0-58g" secondAttribute="trailing" constant="8" id="rV4-P0-oe1"/>
                                                 <constraint firstItem="lHF-WX-fhq" firstAttribute="top" secondItem="Erp-7X-XJ4" secondAttribute="top" constant="4" id="v1U-Z4-I4T"/>
                                                 <constraint firstItem="Jfx-RM-uVy" firstAttribute="top" secondItem="lHF-WX-fhq" secondAttribute="bottom" constant="2" id="w1u-2u-IYb"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         <connections>
                                             <outlet property="descLbl" destination="Jfx-RM-uVy" id="hmY-0u-Bpy"/>
                                             <outlet property="mainImg" destination="ygK-dn-KF3" id="IIP-1n-qNz"/>
+                                            <outlet property="progressBar" destination="fEe-Y0-58g" id="pAJ-kI-ekd"/>
                                             <outlet property="roleLbl" destination="lHF-WX-fhq" id="Qul-7n-tVK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bS-MX-1b2">
-                                <rect key="frame" x="10" y="10" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
