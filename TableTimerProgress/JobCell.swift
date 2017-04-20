@@ -11,8 +11,8 @@ import UIKit
 class JobCell: UITableViewCell {
     
     @IBOutlet weak var mainImg: UIImageView!
+    @IBOutlet weak var roleLbl: UILabel!
     @IBOutlet weak var descLbl: UILabel!
-    @IBOutlet weak var timerLbl: UILabel!
     
 
     override func awakeFromNib() {
@@ -29,8 +29,8 @@ class JobCell: UITableViewCell {
     
     func configureCell(image:UIImage, text:String) {
         mainImg.image = image
+        roleLbl.text = text
         descLbl.text = text
-        timerLbl.text = text
     }
 
 }

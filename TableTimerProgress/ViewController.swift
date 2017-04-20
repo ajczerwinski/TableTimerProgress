@@ -30,8 +30,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "JobCell", for: indexPath) as! JobCell
         let row = indexPath.row
         cell.mainImg.image = #imageLiteral(resourceName: "appImg")
-        cell.descLbl.text = "hi I'm the app label"
-        cell.timerLbl.text = "time will go here"
+        cell.roleLbl.text = "hi I'm the app label"
+        cell.descLbl.text = "time will go here"
         return cell
     }
     
