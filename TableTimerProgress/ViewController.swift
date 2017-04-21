@@ -15,6 +15,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setBackground()
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -31,11 +33,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JobCell", for: indexPath) as! JobCell
-        let row = indexPath.row
+        cell.backgroundColor = .clear
         cell.configureCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
-        //cell.mainImg.image = #imageLiteral(resourceName: "appImg")
-        //cell.roleLbl.text = "hi I'm the app label"
-        //cell.descLbl.text = "time will go here"
+
         return cell
     }
     
@@ -46,6 +46,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return icRoles.count
     }
-
+    
+    func setBackground() {
+    
+        let imageView = UIImageView(frame: self.view.frame)
+        let image = #imageLiteral(resourceName: "background")
+        imageView.image = image
+        self.view.addSubview(imageView)
+        self.view.sendSubview(toBack: imageView)
+        self.tableView.addSubview(imageView)
+        self.tableView.sendSubview(toBack: imageView)
+    
+    }
+    
 }
 

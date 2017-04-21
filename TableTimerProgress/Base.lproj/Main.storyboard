@@ -67,6 +67,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="fEe-Y0-58g" firstAttribute="leading" secondItem="Erp-7X-XJ4" secondAttribute="leading" constant="70" id="1NL-v0-1Ef"/>
                                                 <constraint firstAttribute="trailing" secondItem="fEe-Y0-58g" secondAttribute="trailing" constant="2" id="DBB-em-qoW"/>
@@ -81,6 +82,7 @@
                                                 <constraint firstItem="Jfx-RM-uVy" firstAttribute="top" secondItem="lHF-WX-fhq" secondAttribute="bottom" constant="2" id="w1u-2u-IYb"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         <connections>
                                             <outlet property="descLbl" destination="Jfx-RM-uVy" id="hmY-0u-Bpy"/>

@@ -20,6 +20,7 @@ class JobCell: UITableViewCell {
         super.awakeFromNib()
         mainImg.layer.cornerRadius = mainImg.frame.height / 2
         mainImg.clipsToBounds = true
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
