@@ -15,10 +15,10 @@
 		BFBA5AFE1EA869F1008D322E /* JobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5AFD1EA869F1008D322E /* JobCell.swift */; };
 		BFBA5B011EAAAC33008D322E /* Player.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5AFF1EAAAC32008D322E /* Player.xcdatamodeld */; };
 		BFBA5B031EAAD8E0008D322E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5B021EAAD8E0008D322E /* CoreDataStack.swift */; };
-		BFBA5B101EAADEBF008D322E /* Job+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5B0C1EAADEBF008D322E /* Job+CoreDataClass.swift */; };
-		BFBA5B111EAADEBF008D322E /* Job+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5B0D1EAADEBF008D322E /* Job+CoreDataProperties.swift */; };
-		BFBA5B121EAADEBF008D322E /* Player+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5B0E1EAADEBF008D322E /* Player+CoreDataClass.swift */; };
-		BFBA5B131EAADEBF008D322E /* Player+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5B0F1EAADEBF008D322E /* Player+CoreDataProperties.swift */; };
+		BFBA5B181EAAEEFF008D322E /* Player+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5B141EAAEEFF008D322E /* Player+CoreDataClass.swift */; };
+		BFBA5B191EAAEEFF008D322E /* Player+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5B151EAAEEFF008D322E /* Player+CoreDataProperties.swift */; };
+		BFBA5B1A1EAAEEFF008D322E /* Job+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5B161EAAEEFF008D322E /* Job+CoreDataClass.swift */; };
+		BFBA5B1B1EAAEEFF008D322E /* Job+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5B171EAAEEFF008D322E /* Job+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +32,10 @@
 		BFBA5AFD1EA869F1008D322E /* JobCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobCell.swift; sourceTree = "<group>"; };
 		BFBA5B001EAAAC33008D322E /* Player.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Player.xcdatamodel; sourceTree = "<group>"; };
 		BFBA5B021EAAD8E0008D322E /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		BFBA5B0C1EAADEBF008D322E /* Job+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BFBA5B0D1EAADEBF008D322E /* Job+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BFBA5B0E1EAADEBF008D322E /* Player+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Player+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BFBA5B0F1EAADEBF008D322E /* Player+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Player+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BFBA5B141EAAEEFF008D322E /* Player+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Player+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BFBA5B151EAAEEFF008D322E /* Player+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Player+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BFBA5B161EAAEEFF008D322E /* Job+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BFBA5B171EAAEEFF008D322E /* Job+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,10 +52,10 @@
 		BFBA5ADF1EA858A3008D322E = {
 			isa = PBXGroup;
 			children = (
-				BFBA5B0C1EAADEBF008D322E /* Job+CoreDataClass.swift */,
-				BFBA5B0D1EAADEBF008D322E /* Job+CoreDataProperties.swift */,
-				BFBA5B0E1EAADEBF008D322E /* Player+CoreDataClass.swift */,
-				BFBA5B0F1EAADEBF008D322E /* Player+CoreDataProperties.swift */,
+				BFBA5B141EAAEEFF008D322E /* Player+CoreDataClass.swift */,
+				BFBA5B151EAAEEFF008D322E /* Player+CoreDataProperties.swift */,
+				BFBA5B161EAAEEFF008D322E /* Job+CoreDataClass.swift */,
+				BFBA5B171EAAEEFF008D322E /* Job+CoreDataProperties.swift */,
 				BFBA5AEA1EA858A3008D322E /* TableTimerProgress */,
 				BFBA5AE91EA858A3008D322E /* Products */,
 			);
@@ -157,14 +157,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFBA5B111EAADEBF008D322E /* Job+CoreDataProperties.swift in Sources */,
+				BFBA5B181EAAEEFF008D322E /* Player+CoreDataClass.swift in Sources */,
+				BFBA5B1A1EAAEEFF008D322E /* Job+CoreDataClass.swift in Sources */,
 				BFBA5B031EAAD8E0008D322E /* CoreDataStack.swift in Sources */,
-				BFBA5B131EAADEBF008D322E /* Player+CoreDataProperties.swift in Sources */,
 				BFBA5B011EAAAC33008D322E /* Player.xcdatamodeld in Sources */,
+				BFBA5B191EAAEEFF008D322E /* Player+CoreDataProperties.swift in Sources */,
+				BFBA5B1B1EAAEEFF008D322E /* Job+CoreDataProperties.swift in Sources */,
 				BFBA5AEE1EA858A3008D322E /* ViewController.swift in Sources */,
-				BFBA5B101EAADEBF008D322E /* Job+CoreDataClass.swift in Sources */,
 				BFBA5AFE1EA869F1008D322E /* JobCell.swift in Sources */,
-				BFBA5B121EAADEBF008D322E /* Player+CoreDataClass.swift in Sources */,
 				BFBA5AEC1EA858A3008D322E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,6 +19,7 @@ extension Job {
     @NSManaged public var image: NSData?
     @NSManaged public var role: String?
     @NSManaged public var desc: String?
+    @NSManaged public var creationDate: NSDate?
     @NSManaged public var player: Player?
 
 }
