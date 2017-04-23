@@ -19,23 +19,25 @@
 		BFBA5B191EAAEEFF008D322E /* Player+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5B151EAAEEFF008D322E /* Player+CoreDataProperties.swift */; };
 		BFBA5B1A1EAAEEFF008D322E /* Job+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5B161EAAEEFF008D322E /* Job+CoreDataClass.swift */; };
 		BFBA5B1B1EAAEEFF008D322E /* Job+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5B171EAAEEFF008D322E /* Job+CoreDataProperties.swift */; };
+		BFBA5B1F1EAC1ACE008D322E /* CoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5B1E1EAC1ACE008D322E /* CoreDataTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BFBA5AE81EA858A3008D322E /* TableTimerProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableTimerProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBA5AEB1EA858A3008D322E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BFBA5AED1EA858A3008D322E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BFBA5AED1EA858A3008D322E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = TableTimerProgress/ViewController.swift; sourceTree = "<group>"; };
 		BFBA5AF01EA858A3008D322E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFBA5AF21EA858A3008D322E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFBA5AF51EA858A3008D322E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFBA5AF71EA858A3008D322E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFBA5AFD1EA869F1008D322E /* JobCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobCell.swift; sourceTree = "<group>"; };
 		BFBA5B001EAAAC33008D322E /* Player.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Player.xcdatamodel; sourceTree = "<group>"; };
-		BFBA5B021EAAD8E0008D322E /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		BFBA5B021EAAD8E0008D322E /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = TableTimerProgress/CoreDataStack.swift; sourceTree = "<group>"; };
 		BFBA5B141EAAEEFF008D322E /* Player+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Player+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BFBA5B151EAAEEFF008D322E /* Player+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Player+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BFBA5B161EAAEEFF008D322E /* Job+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BFBA5B171EAAEEFF008D322E /* Job+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BFBA5B1E1EAC1ACE008D322E /* CoreDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,10 +54,6 @@
 		BFBA5ADF1EA858A3008D322E = {
 			isa = PBXGroup;
 			children = (
-				BFBA5B141EAAEEFF008D322E /* Player+CoreDataClass.swift */,
-				BFBA5B151EAAEEFF008D322E /* Player+CoreDataProperties.swift */,
-				BFBA5B161EAAEEFF008D322E /* Job+CoreDataClass.swift */,
-				BFBA5B171EAAEEFF008D322E /* Job+CoreDataProperties.swift */,
 				BFBA5AEA1EA858A3008D322E /* TableTimerProgress */,
 				BFBA5AE91EA858A3008D322E /* Products */,
 			);
@@ -72,10 +70,9 @@
 		BFBA5AEA1EA858A3008D322E /* TableTimerProgress */ = {
 			isa = PBXGroup;
 			children = (
+				BFBA5B1D1EAC1A7D008D322E /* Controllers */,
 				BFBA5AEB1EA858A3008D322E /* AppDelegate.swift */,
-				BFBA5AED1EA858A3008D322E /* ViewController.swift */,
-				BFBA5AFF1EAAAC32008D322E /* Player.xcdatamodeld */,
-				BFBA5B021EAAD8E0008D322E /* CoreDataStack.swift */,
+				BFBA5B1C1EAC19ED008D322E /* Models */,
 				BFBA5AEF1EA858A3008D322E /* Main.storyboard */,
 				BFBA5AF21EA858A3008D322E /* Assets.xcassets */,
 				BFBA5AF41EA858A3008D322E /* LaunchScreen.storyboard */,
@@ -83,6 +80,30 @@
 				BFBA5AFD1EA869F1008D322E /* JobCell.swift */,
 			);
 			path = TableTimerProgress;
+			sourceTree = "<group>";
+		};
+		BFBA5B1C1EAC19ED008D322E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BFBA5AFF1EAAAC32008D322E /* Player.xcdatamodeld */,
+				BFBA5B021EAAD8E0008D322E /* CoreDataStack.swift */,
+				BFBA5B141EAAEEFF008D322E /* Player+CoreDataClass.swift */,
+				BFBA5B151EAAEEFF008D322E /* Player+CoreDataProperties.swift */,
+				BFBA5B161EAAEEFF008D322E /* Job+CoreDataClass.swift */,
+				BFBA5B171EAAEEFF008D322E /* Job+CoreDataProperties.swift */,
+			);
+			name = Models;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		BFBA5B1D1EAC1A7D008D322E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BFBA5B1E1EAC1ACE008D322E /* CoreDataTableViewController.swift */,
+				BFBA5AED1EA858A3008D322E /* ViewController.swift */,
+			);
+			name = Controllers;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +186,7 @@
 				BFBA5B1B1EAAEEFF008D322E /* Job+CoreDataProperties.swift in Sources */,
 				BFBA5AEE1EA858A3008D322E /* ViewController.swift in Sources */,
 				BFBA5AFE1EA869F1008D322E /* JobCell.swift in Sources */,
+				BFBA5B1F1EAC1ACE008D322E /* CoreDataTableViewController.swift in Sources */,
 				BFBA5AEC1EA858A3008D322E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,6 +351,7 @@
 				BFBA5AFC1EA858A3008D322E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -339,7 +362,8 @@
 				BFBA5B001EAAAC33008D322E /* Player.xcdatamodel */,
 			);
 			currentVersion = BFBA5B001EAAAC33008D322E /* Player.xcdatamodel */;
-			path = Player.xcdatamodeld;
+			name = Player.xcdatamodeld;
+			path = TableTimerProgress/Player.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
