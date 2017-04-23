@@ -12,6 +12,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let stack = CoreDataStack(modelName: "Player")!
+    
+    func preloadData() {
+        
+        do {
+            try stack.dropAllData()
+        } catch {
+            print("Error dropping all objects in DB")
+        }
+        
+        let player = Player(score: 0.0, context: stack.context)
+        
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
