@@ -19,5 +19,12 @@ class JobsViewController: CoreDataTableViewController {
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let stack = delegate.stack
         
+        let fr = NSFetchRequest<NSFetchRequestResult>(entityName: "Job")
+        fr.sortDescriptors = [NSSortDescriptor(key: "role", ascending: true), NSSortDescriptor(key: "creationDate", ascending: false)]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fr, managedObjectContext: stack.context, sectionNameKeyPath: nil, cacheName: nil)
+        
     }
+    
+    
 }
