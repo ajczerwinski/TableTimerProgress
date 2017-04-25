@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF705C0F1EAC423F006C102E /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF705C0E1EAC423F006C102E /* JobsViewController.swift */; };
+		BF705C111EAFF026006C102E /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF705C101EAFF026006C102E /* TitleCell.swift */; };
 		BFBA5AEC1EA858A3008D322E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5AEB1EA858A3008D322E /* AppDelegate.swift */; };
 		BFBA5AEE1EA858A3008D322E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5AED1EA858A3008D322E /* ViewController.swift */; };
 		BFBA5AF11EA858A3008D322E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBA5AEF1EA858A3008D322E /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		BF705C0E1EAC423F006C102E /* JobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
+		BF705C101EAFF026006C102E /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		BFBA5AE81EA858A3008D322E /* TableTimerProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableTimerProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBA5AEB1EA858A3008D322E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFBA5AED1EA858A3008D322E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = TableTimerProgress/ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				BFBA5AF41EA858A3008D322E /* LaunchScreen.storyboard */,
 				BFBA5AF71EA858A3008D322E /* Info.plist */,
 				BFBA5AFD1EA869F1008D322E /* JobCell.swift */,
+				BF705C101EAFF026006C102E /* TitleCell.swift */,
 			);
 			path = TableTimerProgress;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF705C111EAFF026006C102E /* TitleCell.swift in Sources */,
 				BFBA5B181EAAEEFF008D322E /* Player.swift in Sources */,
 				BFBA5B1A1EAAEEFF008D322E /* Job.swift in Sources */,
 				BFBA5B031EAAD8E0008D322E /* CoreDataStack.swift in Sources */,
