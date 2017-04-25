@@ -23,12 +23,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let player = Player(score: 0.0, context: stack.context)
+        let job = Job(role: "juniorDev", context: stack.context)
+        
+        print("hi I'm printing player below")
+        print(player)
+        print("hi I'm printing job below")
+        print(job)
+        
         
     }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        preloadData()
         return true
     }
 

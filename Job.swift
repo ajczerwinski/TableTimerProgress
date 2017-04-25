@@ -12,7 +12,7 @@ import CoreData
 @objc(Job)
 public class Job: NSManagedObject {
     
-    convenience init(role: String = "New Role", context: NSManagedObjectContext) {
+    convenience init(role: String, context: NSManagedObjectContext) {
         
         if let ent = NSEntityDescription.entity(forEntityName: "Job", in: context) {
             self.init(entity: ent, insertInto: context)
