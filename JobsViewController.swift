@@ -14,7 +14,7 @@ class JobsViewController: CoreDataTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "TableTimerProgress"
+        title = "JobsViewController"
         
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let stack = delegate.stack
@@ -36,24 +36,26 @@ class JobsViewController: CoreDataTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.section == 0 {
+        let jb = fetchedResultsController!.object(at: indexPath) as! Player
+        
+        if indexPath.row == 0 {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TitleCell", for: indexPath) as! TitleCell
+            let returnCell = tableView.dequeueReusableCell(withIdentifier: "TitleCell", for: indexPath) as! TitleCell
             
-            cell.backgroundColor = .clear
-            cell.configureCell(score: 1.0)
+            returnCell.backgroundColor = .clear
+            returnCell.configureCell(score: 1.0)
             //cell.configureCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
-            return cell
+            return returnCell
             
         } else {
             let job = fetchedResultsController!.object(at: indexPath) as! Job
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "JobCell", for: indexPath) as! JobCell
+            let returnCell = tableView.dequeueReusableCell(withIdentifier: "JobCell", for: indexPath) as! JobCell
             
-            cell.backgroundColor = .clear
-            cell.configureCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
+            returnCell.backgroundColor = .clear
+            returnCell.configureCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
             
-            return cell
+            return returnCell
         }
         
     }
