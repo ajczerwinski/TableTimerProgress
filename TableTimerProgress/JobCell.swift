@@ -14,12 +14,17 @@ class JobCell: UITableViewCell {
     @IBOutlet weak var roleLbl: UILabel!
     @IBOutlet weak var descLbl: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var jobBtnLbl: UIButton!
+    
+    var timesTapped: Float = 0.0
     
 
     override func awakeFromNib() {
         super.awakeFromNib()
         mainImg.layer.cornerRadius = mainImg.frame.height / 2
         mainImg.clipsToBounds = true
+        
+        progressBar.progress = 0.0
         
     }
 
@@ -34,5 +39,16 @@ class JobCell: UITableViewCell {
         roleLbl.text = role
         descLbl.text = desc
     }
+    
+    @IBAction func jobButton(_ sender: UIButton) {
+        
+        timesTapped += 0.1
+        
+        progressBar.progress = timesTapped
+        
+        
+    }
+    
+    
 
 }

@@ -98,16 +98,27 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </progressView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIf-ur-ff4">
+                                                    <rect key="frame" x="8" y="4.5" width="70" height="70"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="jobButton:" destination="Znk-rY-6fo" eventType="touchUpInside" id="ILE-SY-cnd"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="wu2-8U-ers" secondAttribute="trailing" id="04C-os-AsT"/>
                                                 <constraint firstItem="hxv-ZC-lPs" firstAttribute="top" secondItem="65R-ko-ykl" secondAttribute="top" id="2fB-Me-gwb"/>
+                                                <constraint firstItem="kIf-ur-ff4" firstAttribute="bottom" secondItem="65R-ko-ykl" secondAttribute="bottom" id="7At-aj-my6"/>
                                                 <constraint firstItem="65R-ko-ykl" firstAttribute="centerY" secondItem="riS-zc-8c9" secondAttribute="centerY" id="7kb-05-H37"/>
                                                 <constraint firstAttribute="trailing" secondItem="hxv-ZC-lPs" secondAttribute="trailing" constant="8" id="BEJ-4s-Ch4"/>
                                                 <constraint firstItem="hxv-ZC-lPs" firstAttribute="leading" secondItem="65R-ko-ykl" secondAttribute="trailing" constant="8" id="JAr-sr-IJd"/>
+                                                <constraint firstItem="kIf-ur-ff4" firstAttribute="trailing" secondItem="65R-ko-ykl" secondAttribute="trailing" id="JpV-gP-kLp"/>
+                                                <constraint firstItem="kIf-ur-ff4" firstAttribute="top" secondItem="65R-ko-ykl" secondAttribute="top" id="LAa-jw-duN"/>
                                                 <constraint firstItem="wu2-8U-ers" firstAttribute="top" secondItem="riS-zc-8c9" secondAttribute="top" id="OW7-ps-bGx"/>
                                                 <constraint firstItem="aPw-6I-vTl" firstAttribute="trailing" secondItem="hxv-ZC-lPs" secondAttribute="trailing" id="Oy4-da-f3X"/>
                                                 <constraint firstItem="aPw-6I-vTl" firstAttribute="top" secondItem="hxv-ZC-lPs" secondAttribute="bottom" constant="3" id="WNn-fD-Nnt"/>
+                                                <constraint firstItem="kIf-ur-ff4" firstAttribute="leading" secondItem="65R-ko-ykl" secondAttribute="leading" id="YWC-1T-DE9"/>
                                                 <constraint firstItem="aPw-6I-vTl" firstAttribute="leading" secondItem="hxv-ZC-lPs" secondAttribute="leading" id="ayY-Tg-dZh"/>
                                                 <constraint firstAttribute="bottom" secondItem="wu2-8U-ers" secondAttribute="bottom" id="p0t-9U-bWh"/>
                                                 <constraint firstItem="wu2-8U-ers" firstAttribute="leading" secondItem="riS-zc-8c9" secondAttribute="leading" constant="86" id="q8J-mD-mwe"/>
@@ -116,6 +127,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="descLbl" destination="aPw-6I-vTl" id="wyM-zx-mIe"/>
+                                            <outlet property="jobBtnLbl" destination="kIf-ur-ff4" id="MYG-fn-Whs"/>
                                             <outlet property="mainImg" destination="65R-ko-ykl" id="Xrd-MI-2bA"/>
                                             <outlet property="progressBar" destination="wu2-8U-ers" id="OzA-cf-S9E"/>
                                             <outlet property="roleLbl" destination="hxv-ZC-lPs" id="tYC-5A-LRP"/>
