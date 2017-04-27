@@ -74,6 +74,14 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func attemptFetch() {
         setFetchedResults()
+        
+        do {
+            try self.fetchedResultsController.performFetch()
+        } catch {
+            let error = error as NSError
+            print("\(error), \(error.userInfo)")
+        }
+        
     }
     
     func setFetchedResults() {
@@ -81,6 +89,53 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: ad.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        
+        controller.delegate = self
+        
+        fetchedResultsController = controller
+        
+    }
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        
+        tableView.beginUpdates()
+    
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        
+        tableView.endUpdates()
+    
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        
+        switch(type) {
+        case .insert:
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .fade)
+            }
+            break
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            break
+        case .update:
+            if let indexPath = indexPath {
+                let cell = tableView.cellForRow(at: indexPath) as! TitleCell
+            }
+            break
+        case .move:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            
+            if let newIndexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath!], with: .fade)
+            }
+            break
+        }
         
     }
     
