@@ -32,6 +32,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZU-cP-IZv">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUk-os-5kE">
                                                     <rect key="frame" x="166.5" y="30" width="42" height="21"/>
                                                     <constraints>
@@ -45,9 +49,14 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="MUk-os-5kE" firstAttribute="centerX" secondItem="E8a-i4-kJK" secondAttribute="centerX" id="2y7-LS-A7B"/>
+                                                <constraint firstItem="hZU-cP-IZv" firstAttribute="leading" secondItem="E8a-i4-kJK" secondAttribute="leading" id="IiP-Ot-JsP"/>
+                                                <constraint firstItem="hZU-cP-IZv" firstAttribute="top" secondItem="E8a-i4-kJK" secondAttribute="top" id="WUl-c6-3r6"/>
+                                                <constraint firstAttribute="bottom" secondItem="hZU-cP-IZv" secondAttribute="bottom" id="jAX-w3-Bt7"/>
+                                                <constraint firstAttribute="trailing" secondItem="hZU-cP-IZv" secondAttribute="trailing" id="mtX-S6-akZ"/>
                                                 <constraint firstItem="MUk-os-5kE" firstAttribute="centerY" secondItem="E8a-i4-kJK" secondAttribute="centerY" id="wDy-td-oCm"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="scoreLbl" destination="MUk-os-5kE" id="9Qz-oF-YK0"/>
                                         </connections>
@@ -84,9 +93,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wu2-8U-ers">
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wu2-8U-ers">
                                                     <rect key="frame" x="86" y="0.0" width="289" height="79.5"/>
-                                                    <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </progressView>
                                             </subviews>
                                             <constraints>
