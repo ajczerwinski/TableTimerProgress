@@ -9,10 +9,11 @@
 import UIKit
 import CoreData
 
-class JobsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class JobsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +69,18 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.view.sendSubview(toBack: imageView)
         self.tableView.addSubview(imageView)
         self.tableView.sendSubview(toBack: imageView)
+        
+    }
+    
+    func attemptFetch() {
+        setFetchedResults()
+    }
+    
+    func setFetchedResults() {
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
+        
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: ad.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         
     }
     
