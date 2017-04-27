@@ -9,20 +9,18 @@
 import UIKit
 import CoreData
 
-class JobsViewController: CoreDataTableViewController {
+class JobsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "JobsViewController"
+        tableView.dataSource = self
+        tableView.delegate = self
         
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        let stack = delegate.stack
         
-        let fr = NSFetchRequest<NSFetchRequestResult>(entityName: "Job")
-        fr.sortDescriptors = [NSSortDescriptor(key: "role", ascending: true), NSSortDescriptor(key: "creationDate", ascending: false)]
-        
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fr, managedObjectContext: stack.context, sectionNameKeyPath: nil, cacheName: nil)
         
         setBackground()
         
@@ -34,9 +32,7 @@ class JobsViewController: CoreDataTableViewController {
     
     var icImages = [#imageLiteral(resourceName: "studentDev"), #imageLiteral(resourceName: "internDev"), #imageLiteral(resourceName: "juniorDev"), #imageLiteral(resourceName: "dev"), #imageLiteral(resourceName: "seniorDev"), #imageLiteral(resourceName: "leadDev"), #imageLiteral(resourceName: "staffEng"), #imageLiteral(resourceName: "seniorStaffEng"), #imageLiteral(resourceName: "distinguishedEng"), #imageLiteral(resourceName: "superDistinguishedEng")]
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let jb = fetchedResultsController!.object(at: indexPath) as! Player
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
             
@@ -48,7 +44,6 @@ class JobsViewController: CoreDataTableViewController {
             return returnCell
             
         } else {
-            let job = fetchedResultsController!.object(at: indexPath) as! Job
             
             let returnCell = tableView.dequeueReusableCell(withIdentifier: "JobCell", for: indexPath) as! JobCell
             
@@ -60,7 +55,7 @@ class JobsViewController: CoreDataTableViewController {
         
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return icRoles.count
     }
     

@@ -10,18 +10,15 @@
 		BF705C0F1EAC423F006C102E /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF705C0E1EAC423F006C102E /* JobsViewController.swift */; };
 		BF705C111EAFF026006C102E /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF705C101EAFF026006C102E /* TitleCell.swift */; };
 		BFBA5AEC1EA858A3008D322E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5AEB1EA858A3008D322E /* AppDelegate.swift */; };
-		BFBA5AEE1EA858A3008D322E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5AED1EA858A3008D322E /* ViewController.swift */; };
 		BFBA5AF11EA858A3008D322E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBA5AEF1EA858A3008D322E /* Main.storyboard */; };
 		BFBA5AF31EA858A3008D322E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBA5AF21EA858A3008D322E /* Assets.xcassets */; };
 		BFBA5AF61EA858A3008D322E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBA5AF41EA858A3008D322E /* LaunchScreen.storyboard */; };
 		BFBA5AFE1EA869F1008D322E /* JobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5AFD1EA869F1008D322E /* JobCell.swift */; };
 		BFBA5B011EAAAC33008D322E /* Player.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5AFF1EAAAC32008D322E /* Player.xcdatamodeld */; };
-		BFBA5B031EAAD8E0008D322E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5B021EAAD8E0008D322E /* CoreDataStack.swift */; };
 		BFBA5B181EAAEEFF008D322E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5B141EAAEEFF008D322E /* Player.swift */; };
 		BFBA5B191EAAEEFF008D322E /* Player+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5B151EAAEEFF008D322E /* Player+CoreDataProperties.swift */; };
 		BFBA5B1A1EAAEEFF008D322E /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5B161EAAEEFF008D322E /* Job.swift */; };
 		BFBA5B1B1EAAEEFF008D322E /* Job+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5B171EAAEEFF008D322E /* Job+CoreDataProperties.swift */; };
-		BFBA5B1F1EAC1ACE008D322E /* CoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5B1E1EAC1ACE008D322E /* CoreDataTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,19 +26,16 @@
 		BF705C101EAFF026006C102E /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		BFBA5AE81EA858A3008D322E /* TableTimerProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableTimerProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBA5AEB1EA858A3008D322E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BFBA5AED1EA858A3008D322E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = TableTimerProgress/ViewController.swift; sourceTree = "<group>"; };
 		BFBA5AF01EA858A3008D322E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFBA5AF21EA858A3008D322E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFBA5AF51EA858A3008D322E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFBA5AF71EA858A3008D322E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFBA5AFD1EA869F1008D322E /* JobCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobCell.swift; sourceTree = "<group>"; };
 		BFBA5B001EAAAC33008D322E /* Player.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Player.xcdatamodel; sourceTree = "<group>"; };
-		BFBA5B021EAAD8E0008D322E /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = TableTimerProgress/CoreDataStack.swift; sourceTree = "<group>"; };
 		BFBA5B141EAAEEFF008D322E /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		BFBA5B151EAAEEFF008D322E /* Player+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Player+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BFBA5B161EAAEEFF008D322E /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		BFBA5B171EAAEEFF008D322E /* Job+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Job+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BFBA5B1E1EAC1ACE008D322E /* CoreDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				BFBA5AFF1EAAAC32008D322E /* Player.xcdatamodeld */,
-				BFBA5B021EAAD8E0008D322E /* CoreDataStack.swift */,
 				BFBA5B141EAAEEFF008D322E /* Player.swift */,
 				BFBA5B151EAAEEFF008D322E /* Player+CoreDataProperties.swift */,
 				BFBA5B161EAAEEFF008D322E /* Job.swift */,
@@ -104,8 +97,6 @@
 		BFBA5B1D1EAC1A7D008D322E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BFBA5B1E1EAC1ACE008D322E /* CoreDataTableViewController.swift */,
-				BFBA5AED1EA858A3008D322E /* ViewController.swift */,
 				BF705C0E1EAC423F006C102E /* JobsViewController.swift */,
 			);
 			name = Controllers;
@@ -187,13 +178,10 @@
 				BF705C111EAFF026006C102E /* TitleCell.swift in Sources */,
 				BFBA5B181EAAEEFF008D322E /* Player.swift in Sources */,
 				BFBA5B1A1EAAEEFF008D322E /* Job.swift in Sources */,
-				BFBA5B031EAAD8E0008D322E /* CoreDataStack.swift in Sources */,
 				BFBA5B011EAAAC33008D322E /* Player.xcdatamodeld in Sources */,
 				BFBA5B191EAAEEFF008D322E /* Player+CoreDataProperties.swift in Sources */,
 				BFBA5B1B1EAAEEFF008D322E /* Job+CoreDataProperties.swift in Sources */,
-				BFBA5AEE1EA858A3008D322E /* ViewController.swift in Sources */,
 				BFBA5AFE1EA869F1008D322E /* JobCell.swift in Sources */,
-				BFBA5B1F1EAC1ACE008D322E /* CoreDataTableViewController.swift in Sources */,
 				BF705C0F1EAC423F006C102E /* JobsViewController.swift in Sources */,
 				BFBA5AEC1EA858A3008D322E /* AppDelegate.swift in Sources */,
 			);
