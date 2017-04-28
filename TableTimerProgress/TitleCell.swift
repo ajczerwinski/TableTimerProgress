@@ -12,8 +12,8 @@ class TitleCell: UITableViewCell {
     
     @IBOutlet weak var scoreLbl: UILabel!
     
-    func configureCell(score:Float) {
-        scoreLbl.text = "\(score)"
+    func configureTitleCell(player: Player) {
+        scoreLbl.text = "\(player.score)"
     }
     
     

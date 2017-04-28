@@ -21,7 +21,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         tableView.delegate = self
         
-        
+        attemptFetch()
         
         setBackground()
         
@@ -38,9 +38,9 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         if indexPath.row == 0 {
             
             let returnCell = tableView.dequeueReusableCell(withIdentifier: "TitleCell", for: indexPath) as! TitleCell
-            
+            var hi = 11.111
             returnCell.backgroundColor = .clear
-            returnCell.configureCell(score: 1.0)
+            returnCell.scoreLbl.text = "\(hi)"
             //cell.configureCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
             return returnCell
             
@@ -52,6 +52,14 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             returnCell.configureCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
             
             return returnCell
+        }
+        
+    }
+    
+    func configureTitleCell(cell: TitleCell, indexPath: NSIndexPath) {
+        
+        if let score = fetchedResultsController.object(at: indexPath as IndexPath) as? Player {
+            cell.configureTitleCell(player: score)
         }
         
     }
@@ -86,7 +94,11 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func setFetchedResults() {
         
+        //let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
+        
+        let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: ad.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         
@@ -124,6 +136,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         case .update:
             if let indexPath = indexPath {
                 let cell = tableView.cellForRow(at: indexPath) as! TitleCell
+                configureTitleCell(cell: cell, indexPath: indexPath as NSIndexPath)
             }
             break
         case .move:
