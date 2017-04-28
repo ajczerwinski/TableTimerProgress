@@ -44,11 +44,19 @@ class JobCell: UITableViewCell {
         
         timesTapped += 0.1
         
+        if progressBar.progress == 1.0 {
+            //money += 1.0
+            //moneyLbl.text = moneyFormatter(amount: Float(money))
+            progressBar.progress = 0.0
+            timesTapped = 0.0
+        }
+        
         progressBar.progress = timesTapped
         
         
+        
+        
+        
     }
-    
-    
 
 }

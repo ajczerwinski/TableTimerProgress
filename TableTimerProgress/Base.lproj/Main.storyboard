@@ -75,6 +75,12 @@
                                                         <constraint firstAttribute="width" constant="70" id="UOk-HA-Q6z"/>
                                                     </constraints>
                                                 </imageView>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wu2-8U-ers">
+                                                    <rect key="frame" x="86" y="0.0" width="289" height="79.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <color key="progressTintColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </progressView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxv-ZC-lPs">
                                                     <rect key="frame" x="86" y="4.5" width="281" height="20"/>
                                                     <constraints>
@@ -93,14 +99,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wu2-8U-ers">
-                                                    <rect key="frame" x="86" y="0.0" width="289" height="79.5"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </progressView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIf-ur-ff4">
                                                     <rect key="frame" x="8" y="4.5" width="70" height="70"/>
-                                                    <state key="normal" title="Button"/>
                                                     <connections>
                                                         <action selector="jobButton:" destination="Znk-rY-6fo" eventType="touchUpInside" id="ILE-SY-cnd"/>
                                                     </connections>

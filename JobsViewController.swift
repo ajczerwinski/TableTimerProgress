@@ -56,6 +56,15 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if let sections = fetchedResultsController.sections {
+            return sections.count
+        }
+        
+        return 0
+        
+    }
+    
     func configureTitleCell(cell: TitleCell, indexPath: NSIndexPath) {
         
         if let score = fetchedResultsController.object(at: indexPath as IndexPath) as? Player {
