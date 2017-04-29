@@ -13,6 +13,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var tableView: UITableView!
     
+    var playerScore: Float = 0.0
     var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
     
     override func viewDidLoad() {
@@ -35,24 +36,29 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == 0 {
+        let returnCell = tableView.dequeueReusableCell(withIdentifier: "JobCell", for: indexPath) as! JobCell
+        
+        //if indexPath.row == 0 {
             
-            let returnCell = tableView.dequeueReusableCell(withIdentifier: "TitleCell", for: indexPath) as! TitleCell
-            var hi = 11.111
-            returnCell.backgroundColor = .clear
-            returnCell.scoreLbl.text = "\(hi)"
+            //let returnCell = tableView.dequeueReusableCell(withIdentifier: "TitleCell", for: indexPath) as! TitleCell
+            //var score = playerScore
+            //returnCell.backgroundColor = UIColor.white
+            //returnCell.mainImg.isHidden = true
+            //returnCell.roleLbl.isHidden = true
+            //returnCell.descLbl.isHidden = true
+            //returnCell.scoreLbl.text = "\(playerScore + returnCell.scoreIncrementer)"
             //cell.configureCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
-            return returnCell
+            //return returnCell
             
-        } else {
+        //} else {
             
-            let returnCell = tableView.dequeueReusableCell(withIdentifier: "JobCell", for: indexPath) as! JobCell
+            //let returnCell = tableView.dequeueReusableCell(withIdentifier: "JobCell", for: indexPath) as! JobCell
             
             returnCell.backgroundColor = .clear
+            returnCell.scoreLbl.text = "\(playerScore + returnCell.scoreIncrementer)"
             returnCell.configureCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
             
             return returnCell
-        }
         
     }
     

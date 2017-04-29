@@ -15,8 +15,10 @@ class JobCell: UITableViewCell {
     @IBOutlet weak var descLbl: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var jobBtnLbl: UIButton!
+    @IBOutlet weak var scoreLbl: UILabel!
     
     var timesTapped: Float = 0.0
+    var scoreIncrementer: Float = 0.0
     
 
     override func awakeFromNib() {
@@ -43,10 +45,12 @@ class JobCell: UITableViewCell {
     @IBAction func jobButton(_ sender: UIButton) {
         
         timesTapped += 0.1
+        //scoreLbl.text = "\(playerScore)"
         
         if progressBar.progress == 1.0 {
             //money += 1.0
             //moneyLbl.text = moneyFormatter(amount: Float(money))
+            scoreIncrementer = 1.0
             progressBar.progress = 0.0
             timesTapped = 0.0
         }
