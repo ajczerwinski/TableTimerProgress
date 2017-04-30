@@ -14,6 +14,7 @@ class JobsVC: UIViewController {
     @IBOutlet weak var scoreLbl: UILabel!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
