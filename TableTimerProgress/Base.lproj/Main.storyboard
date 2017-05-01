@@ -191,7 +191,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INZ-nk-nkd">
                                                         <rect key="frame" x="4" y="4" width="60" height="62"/>
                                                         <connections>
-                                                            <action selector="studentDevBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="y5Z-Fv-USh"/>
+                                                            <action selector="gameButton:" destination="WHI-CN-HQS" eventType="touchUpInside" id="SZ0-JN-mWP"/>
                                                         </connections>
                                                     </button>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KxG-8V-viU">
@@ -251,10 +251,10 @@
                                                             <constraint firstAttribute="width" constant="60" id="Uj7-ZF-B9A"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjl-n6-vBB">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjl-n6-vBB">
                                                         <rect key="frame" x="4" y="4" width="60" height="62"/>
                                                         <connections>
-                                                            <action selector="internDevBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="0OG-hZ-bcn"/>
+                                                            <action selector="gameButton:" destination="WHI-CN-HQS" eventType="touchUpInside" id="GGe-qb-LW2"/>
                                                         </connections>
                                                     </button>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m8V-d2-0mx">
@@ -312,10 +312,10 @@
                                                             <constraint firstAttribute="width" constant="60" id="mzT-7T-VNa"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0R-ND-PeF">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0R-ND-PeF">
                                                         <rect key="frame" x="4" y="4" width="60" height="62"/>
                                                         <connections>
-                                                            <action selector="juniorDevBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="ZWu-Zn-Tq4"/>
+                                                            <action selector="gameButton:" destination="WHI-CN-HQS" eventType="touchUpInside" id="3iV-dV-2aO"/>
                                                         </connections>
                                                     </button>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QIU-TX-H9G">
@@ -373,10 +373,10 @@
                                                             <constraint firstAttribute="width" constant="60" id="V1h-AN-k5a"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obP-gb-faS">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obP-gb-faS">
                                                         <rect key="frame" x="4" y="4" width="60" height="62"/>
                                                         <connections>
-                                                            <action selector="devBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="F4J-G7-8HS"/>
+                                                            <action selector="gameButton:" destination="WHI-CN-HQS" eventType="touchUpInside" id="juN-8Y-Oqa"/>
                                                         </connections>
                                                     </button>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mXB-f2-kdp">
@@ -393,7 +393,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final credible" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIF-oH-VW1">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finally credible" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIF-oH-VW1">
                                                         <rect key="frame" x="72" y="29" width="287" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="e3B-tD-E5n"/>
@@ -434,10 +434,10 @@
                                                             <constraint firstAttribute="width" constant="60" id="yOu-4d-YEc"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZuM-Ge-fvw">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZuM-Ge-fvw">
                                                         <rect key="frame" x="4" y="4" width="60" height="62"/>
                                                         <connections>
-                                                            <action selector="seniorDevBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="QTP-i4-0uy"/>
+                                                            <action selector="gameButton:" destination="WHI-CN-HQS" eventType="touchUpInside" id="Tk8-5I-hf7"/>
                                                         </connections>
                                                     </button>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qpW-U6-nki">
@@ -495,10 +495,10 @@
                                                             <constraint firstAttribute="width" constant="60" id="kbe-9b-3Yw"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUL-NC-xiO">
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUL-NC-xiO">
                                                         <rect key="frame" x="4" y="4" width="60" height="62"/>
                                                         <connections>
-                                                            <action selector="leadDevBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="1ig-8W-dbl"/>
+                                                            <action selector="gameButton:" destination="WHI-CN-HQS" eventType="touchUpInside" id="g8K-nM-kxg"/>
                                                         </connections>
                                                     </button>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u2b-3d-cwc">
@@ -556,10 +556,10 @@
                                                             <constraint firstAttribute="width" constant="60" id="zrD-XD-Y3x"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMg-6c-0zb">
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMg-6c-0zb">
                                                         <rect key="frame" x="4" y="4" width="60" height="62"/>
                                                         <connections>
-                                                            <action selector="staffEngBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="eKm-fO-0bq"/>
+                                                            <action selector="gameButton:" destination="WHI-CN-HQS" eventType="touchUpInside" id="a0k-bM-djG"/>
                                                         </connections>
                                                     </button>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dg1-Ws-TjI">
@@ -617,10 +617,10 @@
                                                             <constraint firstAttribute="width" constant="60" id="keL-6d-pT7"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awu-ox-WNh">
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awu-ox-WNh">
                                                         <rect key="frame" x="4" y="4" width="60" height="62"/>
                                                         <connections>
-                                                            <action selector="seniorStaffEngBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="BFQ-7o-99y"/>
+                                                            <action selector="gameButton:" destination="WHI-CN-HQS" eventType="touchUpInside" id="klx-2f-8Dc"/>
                                                         </connections>
                                                     </button>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LuY-GX-XXZ">
@@ -678,10 +678,10 @@
                                                             <constraint firstAttribute="width" constant="60" id="Hd3-UD-lwo"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVM-vD-gf9">
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVM-vD-gf9">
                                                         <rect key="frame" x="4" y="4" width="60" height="62"/>
                                                         <connections>
-                                                            <action selector="distinguishedEngBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="yaA-Tl-81a"/>
+                                                            <action selector="gameButton:" destination="WHI-CN-HQS" eventType="touchUpInside" id="8dx-Ul-lVu"/>
                                                         </connections>
                                                     </button>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="96y-id-OOY">
@@ -740,11 +740,11 @@
                                                             <constraint firstAttribute="width" constant="60" id="ZU2-0w-NOX"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73v-Qz-4df">
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73v-Qz-4df">
                                                         <rect key="frame" x="4" y="4" width="60" height="62"/>
                                                         <state key="normal" title="Button"/>
                                                         <connections>
-                                                            <action selector="superDistinguishedEngBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="880-tx-9iQ"/>
+                                                            <action selector="gameButton:" destination="WHI-CN-HQS" eventType="touchUpInside" id="5Xg-Hh-Jp7"/>
                                                         </connections>
                                                     </button>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vlk-Wm-e78">
@@ -852,28 +852,28 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="devImg" destination="XwX-Sa-TDF" id="7RP-fk-I7B"/>
-                        <outlet property="devProgress" destination="mXB-f2-kdp" id="Sle-Wh-Ojh"/>
-                        <outlet property="distinguishedEngImg" destination="5mk-4K-8rv" id="yce-Kb-rLR"/>
-                        <outlet property="distinguishedProgress" destination="96y-id-OOY" id="w9W-9E-Zlr"/>
-                        <outlet property="internDevImg" destination="kUZ-oy-sTS" id="EVV-Dn-TPG"/>
-                        <outlet property="internProgress" destination="m8V-d2-0mx" id="0tY-FM-a2u"/>
-                        <outlet property="juniorDevImg" destination="CK9-Rm-Qb0" id="6X4-ST-UU6"/>
-                        <outlet property="juniorProgress" destination="QIU-TX-H9G" id="USR-oU-mjL"/>
-                        <outlet property="leadDevImg" destination="3Sl-WC-fgY" id="OBx-bb-Daa"/>
-                        <outlet property="leadProgress" destination="u2b-3d-cwc" id="nH0-88-i4A"/>
                         <outlet property="scoreLbl" destination="2j9-fy-5Y0" id="7Jc-Tr-Eh1"/>
                         <outlet property="scrollView" destination="t3o-D5-yOW" id="rUg-gc-cxa"/>
-                        <outlet property="seniorDevImg" destination="ozC-xN-OH8" id="fY7-1N-N7g"/>
-                        <outlet property="seniorProgress" destination="qpW-U6-nki" id="Xgn-rs-NkW"/>
-                        <outlet property="seniorStaffEngImg" destination="9nk-G3-UAu" id="JLQ-9l-HR2"/>
-                        <outlet property="seniorStaffProgress" destination="LuY-GX-XXZ" id="eUV-vS-0mU"/>
-                        <outlet property="staffEngImg" destination="LF2-CB-Cud" id="Jwc-Iv-8Km"/>
-                        <outlet property="staffProgress" destination="dg1-Ws-TjI" id="2xO-iT-AVc"/>
-                        <outlet property="studentDevImg" destination="JDu-qT-Qw5" id="9zl-6z-3pu"/>
-                        <outlet property="studentProgress" destination="KxG-8V-viU" id="l3I-4F-2My"/>
-                        <outlet property="superDistEngImg" destination="NrC-Rc-mmx" id="gwR-hV-6yp"/>
-                        <outlet property="superDistProgress" destination="vlk-Wm-e78" id="NYk-Rp-K7v"/>
+                        <outletCollection property="progressBar" destination="KxG-8V-viU" collectionClass="NSMutableArray" id="v5x-ZP-ZfK"/>
+                        <outletCollection property="progressBar" destination="m8V-d2-0mx" collectionClass="NSMutableArray" id="ZjN-Nl-Snm"/>
+                        <outletCollection property="progressBar" destination="QIU-TX-H9G" collectionClass="NSMutableArray" id="VyK-RA-pmd"/>
+                        <outletCollection property="progressBar" destination="mXB-f2-kdp" collectionClass="NSMutableArray" id="ioq-ya-N7w"/>
+                        <outletCollection property="progressBar" destination="qpW-U6-nki" collectionClass="NSMutableArray" id="lqg-fp-2ba"/>
+                        <outletCollection property="progressBar" destination="u2b-3d-cwc" collectionClass="NSMutableArray" id="xqu-A6-fQn"/>
+                        <outletCollection property="progressBar" destination="dg1-Ws-TjI" collectionClass="NSMutableArray" id="W3I-9C-TMX"/>
+                        <outletCollection property="progressBar" destination="LuY-GX-XXZ" collectionClass="NSMutableArray" id="Vzt-84-pl3"/>
+                        <outletCollection property="progressBar" destination="96y-id-OOY" collectionClass="NSMutableArray" id="R5K-No-Dfx"/>
+                        <outletCollection property="progressBar" destination="vlk-Wm-e78" collectionClass="NSMutableArray" id="tgi-cT-qE6"/>
+                        <outletCollection property="roleImg" destination="JDu-qT-Qw5" collectionClass="NSMutableArray" id="rpZ-w7-TYt"/>
+                        <outletCollection property="roleImg" destination="kUZ-oy-sTS" collectionClass="NSMutableArray" id="Z0X-Qy-NT2"/>
+                        <outletCollection property="roleImg" destination="CK9-Rm-Qb0" collectionClass="NSMutableArray" id="kMX-b7-7QS"/>
+                        <outletCollection property="roleImg" destination="XwX-Sa-TDF" collectionClass="NSMutableArray" id="ute-Y9-8fi"/>
+                        <outletCollection property="roleImg" destination="ozC-xN-OH8" collectionClass="NSMutableArray" id="qpS-4O-Om8"/>
+                        <outletCollection property="roleImg" destination="3Sl-WC-fgY" collectionClass="NSMutableArray" id="xue-ev-tec"/>
+                        <outletCollection property="roleImg" destination="LF2-CB-Cud" collectionClass="NSMutableArray" id="UPH-LJ-9tu"/>
+                        <outletCollection property="roleImg" destination="9nk-G3-UAu" collectionClass="NSMutableArray" id="3nh-1I-Hhe"/>
+                        <outletCollection property="roleImg" destination="5mk-4K-8rv" collectionClass="NSMutableArray" id="2ua-QD-UQ5"/>
+                        <outletCollection property="roleImg" destination="NrC-Rc-mmx" collectionClass="NSMutableArray" id="ktA-m3-LRB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXE-qf-NeB" userLabel="First Responder" sceneMemberID="firstResponder"/>
