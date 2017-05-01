@@ -50,21 +50,27 @@ class JobsVC: UIViewController {
         
         let buttonTag = sender.tag
         
-        timesTapped[buttonTag] += 0.1
+        addMoney(tag: buttonTag)
         
-        switch buttonTag {
+    }
+    
+    func addMoney(tag: Int) {
+        
+        timesTapped[tag] += 0.1
+        
+        switch tag {
             
         case 0:
-            if progressBar[buttonTag].progress == 1.0 {
+            if progressBar[tag].progress == 1.0 {
                 scoreLbl.text = moneyFormatter(amount: Float(score))
-                progressBar[buttonTag].progress = 0
+                progressBar[tag].progress = 0
                 
             }
-            progressBar[buttonTag].progress += 0.1
+            progressBar[tag].progress += 0.1
             
             break
         case 1:
-            progressBar[buttonTag].progress += 0.1
+            progressBar[tag].progress += 0.1
             
         default:
             return
