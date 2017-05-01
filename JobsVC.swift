@@ -15,6 +15,9 @@ class JobsVC: UIViewController {
     
     @IBOutlet weak var scoreLbl: UILabel!
     
+    
+    // UI Images
+    
     @IBOutlet weak var studentDevImg: UIImageView!
     @IBOutlet weak var internDevImg: UIImageView!
     @IBOutlet weak var juniorDevImg: UIImageView!
@@ -26,6 +29,28 @@ class JobsVC: UIViewController {
     @IBOutlet weak var distinguishedEngImg: UIImageView!
     @IBOutlet weak var superDistEngImg: UIImageView!
     
+    
+    // Progress Bars
+    
+    @IBOutlet weak var studentProgress: UIProgressView!
+    @IBOutlet weak var internProgress: UIProgressView!
+    @IBOutlet weak var juniorProgress: UIProgressView!
+    @IBOutlet weak var devProgress: UIProgressView!
+    @IBOutlet weak var seniorProgress: UIProgressView!
+    @IBOutlet weak var leadProgress: UIProgressView!
+    @IBOutlet weak var staffProgress: UIProgressView!
+    @IBOutlet weak var seniorStaffProgress: UIProgressView!
+    @IBOutlet weak var distinguishedProgress: UIProgressView!
+    @IBOutlet weak var superDistProgress: UIProgressView!
+    
+    
+    var timesTapped: Float = 0.0
+    var timer = Timer()
+    var tenths = 100
+    var score = 0.0
+    var multiplier: Float = 1.0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,9 +60,35 @@ class JobsVC: UIViewController {
     
     
     @IBAction func studentDevBtn(_ sender: UIButton) {
+        
+        timesTapped += 0.1
+        
+        
+        if studentProgress.progress == 1.0 {
+            score += 1.0
+            scoreLbl.text = moneyFormatter(amount: Float(score))
+            studentProgress.progress = 0.0
+            timesTapped = 0.0
+        }
+        
+        studentProgress.progress = timesTapped
+        
     }
     
     @IBAction func internDevBtn(_ sender: UIButton) {
+        
+        timesTapped += 0.1
+        
+        
+        if internProgress.progress == 1.0 {
+            score += 5.0
+            scoreLbl.text = moneyFormatter(amount: Float(score))
+            internProgress.progress = 0.0
+            timesTapped = 0.0
+        }
+        
+        internProgress.progress = timesTapped
+        
     }
     
     @IBAction func juniorDevBtn(_ sender: UIButton) {
@@ -72,7 +123,22 @@ class JobsVC: UIViewController {
     
     
     
-    
+    /* func gameButton() {
+        
+        timesTapped += 0.1
+        
+        
+        if progressBar.progress == 1.0 {
+            money += 1.0
+            moneyLbl.text = moneyFormatter(amount: Float(money))
+            progressBar.progress = 0.0
+            timesTapped = 0.0
+        }
+        
+        progressLbl.text = tapperProgressFormatter(text: timesTapped)
+        progressBar.progress = timesTapped
+        
+    } */
     
     
     func formatImages() {
@@ -107,7 +173,14 @@ class JobsVC: UIViewController {
         superDistEngImg.layer.cornerRadius = superDistEngImg.frame.height / 2
         superDistEngImg.clipsToBounds = true
         
-        //progressBar.progress = 0.0
+    }
+    
+    func moneyFormatter(amount: Float) -> String {
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        
+        return formatter.string(from: NSNumber(value: amount))!
         
     }
     

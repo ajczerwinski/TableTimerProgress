@@ -161,10 +161,10 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mSJ-Op-HbN">
                                                 <rect key="frame" x="4" y="8" width="367" height="70"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2j9-fy-5Y0">
-                                                        <rect key="frame" x="162" y="25" width="42" height="21"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2j9-fy-5Y0">
+                                                        <rect key="frame" x="133" y="25" width="100" height="21"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="42" id="Pje-4U-AE9"/>
+                                                            <constraint firstAttribute="width" constant="100" id="Pje-4U-AE9"/>
                                                             <constraint firstAttribute="height" constant="21" id="gT7-sl-dKS"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -194,8 +194,11 @@
                                                             <action selector="studentDevBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="y5Z-Fv-USh"/>
                                                         </connections>
                                                     </button>
-                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KxG-8V-viU">
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KxG-8V-viU">
                                                         <rect key="frame" x="70" y="4" width="293" height="62"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="tintColor" red="0.62745098040000002" green="0.094117647060000004" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="trackTintColor" red="0.071179859340190887" green="0.24160763621330261" blue="0.81240099668502808" alpha="0.15675834760273974" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxd-Ee-TJ2">
                                                         <rect key="frame" x="72" y="4" width="287" height="21"/>
@@ -254,8 +257,10 @@
                                                             <action selector="internDevBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="0OG-hZ-bcn"/>
                                                         </connections>
                                                     </button>
-                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="m8V-d2-0mx">
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m8V-d2-0mx">
                                                         <rect key="frame" x="70" y="4" width="293" height="62"/>
+                                                        <color key="tintColor" red="0.62745098040000002" green="0.094117647060000004" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="trackTintColor" red="0.071179859340190887" green="0.24160763621330261" blue="0.81240099668502808" alpha="0.15675834759999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intern" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGW-cO-X95">
                                                         <rect key="frame" x="72" y="4" width="287" height="21"/>
@@ -313,8 +318,10 @@
                                                             <action selector="juniorDevBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="ZWu-Zn-Tq4"/>
                                                         </connections>
                                                     </button>
-                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QIU-TX-H9G">
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QIU-TX-H9G">
                                                         <rect key="frame" x="70" y="4" width="293" height="62"/>
+                                                        <color key="tintColor" red="0.62745098040000002" green="0.094117647060000004" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="trackTintColor" red="0.071179859340190887" green="0.24160763621330261" blue="0.81240099668502808" alpha="0.15675834759999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Junior Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xu-mC-ts9">
                                                         <rect key="frame" x="72" y="4" width="287" height="21"/>
@@ -372,8 +379,10 @@
                                                             <action selector="devBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="F4J-G7-8HS"/>
                                                         </connections>
                                                     </button>
-                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mXB-f2-kdp">
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mXB-f2-kdp">
                                                         <rect key="frame" x="70" y="4" width="293" height="62"/>
+                                                        <color key="tintColor" red="0.62745098040000002" green="0.094117647060000004" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="trackTintColor" red="0.071179859340190887" green="0.24160763621330261" blue="0.81240099668502808" alpha="0.15675834759999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZy-0m-ouP">
                                                         <rect key="frame" x="72" y="4" width="287" height="21"/>
@@ -431,8 +440,10 @@
                                                             <action selector="seniorDevBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="QTP-i4-0uy"/>
                                                         </connections>
                                                     </button>
-                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qpW-U6-nki">
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qpW-U6-nki">
                                                         <rect key="frame" x="70" y="4" width="293" height="62"/>
+                                                        <color key="tintColor" red="0.62745098040000002" green="0.094117647060000004" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="trackTintColor" red="0.071179859340190887" green="0.24160763621330261" blue="0.81240099668502808" alpha="0.15675834759999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senior Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hk9-k8-vLp">
                                                         <rect key="frame" x="72" y="4" width="287" height="21"/>
@@ -490,8 +501,10 @@
                                                             <action selector="leadDevBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="1ig-8W-dbl"/>
                                                         </connections>
                                                     </button>
-                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="u2b-3d-cwc">
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u2b-3d-cwc">
                                                         <rect key="frame" x="70" y="4" width="293" height="62"/>
+                                                        <color key="tintColor" red="0.62745098040000002" green="0.094117647060000004" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="trackTintColor" red="0.071179859340190887" green="0.24160763621330261" blue="0.81240099668502808" alpha="0.15675834759999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lead Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeW-3A-K3t">
                                                         <rect key="frame" x="72" y="4" width="287" height="21"/>
@@ -549,8 +562,10 @@
                                                             <action selector="staffEngBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="eKm-fO-0bq"/>
                                                         </connections>
                                                     </button>
-                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dg1-Ws-TjI">
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dg1-Ws-TjI">
                                                         <rect key="frame" x="70" y="4" width="293" height="62"/>
+                                                        <color key="tintColor" red="0.62745098040000002" green="0.094117647060000004" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="trackTintColor" red="0.071179859340190887" green="0.24160763621330261" blue="0.81240099668502808" alpha="0.15675834759999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staff Engineer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxy-D7-65w">
                                                         <rect key="frame" x="72" y="4" width="287" height="21"/>
@@ -608,8 +623,10 @@
                                                             <action selector="seniorStaffEngBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="BFQ-7o-99y"/>
                                                         </connections>
                                                     </button>
-                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LuY-GX-XXZ">
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LuY-GX-XXZ">
                                                         <rect key="frame" x="70" y="4" width="293" height="62"/>
+                                                        <color key="tintColor" red="0.62745098040000002" green="0.094117647060000004" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="trackTintColor" red="0.071179859340190887" green="0.24160763621330261" blue="0.81240099668502808" alpha="0.15675834759999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senior Staff Engineer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEu-Fg-z6n">
                                                         <rect key="frame" x="72" y="4" width="287" height="21"/>
@@ -667,8 +684,10 @@
                                                             <action selector="distinguishedEngBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="yaA-Tl-81a"/>
                                                         </connections>
                                                     </button>
-                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="96y-id-OOY">
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="96y-id-OOY">
                                                         <rect key="frame" x="70" y="4" width="289" height="62"/>
+                                                        <color key="tintColor" red="0.62745098040000002" green="0.094117647060000004" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="trackTintColor" red="0.071179859340190887" green="0.24160763621330261" blue="0.81240099668502808" alpha="0.15675834759999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distinguished Engineer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYD-TF-wcJ">
                                                         <rect key="frame" x="72" y="4" width="287" height="21"/>
@@ -728,8 +747,10 @@
                                                             <action selector="superDistinguishedEngBtn:" destination="WHI-CN-HQS" eventType="touchUpInside" id="880-tx-9iQ"/>
                                                         </connections>
                                                     </button>
-                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vlk-Wm-e78">
+                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vlk-Wm-e78">
                                                         <rect key="frame" x="70" y="4" width="293" height="62"/>
+                                                        <color key="tintColor" red="0.62745098040000002" green="0.094117647060000004" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="trackTintColor" red="0.071179859340190887" green="0.24160763621330261" blue="0.81240099668502808" alpha="0.15675834759999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Super Distinguished Engineer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7i-Ey-efw">
                                                         <rect key="frame" x="72" y="4" width="287" height="21"/>
@@ -832,17 +853,27 @@
                     </view>
                     <connections>
                         <outlet property="devImg" destination="XwX-Sa-TDF" id="7RP-fk-I7B"/>
+                        <outlet property="devProgress" destination="mXB-f2-kdp" id="Sle-Wh-Ojh"/>
                         <outlet property="distinguishedEngImg" destination="5mk-4K-8rv" id="yce-Kb-rLR"/>
+                        <outlet property="distinguishedProgress" destination="96y-id-OOY" id="w9W-9E-Zlr"/>
                         <outlet property="internDevImg" destination="kUZ-oy-sTS" id="EVV-Dn-TPG"/>
+                        <outlet property="internProgress" destination="m8V-d2-0mx" id="0tY-FM-a2u"/>
                         <outlet property="juniorDevImg" destination="CK9-Rm-Qb0" id="6X4-ST-UU6"/>
+                        <outlet property="juniorProgress" destination="QIU-TX-H9G" id="USR-oU-mjL"/>
                         <outlet property="leadDevImg" destination="3Sl-WC-fgY" id="OBx-bb-Daa"/>
+                        <outlet property="leadProgress" destination="u2b-3d-cwc" id="nH0-88-i4A"/>
                         <outlet property="scoreLbl" destination="2j9-fy-5Y0" id="7Jc-Tr-Eh1"/>
                         <outlet property="scrollView" destination="t3o-D5-yOW" id="rUg-gc-cxa"/>
                         <outlet property="seniorDevImg" destination="ozC-xN-OH8" id="fY7-1N-N7g"/>
+                        <outlet property="seniorProgress" destination="qpW-U6-nki" id="Xgn-rs-NkW"/>
                         <outlet property="seniorStaffEngImg" destination="9nk-G3-UAu" id="JLQ-9l-HR2"/>
+                        <outlet property="seniorStaffProgress" destination="LuY-GX-XXZ" id="eUV-vS-0mU"/>
                         <outlet property="staffEngImg" destination="LF2-CB-Cud" id="Jwc-Iv-8Km"/>
+                        <outlet property="staffProgress" destination="dg1-Ws-TjI" id="2xO-iT-AVc"/>
                         <outlet property="studentDevImg" destination="JDu-qT-Qw5" id="9zl-6z-3pu"/>
+                        <outlet property="studentProgress" destination="KxG-8V-viU" id="l3I-4F-2My"/>
                         <outlet property="superDistEngImg" destination="NrC-Rc-mmx" id="gwR-hV-6yp"/>
+                        <outlet property="superDistProgress" destination="vlk-Wm-e78" id="NYk-Rp-K7v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXE-qf-NeB" userLabel="First Responder" sceneMemberID="firstResponder"/>
