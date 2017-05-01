@@ -26,14 +26,54 @@ class JobsVC: UIViewController {
     @IBOutlet weak var distinguishedEngImg: UIImageView!
     @IBOutlet weak var superDistEngImg: UIImageView!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         formatImages()
         
     }
+    
+    
+    @IBAction func studentDevBtn(_ sender: UIButton) {
+    }
+    
+    @IBAction func internDevBtn(_ sender: UIButton) {
+    }
+    
+    @IBAction func juniorDevBtn(_ sender: UIButton) {
+    }
+    
+    @IBAction func devBtn(_ sender: UIButton) {
+    }
+    
+    @IBAction func seniorDevBtn(_ sender: UIButton) {
+    }
+    
+    @IBAction func leadDevBtn(_ sender: UIButton) {
+    }
+    
+    @IBAction func staffEngBtn(_ sender: UIButton) {
+    }
+    
+    @IBAction func seniorStaffEngBtn(_ sender: UIButton) {
+    }
+    
+    @IBAction func distinguishedEngBtn(_ sender: UIButton) {
+    }
+    
+    @IBAction func superDistinguishedEngBtn(_ sender: UIButton) {
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     func formatImages() {
         
