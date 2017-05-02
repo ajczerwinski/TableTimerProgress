@@ -64,8 +64,10 @@ class JobsVC: UIViewController {
             scoreLbl.text = moneyFormatter(amount: Float(score))
             progressBar[tag].progress = 0
                 
+        } else {
+            progressBar[tag].progress += 0.1
         }
-        progressBar[tag].progress += 0.1
+        
         
     }
     
