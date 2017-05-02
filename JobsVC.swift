@@ -59,24 +59,13 @@ class JobsVC: UIViewController {
         
         timesTapped[tag] += 0.1
         
-        switch tag {
-            
-        case 0:
-            if progressBar[tag].progress == 1.0 {
-                score += multiplier[tag] * roleBase[tag]
-                scoreLbl.text = moneyFormatter(amount: Float(score))
-                progressBar[tag].progress = 0
+        if progressBar[tag].progress == 1.0 {
+            score += multiplier[tag] * roleBase[tag]
+            scoreLbl.text = moneyFormatter(amount: Float(score))
+            progressBar[tag].progress = 0
                 
-            }
-            progressBar[tag].progress += 0.1
-            
-            break
-        case 1:
-            progressBar[tag].progress += 0.1
-            
-        default:
-            return
         }
+        progressBar[tag].progress += 0.1
         
     }
     
