@@ -41,7 +41,7 @@ class JobsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: 2000)
         formatImages()
         
     }
