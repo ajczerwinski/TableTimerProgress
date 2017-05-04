@@ -42,14 +42,12 @@ class JobsVC: UIViewController {
     // store # of times tapped for each role
     
     var timesTapped: [Float] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    var multiplier: [Float] = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    var isRoleEnabled: [Bool] = [true, false, false, false, false, false, false, false, false, false]
+    var multiplier: [Float] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    var isRoleEnabled: [Bool] = [true, true, false, false, false, false, false, false, false, false]
     var roleBase: [Float] = [1, 5, 10, 20, 50, 100, 500, 1000, 2000, 10000]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         formatUI()
     }
@@ -100,6 +98,9 @@ class JobsVC: UIViewController {
             } else if (isRoleEnabled[role] == false && isRoleEnabled[role - 1] == true) {
                 roleView[role - 1].alpha = 1
                 roleView[role].alpha = 0.5
+                buttonLbl[role - 1].isHidden = true
+                
+
             } else {
                 roleView[role].alpha = 0
             }
