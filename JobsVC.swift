@@ -112,9 +112,9 @@ class JobsVC: UIViewController {
             roleImg[role].layer.cornerRadius = roleImg[role].frame.height / 2
             roleImg[role].clipsToBounds = true
             buttonLbl[role].isEnabled = isRoleEnabled[role]
-            if isRoleEnabled[role] == true {
+            if isRoleEnabled[role] {
                 roleView[role].alpha = 1
-            } else if (isRoleEnabled[role] == false && isRoleEnabled[role - 1] == true) {
+            } else if (!isRoleEnabled[role] && isRoleEnabled[role - 1]) {
                 roleView[role - 1].alpha = 1
                 roleView[role].alpha = 0.5
                 buttonLbl[role - 1].isHidden = true
