@@ -731,6 +731,27 @@
                         <outletCollection property="progressBar" destination="96y-id-OOY" collectionClass="NSMutableArray" id="R5K-No-Dfx"/>
                         <outletCollection property="roleImg" destination="NrC-Rc-mmx" collectionClass="NSMutableArray" id="ktA-m3-LRB"/>
                         <outletCollection property="progressBar" destination="vlk-Wm-e78" collectionClass="NSMutableArray" id="tgi-cT-qE6"/>
+                        <outletCollection property="buttonLbl" destination="INZ-nk-nkd" collectionClass="NSMutableArray" id="0jD-PQ-nON"/>
+                        <outletCollection property="buttonLbl" destination="Hjl-n6-vBB" collectionClass="NSMutableArray" id="ycs-E5-DOJ"/>
+                        <outletCollection property="buttonLbl" destination="O0R-ND-PeF" collectionClass="NSMutableArray" id="yRi-IV-yPU"/>
+                        <outletCollection property="buttonLbl" destination="obP-gb-faS" collectionClass="NSMutableArray" id="wyJ-b4-45q"/>
+                        <outletCollection property="buttonLbl" destination="ZuM-Ge-fvw" collectionClass="NSMutableArray" id="ZUZ-ia-AmL"/>
+                        <outletCollection property="buttonLbl" destination="TUL-NC-xiO" collectionClass="NSMutableArray" id="aH7-4H-hkO"/>
+                        <outletCollection property="buttonLbl" destination="JMg-6c-0zb" collectionClass="NSMutableArray" id="d6X-nr-IMY"/>
+                        <outletCollection property="buttonLbl" destination="awu-ox-WNh" collectionClass="NSMutableArray" id="GGD-Wf-ygO"/>
+                        <outletCollection property="buttonLbl" destination="hVM-vD-gf9" collectionClass="NSMutableArray" id="sRB-F4-ITf"/>
+                        <outletCollection property="buttonLbl" destination="73v-Qz-4df" collectionClass="NSMutableArray" id="Ldk-9q-eGA"/>
+                        <outletCollection property="roleView" destination="wTl-11-gAI" collectionClass="NSMutableArray" id="cOi-GB-JDJ"/>
+                        <outletCollection property="roleView" destination="wTl-11-gAI" collectionClass="NSMutableArray" id="2Mu-rW-6o2"/>
+                        <outletCollection property="roleView" destination="cPX-ve-oSy" collectionClass="NSMutableArray" id="4om-UF-cPZ"/>
+                        <outletCollection property="roleView" destination="kYq-6Z-qJf" collectionClass="NSMutableArray" id="Xf8-RR-TI3"/>
+                        <outletCollection property="roleView" destination="8Va-ym-z8P" collectionClass="NSMutableArray" id="2c7-IU-6jb"/>
+                        <outletCollection property="roleView" destination="8pI-CQ-bDy" collectionClass="NSMutableArray" id="hBg-Sy-qbW"/>
+                        <outletCollection property="roleView" destination="fSR-ib-wxS" collectionClass="NSMutableArray" id="xVx-el-5oK"/>
+                        <outletCollection property="roleView" destination="6qB-hf-0N9" collectionClass="NSMutableArray" id="SA4-4z-PqW"/>
+                        <outletCollection property="roleView" destination="Gxz-0V-Y1i" collectionClass="NSMutableArray" id="Vgp-rJ-ZBx"/>
+                        <outletCollection property="roleView" destination="t8U-Df-RLX" collectionClass="NSMutableArray" id="OBC-38-EGH"/>
+                        <outletCollection property="roleView" destination="3fT-KW-sjW" collectionClass="NSMutableArray" id="Eso-uF-dUZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXE-qf-NeB" userLabel="First Responder" sceneMemberID="firstResponder"/>

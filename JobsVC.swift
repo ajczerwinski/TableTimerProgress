@@ -15,6 +15,12 @@ class JobsVC: UIViewController {
     
     @IBOutlet weak var scoreLbl: UILabel!
     
+    // Button Labels
+    
+    @IBOutlet var buttonLbl: [UIButton]!
+    
+    @IBOutlet var roleView: [UIView]!
+    
     
     // UI Images
     
@@ -36,14 +42,16 @@ class JobsVC: UIViewController {
     // store # of times tapped for each role
     
     var timesTapped: [Float] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    var multiplier: [Float] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    var multiplier: [Float] = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    var isRoleEnabled: [Bool] = [true, false, false, false, false, false, false, false, false, false]
     var roleBase: [Float] = [1, 5, 10, 20, 50, 100, 500, 1000, 2000, 10000]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: 2000)
-        formatImages()
         
+        
+        
+        formatUI()
     }
 
     
@@ -80,14 +88,22 @@ class JobsVC: UIViewController {
         
     }
     
-    func formatImages() {
+    func formatUI() {
         
         for role in 0...9 {
             roleImg[role].image = roleImages[role]
             roleImg[role].layer.cornerRadius = roleImg[role].frame.height / 2
             roleImg[role].clipsToBounds = true
+            buttonLbl[role].isEnabled = isRoleEnabled[role]
+            if isRoleEnabled[role] == true {
+                roleView[role].alpha = 1
+            } else if (isRoleEnabled[role] == false && isRoleEnabled[role - 1] == true) {
+                roleView[role - 1].alpha = 1
+                roleView[role].alpha = 0.5
+            } else {
+                roleView[role].alpha = 0
+            }
         }
-        
     }
     
     
