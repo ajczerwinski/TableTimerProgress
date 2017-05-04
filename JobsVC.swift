@@ -44,7 +44,8 @@ class JobsVC: UIViewController {
     var timesTapped: [Float] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     var multiplier: [Float] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     var isRoleEnabled: [Bool] = [true, true, false, false, false, false, false, false, false, false]
-    var roleBase: [Float] = [1, 5, 10, 20, 50, 100, 500, 1000, 2000, 10000]
+    var purchasePrice: [Float] = [1, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
+    var roleBase: [Float] = [10, 5, 10, 20, 50, 100, 500, 1000, 2000, 10000]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +69,25 @@ class JobsVC: UIViewController {
         if progressBar[tag].progress == 1.0 {
             score += multiplier[tag] * roleBase[tag]
             scoreLbl.text = moneyFormatter(amount: Float(score))
+            
+            if tag != 9 && score >= purchasePrice[tag + 1] /*&& buttonLbl[tag + 1].isEnabled == false */{
+                isRoleEnabled[tag + 2] = true
+                roleView[tag + 2].alpha = 1
+                buttonLbl[tag + 1].isEnabled = true
+                formatUI()
+                
+                
+            }
+            
             progressBar[tag].progress = 0
+            
+            
+            
+            /*for role in 0...8 {
+                if score >= purchasePrice[role + 1] {
+                    
+                }
+            }*/
                 
         } else {
             progressBar[tag].progress += 0.1
