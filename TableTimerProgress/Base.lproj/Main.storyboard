@@ -598,7 +598,7 @@
                                             <constraint firstItem="hVM-vD-gf9" firstAttribute="leading" secondItem="5mk-4K-8rv" secondAttribute="leading" id="wkE-yl-hOw"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fT-KW-sjW">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fT-KW-sjW">
                                         <rect key="frame" x="4" y="670" width="306" height="70"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="superDistinguishedEng" translatesAutoresizingMaskIntoConstraints="NO" id="NrC-Rc-mmx">

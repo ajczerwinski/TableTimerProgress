@@ -70,13 +70,11 @@ class JobsVC: UIViewController {
             score += multiplier[tag] * roleBase[tag]
             scoreLbl.text = moneyFormatter(amount: Float(score))
             
-            if tag != 9 && score >= purchasePrice[tag + 1] /*&& buttonLbl[tag + 1].isEnabled == false */{
+            if tag <= 7 && score >= purchasePrice[tag + 1] /*&& buttonLbl[tag + 1].isEnabled == false */{
                 isRoleEnabled[tag + 2] = true
                 roleView[tag + 2].alpha = 1
                 buttonLbl[tag + 1].isEnabled = true
                 formatUI()
-                
-                
             }
             
             progressBar[tag].progress = 0
@@ -112,8 +110,9 @@ class JobsVC: UIViewController {
             roleImg[role].layer.cornerRadius = roleImg[role].frame.height / 2
             roleImg[role].clipsToBounds = true
             buttonLbl[role].isEnabled = isRoleEnabled[role]
-            if isRoleEnabled[role] {
+            if isRoleEnabled[role] && role != 9 {
                 roleView[role].alpha = 1
+                roleView[role + 1].alpha = 0.5
             } else if (!isRoleEnabled[role] && isRoleEnabled[role - 1]) {
                 roleView[role - 1].alpha = 1
                 roleView[role].alpha = 0.5
