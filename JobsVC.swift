@@ -35,17 +35,17 @@ class JobsVC: UIViewController {
     // var timesTapped: Float = 0.0
     var timer = Timer()
     var tenths = 100
-    var score: Float = 0.0
+    var score: Double = 0.0
     
     var roleImages = [#imageLiteral(resourceName: "studentDev"), #imageLiteral(resourceName: "internDev"), #imageLiteral(resourceName: "juniorDev"), #imageLiteral(resourceName: "dev"), #imageLiteral(resourceName: "seniorDev"), #imageLiteral(resourceName: "leadDev"), #imageLiteral(resourceName: "staffEng"), #imageLiteral(resourceName: "seniorStaffEng"), #imageLiteral(resourceName: "distinguishedEng"), #imageLiteral(resourceName: "superDistinguishedEng")]
     
     // store # of times tapped for each role
     
-    var timesTapped: [Float] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    var multiplier: [Float] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    var timesTapped: [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    var multiplier: [Double] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     var isRoleEnabled: [Bool] = [true, true, false, false, false, false, false, false, false, false]
-    var purchasePrice: [Float] = [1, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
-    var roleBase: [Float] = [10, 5, 10, 20, 50, 100, 500, 1000, 2000, 10000]
+    var purchasePrice: [Double] = [1, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
+    var roleBase: [Double] = [10, 5, 10, 20, 50, 100, 500, 1000, 2000, 10000]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,13 +70,15 @@ class JobsVC: UIViewController {
             score += multiplier[tag] * roleBase[tag]
             scoreLbl.text = moneyFormatter(amount: Float(score))
             
-            if tag <= 7 && score >= purchasePrice[tag + 1] /*&& buttonLbl[tag + 1].isEnabled == false */{
+            /*if tag <= 7 && score >= purchasePrice[tag + 1] && !buttonLbl[tag + 1].isEnabled{
                 isRoleEnabled[tag + 2] = true
                 roleView[tag + 2].alpha = 1
-                buttonLbl[tag + 1].isEnabled = true
-                formatUI()
-            }
-            
+                roleView[tag + 3].alpha = 0.5
+                buttonLbl[tag + 2].isEnabled = true
+                buttonLbl[tag + 3].isEnabled = true
+                
+            } */
+            formatUI()
             progressBar[tag].progress = 0
             
             
@@ -109,6 +111,11 @@ class JobsVC: UIViewController {
             roleImg[role].image = roleImages[role]
             roleImg[role].layer.cornerRadius = roleImg[role].frame.height / 2
             roleImg[role].clipsToBounds = true
+            
+            if role != 0 && score >= purchasePrice[role - 1] {
+                isRoleEnabled[role] = true
+            }
+            
             buttonLbl[role].isEnabled = isRoleEnabled[role]
             if isRoleEnabled[role] && role != 9 {
                 roleView[role].alpha = 1
@@ -122,6 +129,7 @@ class JobsVC: UIViewController {
             } else {
                 roleView[role].alpha = 0
             }
+            print(score)
         }
     }
     
