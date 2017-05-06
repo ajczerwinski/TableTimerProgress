@@ -50,7 +50,7 @@ class JobsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        formatUI()
+        formatImages()
     }
 
     
@@ -105,33 +105,48 @@ class JobsVC: UIViewController {
         
     }
     
-    func formatUI() {
+    func formatImages() {
         
         for role in 0...9 {
             roleImg[role].image = roleImages[role]
             roleImg[role].layer.cornerRadius = roleImg[role].frame.height / 2
             roleImg[role].clipsToBounds = true
             
-            if role != 0 && score >= purchasePrice[role - 1] {
+        }
+        
+        formatUI()
+        
+    }
+    
+    func formatUI() {
+        
+        for role in 1...8 {
+            
+            if score >= purchasePrice[role - 1] {
                 isRoleEnabled[role] = true
+                buttonLbl[role].isEnabled = isRoleEnabled[role]
+                print("\([role])", "\(isRoleEnabled[role])")
             }
             
-            buttonLbl[role].isEnabled = isRoleEnabled[role]
+            
             if isRoleEnabled[role] && role != 9 {
                 roleView[role].alpha = 1
                 roleView[role + 1].alpha = 0.5
             } else if (!isRoleEnabled[role] && isRoleEnabled[role - 1]) {
                 roleView[role - 1].alpha = 1
                 roleView[role].alpha = 0.5
-                buttonLbl[role - 1].isHidden = true
+                buttonLbl[role].isHidden = true
                 
-
+                
             } else {
                 roleView[role].alpha = 0
             }
-            print(score)
+            
         }
+        
+        
     }
+    
     
     
     
