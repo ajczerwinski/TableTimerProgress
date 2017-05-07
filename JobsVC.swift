@@ -43,8 +43,8 @@ class JobsVC: UIViewController {
     
     var timesTapped: [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     var multiplier: [Double] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-    var isRoleEnabled: [Bool] = [true, true, false, false, false, false, false, false, false, false]
-    var purchasePrice: [Double] = [1, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
+    var isRoleEnabled: [Bool] = [true, false, false, false, false, false, false, false, false, false]
+    var purchasePrice: [Double] = [0, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
     var roleBase: [Double] = [10, 5, 10, 20, 50, 100, 500, 1000, 2000, 10000]
     
     override func viewDidLoad() {
@@ -70,24 +70,8 @@ class JobsVC: UIViewController {
             score += multiplier[tag] * roleBase[tag]
             scoreLbl.text = moneyFormatter(amount: Float(score))
             
-            /*if tag <= 7 && score >= purchasePrice[tag + 1] && !buttonLbl[tag + 1].isEnabled{
-                isRoleEnabled[tag + 2] = true
-                roleView[tag + 2].alpha = 1
-                roleView[tag + 3].alpha = 0.5
-                buttonLbl[tag + 2].isEnabled = true
-                buttonLbl[tag + 3].isEnabled = true
-                
-            } */
-            formatUI()
+            formatImages()
             progressBar[tag].progress = 0
-            
-            
-            
-            /*for role in 0...8 {
-                if score >= purchasePrice[role + 1] {
-                    
-                }
-            }*/
                 
         } else {
             progressBar[tag].progress += 0.1
@@ -108,28 +92,61 @@ class JobsVC: UIViewController {
     func formatImages() {
         
         for role in 0...9 {
+
             roleImg[role].image = roleImages[role]
             roleImg[role].layer.cornerRadius = roleImg[role].frame.height / 2
             roleImg[role].clipsToBounds = true
             
         }
         
-        formatUI()
+        initialFormat()
         
     }
     
     func formatUI() {
         
-        for role in 1...8 {
+       for role in 1...9 {
             
-            if score >= purchasePrice[role - 1] {
+            /*if roleView[role].alpha != 1 {
+                
+                buttonLbl[role].isHidden = true
+                buttonLbl[role].isEnabled = false
+                
+            }*/
+            
+            if score >= purchasePrice[role] {
+                
                 isRoleEnabled[role] = true
+                buttonLbl[role].isEnabled = isRoleEnabled[role]
+                buttonLbl[role].isHidden = !isRoleEnabled[role]
+                roleView[role].alpha = 1.0
+            }
+            
+            if (!isRoleEnabled[role] && isRoleEnabled[role - 1]) {
+                
+                roleView[role].alpha = 0.5
+                buttonLbl[role].isHidden = true
+                buttonLbl[role].isEnabled = false
+                
+            } else {
+                
+                roleView[role].alpha = 0
+                buttonLbl[role].isHidden = true
+                
+            }
+            
+        }
+        
+        /*for role in 0...8 {
+            
+            if score >= purchasePrice[role + 1] {
+                isRoleEnabled[role + 1] = true
                 buttonLbl[role].isEnabled = isRoleEnabled[role]
                 print("\([role])", "\(isRoleEnabled[role])")
             }
             
             
-            if isRoleEnabled[role] && role != 9 {
+            if isRoleEnabled[role] {
                 roleView[role].alpha = 1
                 roleView[role + 1].alpha = 0.5
             } else if (!isRoleEnabled[role] && isRoleEnabled[role - 1]) {
@@ -142,8 +159,26 @@ class JobsVC: UIViewController {
                 roleView[role].alpha = 0
             }
             
-        }
+        } */
         
+        
+    }
+    
+    func initialFormat() {
+        for role in 0...9 {
+            
+            print("Hi I'm view #",
+                "(\(roleView[role].tag))")
+            
+        }
+        /*isRoleEnabled[4] = true
+        buttonLbl[4].isEnabled = !isRoleEnabled[4]
+        buttonLbl[4].isHidden = isRoleEnabled[4]
+        roleView[4].alpha = 1.0
+        
+        roleView[1].alpha = 0.5
+        buttonLbl[1].isEnabled = false
+        buttonLbl[1].isHidden = true*/
         
     }
     
