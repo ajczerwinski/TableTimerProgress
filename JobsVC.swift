@@ -19,6 +19,8 @@ class JobsVC: UIViewController {
     
     @IBOutlet var buttonLbl: [UIButton]!
     
+    @IBOutlet var numRoles: [UIButton]!
+    
     @IBOutlet var roleView: [UIView]!
     
     
@@ -46,6 +48,7 @@ class JobsVC: UIViewController {
     var isRoleEnabled: [Bool] = [true, false, false, false, false, false, false, false, false, false]
     var purchasePrice: [Double] = [0, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
     var roleBase: [Double] = [1, 5, 10, 20, 50, 100, 500, 1000, 2000, 10000]
+    var rolesOwned: [Double] = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +66,15 @@ class JobsVC: UIViewController {
         
     }
     
+    @IBAction func purchaseRole(_ sender: UIButton) {
+        
+        let buttonTag = sender.tag
+        
+        rolesOwned[buttonTag] += 1
+        print(rolesOwned)
+        
+    }
+    
     func addMoney(tag: Int) {
         
         timesTapped[tag] += 0.1
@@ -74,11 +86,10 @@ class JobsVC: UIViewController {
             //formatImages()
             formatUI()
             progressBar[tag].progress = 0
-                
+            
         } else {
             progressBar[tag].progress += 0.1
         }
-        
         
     }
     
@@ -108,13 +119,7 @@ class JobsVC: UIViewController {
     func formatUI() {
         
        for role in 1...9 {
-            
-            /*if roleView[role].alpha != 1 {
-                
-                buttonLbl[role].isHidden = true
-                buttonLbl[role].isEnabled = false
-                
-            }*/
+        
             
             if score >= purchasePrice[role] {
                 
@@ -137,31 +142,6 @@ class JobsVC: UIViewController {
             }
             
         }
-        
-        /*for role in 0...8 {
-            
-            if score >= purchasePrice[role + 1] {
-                isRoleEnabled[role + 1] = true
-                buttonLbl[role].isEnabled = isRoleEnabled[role]
-                print("\([role])", "\(isRoleEnabled[role])")
-            }
-            
-            
-            if isRoleEnabled[role] {
-                roleView[role].alpha = 1
-                roleView[role + 1].alpha = 0.5
-            } else if (!isRoleEnabled[role] && isRoleEnabled[role - 1]) {
-                roleView[role - 1].alpha = 1
-                roleView[role].alpha = 0.5
-                buttonLbl[role].isHidden = true
-                
-                
-            } else {
-                roleView[role].alpha = 0
-            }
-            
-        } */
-        
         
     }
     

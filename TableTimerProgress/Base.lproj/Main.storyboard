@@ -47,7 +47,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="595"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTl-11-gAI">
-                                        <rect key="frame" x="4" y="4" width="306" height="70"/>
+                                        <rect key="frame" x="4" y="4" width="376" height="70"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="studentDev" translatesAutoresizingMaskIntoConstraints="NO" id="JDu-qT-Qw5">
                                                 <rect key="frame" x="4" y="4" width="60" height="62"/>
@@ -55,20 +55,14 @@
                                                     <constraint firstAttribute="width" constant="60" id="KlN-Mt-G29"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INZ-nk-nkd">
-                                                <rect key="frame" x="4" y="4" width="60" height="62"/>
-                                                <connections>
-                                                    <action selector="gameButton:" destination="WHI-CN-HQS" eventType="touchUpInside" id="SZ0-JN-mWP"/>
-                                                </connections>
-                                            </button>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KxG-8V-viU">
-                                                <rect key="frame" x="70" y="4" width="232" height="62"/>
+                                                <rect key="frame" x="70" y="4" width="139" height="62"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxd-Ee-TJ2">
-                                                <rect key="frame" x="72" y="4" width="226" height="21"/>
+                                                <rect key="frame" x="72" y="4" width="137" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="ehe-Ed-DEi"/>
                                                 </constraints>
@@ -77,7 +71,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Just tryin' to learn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEZ-Kc-ake">
-                                                <rect key="frame" x="72" y="29" width="226" height="21"/>
+                                                <rect key="frame" x="72" y="29" width="137" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="1jo-Fw-Bt7"/>
                                                     <constraint firstAttribute="height" constant="21" id="B4a-hi-kLe"/>
@@ -86,6 +80,23 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INZ-nk-nkd">
+                                                <rect key="frame" x="4" y="4" width="60" height="62"/>
+                                                <connections>
+                                                    <action selector="gameButton:" destination="WHI-CN-HQS" eventType="touchUpInside" id="SZ0-JN-mWP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXs-5z-sFF">
+                                                <rect key="frame" x="242" y="4" width="60" height="62"/>
+                                                <color key="backgroundColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="JI7-vd-gPz"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="purchaseRole:" destination="WHI-CN-HQS" eventType="touchUpInside" id="JnR-dl-rYQ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -94,23 +105,25 @@
                                             <constraint firstItem="JDu-qT-Qw5" firstAttribute="top" secondItem="wTl-11-gAI" secondAttribute="top" constant="4" id="9pW-cc-KCj"/>
                                             <constraint firstAttribute="bottom" secondItem="JDu-qT-Qw5" secondAttribute="bottom" constant="4" id="DmJ-Tv-YPR"/>
                                             <constraint firstItem="KxG-8V-viU" firstAttribute="leading" secondItem="wTl-11-gAI" secondAttribute="leading" constant="70" id="IVn-n9-dA8"/>
-                                            <constraint firstAttribute="trailing" secondItem="KxG-8V-viU" secondAttribute="trailing" constant="4" id="Jan-X7-Y12"/>
                                             <constraint firstItem="MEZ-Kc-ake" firstAttribute="leading" secondItem="nxd-Ee-TJ2" secondAttribute="leading" id="MT7-Vc-adX"/>
                                             <constraint firstItem="MEZ-Kc-ake" firstAttribute="trailing" secondItem="nxd-Ee-TJ2" secondAttribute="trailing" id="O9s-WI-yuf"/>
                                             <constraint firstItem="nxd-Ee-TJ2" firstAttribute="top" secondItem="wTl-11-gAI" secondAttribute="top" constant="4" id="UQR-09-p01"/>
+                                            <constraint firstItem="nxd-Ee-TJ2" firstAttribute="trailing" secondItem="KxG-8V-viU" secondAttribute="trailing" id="VcO-tz-2wY"/>
+                                            <constraint firstAttribute="bottom" secondItem="RXs-5z-sFF" secondAttribute="bottom" constant="4" id="bvr-jq-B5a"/>
                                             <constraint firstItem="nxd-Ee-TJ2" firstAttribute="leading" secondItem="INZ-nk-nkd" secondAttribute="trailing" constant="8" id="cpp-al-5ag"/>
                                             <constraint firstItem="INZ-nk-nkd" firstAttribute="bottom" secondItem="JDu-qT-Qw5" secondAttribute="bottom" id="cvA-OP-Rmh"/>
                                             <constraint firstItem="JDu-qT-Qw5" firstAttribute="leading" secondItem="wTl-11-gAI" secondAttribute="leading" constant="4" id="eoA-e4-laT"/>
                                             <constraint firstAttribute="height" constant="70" id="fr9-aZ-gVd"/>
+                                            <constraint firstAttribute="trailing" secondItem="RXs-5z-sFF" secondAttribute="trailing" constant="74" id="mdf-bY-Ed6"/>
                                             <constraint firstAttribute="bottom" secondItem="KxG-8V-viU" secondAttribute="bottom" constant="4" id="mw3-zL-wRJ"/>
                                             <constraint firstItem="INZ-nk-nkd" firstAttribute="leading" secondItem="JDu-qT-Qw5" secondAttribute="leading" id="olQ-12-hZa"/>
                                             <constraint firstItem="INZ-nk-nkd" firstAttribute="trailing" secondItem="JDu-qT-Qw5" secondAttribute="trailing" id="sYI-9l-P0Q"/>
-                                            <constraint firstAttribute="trailing" secondItem="nxd-Ee-TJ2" secondAttribute="trailing" constant="8" id="u1W-z1-BiJ"/>
+                                            <constraint firstItem="RXs-5z-sFF" firstAttribute="top" secondItem="wTl-11-gAI" secondAttribute="top" constant="4" id="vgM-oJ-DYb"/>
                                             <constraint firstItem="MEZ-Kc-ake" firstAttribute="top" secondItem="nxd-Ee-TJ2" secondAttribute="bottom" constant="4" id="zRQ-vK-Tvx"/>
                                         </constraints>
                                     </view>
                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPX-ve-oSy">
-                                        <rect key="frame" x="4" y="78" width="306" height="70"/>
+                                        <rect key="frame" x="4" y="78" width="376" height="70"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="internDev" translatesAutoresizingMaskIntoConstraints="NO" id="kUZ-oy-sTS">
                                                 <rect key="frame" x="4" y="4" width="60" height="62"/>
@@ -125,7 +138,7 @@
                                                 </connections>
                                             </button>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m8V-d2-0mx">
-                                                <rect key="frame" x="70" y="4" width="232" height="62"/>
+                                                <rect key="frame" x="70" y="4" width="302" height="62"/>
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
@@ -155,7 +168,7 @@
                                             <constraint firstItem="Zc4-1v-bfl" firstAttribute="top" secondItem="CGW-cO-X95" secondAttribute="bottom" constant="4" id="B8A-8J-0h2"/>
                                             <constraint firstItem="kUZ-oy-sTS" firstAttribute="leading" secondItem="cPX-ve-oSy" secondAttribute="leading" constant="4" id="BrQ-fW-vw4"/>
                                             <constraint firstAttribute="trailing" secondItem="m8V-d2-0mx" secondAttribute="trailing" constant="4" id="CkJ-kn-CY8"/>
-                                            <constraint firstAttribute="trailing" secondItem="CGW-cO-X95" secondAttribute="trailing" constant="8" id="Nct-9g-Yby"/>
+                                            <constraint firstAttribute="trailing" secondItem="CGW-cO-X95" secondAttribute="trailing" constant="78" id="Nct-9g-Yby"/>
                                             <constraint firstItem="Zc4-1v-bfl" firstAttribute="trailing" secondItem="CGW-cO-X95" secondAttribute="trailing" id="Ofx-GJ-U2y"/>
                                             <constraint firstItem="m8V-d2-0mx" firstAttribute="leading" secondItem="cPX-ve-oSy" secondAttribute="leading" constant="70" id="Oul-5N-sMR"/>
                                             <constraint firstItem="m8V-d2-0mx" firstAttribute="top" secondItem="cPX-ve-oSy" secondAttribute="top" constant="4" id="SPl-B8-qj6"/>
@@ -171,7 +184,7 @@
                                         </constraints>
                                     </view>
                                     <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYq-6Z-qJf">
-                                        <rect key="frame" x="4" y="152" width="306" height="70"/>
+                                        <rect key="frame" x="4" y="152" width="376" height="70"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="juniorDev" translatesAutoresizingMaskIntoConstraints="NO" id="CK9-Rm-Qb0">
                                                 <rect key="frame" x="4" y="4" width="60" height="62"/>
@@ -186,7 +199,7 @@
                                                 </connections>
                                             </button>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QIU-TX-H9G">
-                                                <rect key="frame" x="70" y="4" width="232" height="62"/>
+                                                <rect key="frame" x="70" y="4" width="302" height="62"/>
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
@@ -227,12 +240,12 @@
                                             <constraint firstItem="CK9-Rm-Qb0" firstAttribute="leading" secondItem="kYq-6Z-qJf" secondAttribute="leading" constant="4" id="pXz-M7-jGR"/>
                                             <constraint firstItem="O0R-ND-PeF" firstAttribute="trailing" secondItem="CK9-Rm-Qb0" secondAttribute="trailing" id="qc1-Rq-4J4"/>
                                             <constraint firstItem="cyF-2K-KN3" firstAttribute="trailing" secondItem="0Xu-mC-ts9" secondAttribute="trailing" id="s3n-rb-Y3L"/>
-                                            <constraint firstAttribute="trailing" secondItem="0Xu-mC-ts9" secondAttribute="trailing" constant="8" id="sTc-9z-pHQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="0Xu-mC-ts9" secondAttribute="trailing" constant="78" id="sTc-9z-pHQ"/>
                                             <constraint firstItem="CK9-Rm-Qb0" firstAttribute="top" secondItem="kYq-6Z-qJf" secondAttribute="top" constant="4" id="tZB-mv-t8B"/>
                                         </constraints>
                                     </view>
                                     <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Va-ym-z8P">
-                                        <rect key="frame" x="4" y="226" width="306" height="70"/>
+                                        <rect key="frame" x="4" y="226" width="376" height="70"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dev" translatesAutoresizingMaskIntoConstraints="NO" id="XwX-Sa-TDF">
                                                 <rect key="frame" x="4" y="4" width="60" height="62"/>
@@ -247,7 +260,7 @@
                                                 </connections>
                                             </button>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mXB-f2-kdp">
-                                                <rect key="frame" x="70" y="4" width="232" height="62"/>
+                                                <rect key="frame" x="70" y="4" width="302" height="62"/>
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
@@ -285,7 +298,7 @@
                                             <constraint firstItem="obP-gb-faS" firstAttribute="trailing" secondItem="XwX-Sa-TDF" secondAttribute="trailing" id="XeW-DU-kc7"/>
                                             <constraint firstItem="VZy-0m-ouP" firstAttribute="top" secondItem="8Va-ym-z8P" secondAttribute="top" constant="4" id="dPR-yq-ful"/>
                                             <constraint firstItem="mXB-f2-kdp" firstAttribute="leading" secondItem="8Va-ym-z8P" secondAttribute="leading" constant="70" id="dnz-WM-6sF"/>
-                                            <constraint firstAttribute="trailing" secondItem="VZy-0m-ouP" secondAttribute="trailing" constant="8" id="o8z-yq-zNK"/>
+                                            <constraint firstAttribute="trailing" secondItem="VZy-0m-ouP" secondAttribute="trailing" constant="78" id="o8z-yq-zNK"/>
                                             <constraint firstAttribute="bottom" secondItem="XwX-Sa-TDF" secondAttribute="bottom" constant="4" id="tGE-bc-NXV"/>
                                             <constraint firstItem="mXB-f2-kdp" firstAttribute="top" secondItem="8Va-ym-z8P" secondAttribute="top" constant="4" id="xK2-B9-06d"/>
                                             <constraint firstItem="obP-gb-faS" firstAttribute="bottom" secondItem="XwX-Sa-TDF" secondAttribute="bottom" id="y4i-SF-j7g"/>
@@ -293,7 +306,7 @@
                                         </constraints>
                                     </view>
                                     <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8pI-CQ-bDy">
-                                        <rect key="frame" x="4" y="300" width="306" height="70"/>
+                                        <rect key="frame" x="4" y="300" width="376" height="70"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seniorDev" translatesAutoresizingMaskIntoConstraints="NO" id="ozC-xN-OH8">
                                                 <rect key="frame" x="4" y="4" width="60" height="62"/>
@@ -308,7 +321,7 @@
                                                 </connections>
                                             </button>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qpW-U6-nki">
-                                                <rect key="frame" x="70" y="4" width="232" height="62"/>
+                                                <rect key="frame" x="70" y="4" width="302" height="62"/>
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
@@ -337,7 +350,7 @@
                                             <constraint firstAttribute="bottom" secondItem="ozC-xN-OH8" secondAttribute="bottom" constant="4" id="2ON-hP-amo"/>
                                             <constraint firstItem="ozC-xN-OH8" firstAttribute="top" secondItem="8pI-CQ-bDy" secondAttribute="top" constant="4" id="7Ep-nu-r3o"/>
                                             <constraint firstItem="ZuM-Ge-fvw" firstAttribute="top" secondItem="ozC-xN-OH8" secondAttribute="top" id="8Hw-G8-7SJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="Hk9-k8-vLp" secondAttribute="trailing" constant="8" id="GuV-ee-cAw"/>
+                                            <constraint firstAttribute="trailing" secondItem="Hk9-k8-vLp" secondAttribute="trailing" constant="78" id="GuV-ee-cAw"/>
                                             <constraint firstItem="qpW-U6-nki" firstAttribute="top" secondItem="8pI-CQ-bDy" secondAttribute="top" constant="4" id="LKu-JC-0oH"/>
                                             <constraint firstAttribute="trailing" secondItem="qpW-U6-nki" secondAttribute="trailing" constant="4" id="NCH-di-2WG"/>
                                             <constraint firstItem="KaY-0C-kdY" firstAttribute="trailing" secondItem="Hk9-k8-vLp" secondAttribute="trailing" id="Rrt-RK-7Yz"/>
@@ -354,7 +367,7 @@
                                         </constraints>
                                     </view>
                                     <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSR-ib-wxS">
-                                        <rect key="frame" x="4" y="374" width="306" height="70"/>
+                                        <rect key="frame" x="4" y="374" width="376" height="70"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leadDev" translatesAutoresizingMaskIntoConstraints="NO" id="3Sl-WC-fgY">
                                                 <rect key="frame" x="4" y="4" width="60" height="62"/>
@@ -369,7 +382,7 @@
                                                 </connections>
                                             </button>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u2b-3d-cwc">
-                                                <rect key="frame" x="70" y="4" width="232" height="62"/>
+                                                <rect key="frame" x="70" y="4" width="302" height="62"/>
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
@@ -406,7 +419,7 @@
                                             <constraint firstItem="u2b-3d-cwc" firstAttribute="top" secondItem="fSR-ib-wxS" secondAttribute="top" constant="4" id="QmG-jJ-mtg"/>
                                             <constraint firstAttribute="height" constant="70" id="Zpu-UM-tAt"/>
                                             <constraint firstItem="DeW-3A-K3t" firstAttribute="leading" secondItem="TUL-NC-xiO" secondAttribute="trailing" constant="8" id="aDO-p0-Rif"/>
-                                            <constraint firstAttribute="trailing" secondItem="DeW-3A-K3t" secondAttribute="trailing" constant="8" id="gFN-Hd-Voi"/>
+                                            <constraint firstAttribute="trailing" secondItem="DeW-3A-K3t" secondAttribute="trailing" constant="78" id="gFN-Hd-Voi"/>
                                             <constraint firstAttribute="bottom" secondItem="u2b-3d-cwc" secondAttribute="bottom" constant="4" id="h2t-i3-bbC"/>
                                             <constraint firstAttribute="bottom" secondItem="3Sl-WC-fgY" secondAttribute="bottom" constant="4" id="jfc-CM-7pi"/>
                                             <constraint firstItem="pWh-cC-ADI" firstAttribute="leading" secondItem="DeW-3A-K3t" secondAttribute="leading" id="w1l-6U-KMd"/>
@@ -415,7 +428,7 @@
                                         </constraints>
                                     </view>
                                     <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6qB-hf-0N9">
-                                        <rect key="frame" x="4" y="448" width="306" height="70"/>
+                                        <rect key="frame" x="4" y="448" width="376" height="70"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="staffEng" translatesAutoresizingMaskIntoConstraints="NO" id="LF2-CB-Cud">
                                                 <rect key="frame" x="4" y="4" width="60" height="62"/>
@@ -430,7 +443,7 @@
                                                 </connections>
                                             </button>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dg1-Ws-TjI">
-                                                <rect key="frame" x="70" y="4" width="232" height="62"/>
+                                                <rect key="frame" x="70" y="4" width="302" height="62"/>
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
@@ -468,7 +481,7 @@
                                             <constraint firstItem="Jxy-D7-65w" firstAttribute="top" secondItem="6qB-hf-0N9" secondAttribute="top" constant="4" id="in5-O0-euo"/>
                                             <constraint firstItem="LF2-CB-Cud" firstAttribute="top" secondItem="6qB-hf-0N9" secondAttribute="top" constant="4" id="m59-JZ-h3J"/>
                                             <constraint firstAttribute="bottom" secondItem="dg1-Ws-TjI" secondAttribute="bottom" constant="4" id="mRw-CF-vpo"/>
-                                            <constraint firstAttribute="trailing" secondItem="Jxy-D7-65w" secondAttribute="trailing" constant="8" id="nj2-OQ-qJR"/>
+                                            <constraint firstAttribute="trailing" secondItem="Jxy-D7-65w" secondAttribute="trailing" constant="78" id="nj2-OQ-qJR"/>
                                             <constraint firstItem="BFT-zF-oYS" firstAttribute="trailing" secondItem="Jxy-D7-65w" secondAttribute="trailing" id="pk5-il-uDn"/>
                                             <constraint firstAttribute="height" constant="70" id="qNp-7J-yNX"/>
                                             <constraint firstItem="dg1-Ws-TjI" firstAttribute="leading" secondItem="6qB-hf-0N9" secondAttribute="leading" constant="70" id="v1a-QM-WRy"/>
@@ -476,7 +489,7 @@
                                         </constraints>
                                     </view>
                                     <view tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gxz-0V-Y1i">
-                                        <rect key="frame" x="4" y="522" width="306" height="70"/>
+                                        <rect key="frame" x="4" y="522" width="376" height="70"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seniorStaffEng" translatesAutoresizingMaskIntoConstraints="NO" id="9nk-G3-UAu">
                                                 <rect key="frame" x="4" y="4" width="60" height="62"/>
@@ -491,7 +504,7 @@
                                                 </connections>
                                             </button>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LuY-GX-XXZ">
-                                                <rect key="frame" x="70" y="4" width="232" height="62"/>
+                                                <rect key="frame" x="70" y="4" width="302" height="62"/>
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
@@ -528,7 +541,7 @@
                                             <constraint firstItem="9nk-G3-UAu" firstAttribute="leading" secondItem="Gxz-0V-Y1i" secondAttribute="leading" constant="4" id="JCM-g6-kpa"/>
                                             <constraint firstItem="awu-ox-WNh" firstAttribute="leading" secondItem="9nk-G3-UAu" secondAttribute="leading" id="cae-U2-GB7"/>
                                             <constraint firstItem="awu-ox-WNh" firstAttribute="top" secondItem="9nk-G3-UAu" secondAttribute="top" id="dZq-hI-T6O"/>
-                                            <constraint firstAttribute="trailing" secondItem="WEu-Fg-z6n" secondAttribute="trailing" constant="8" id="gzT-QZ-vBe"/>
+                                            <constraint firstAttribute="trailing" secondItem="WEu-Fg-z6n" secondAttribute="trailing" constant="78" id="gzT-QZ-vBe"/>
                                             <constraint firstItem="zhs-Kr-cf6" firstAttribute="trailing" secondItem="WEu-Fg-z6n" secondAttribute="trailing" id="hBA-2m-zHE"/>
                                             <constraint firstItem="LuY-GX-XXZ" firstAttribute="top" secondItem="Gxz-0V-Y1i" secondAttribute="top" constant="4" id="iXq-KN-szT"/>
                                             <constraint firstAttribute="height" constant="70" id="sRz-fH-pN0"/>
@@ -537,7 +550,7 @@
                                         </constraints>
                                     </view>
                                     <view tag="8" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8U-Df-RLX">
-                                        <rect key="frame" x="4" y="596" width="306" height="70"/>
+                                        <rect key="frame" x="4" y="596" width="376" height="70"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="distinguishedEng" translatesAutoresizingMaskIntoConstraints="NO" id="5mk-4K-8rv">
                                                 <rect key="frame" x="4" y="4" width="60" height="62"/>
@@ -552,7 +565,7 @@
                                                 </connections>
                                             </button>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="96y-id-OOY">
-                                                <rect key="frame" x="70" y="4" width="228" height="62"/>
+                                                <rect key="frame" x="70" y="4" width="298" height="62"/>
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
@@ -590,7 +603,7 @@
                                             <constraint firstItem="96y-id-OOY" firstAttribute="leading" secondItem="t8U-Df-RLX" secondAttribute="leading" constant="70" id="XHq-ks-UPF"/>
                                             <constraint firstItem="hVM-vD-gf9" firstAttribute="bottom" secondItem="5mk-4K-8rv" secondAttribute="bottom" id="YtH-te-0Ji"/>
                                             <constraint firstItem="jYD-TF-wcJ" firstAttribute="leading" secondItem="hVM-vD-gf9" secondAttribute="trailing" constant="8" id="daS-lV-1Pt"/>
-                                            <constraint firstAttribute="trailing" secondItem="jYD-TF-wcJ" secondAttribute="trailing" constant="8" id="ibG-RX-Zdq"/>
+                                            <constraint firstAttribute="trailing" secondItem="jYD-TF-wcJ" secondAttribute="trailing" constant="78" id="ibG-RX-Zdq"/>
                                             <constraint firstItem="96y-id-OOY" firstAttribute="top" secondItem="t8U-Df-RLX" secondAttribute="top" constant="4" id="krv-1y-wD1"/>
                                             <constraint firstAttribute="trailing" secondItem="96y-id-OOY" secondAttribute="trailing" constant="8" id="pej-cW-BFv"/>
                                             <constraint firstAttribute="height" constant="70" id="uyf-Vv-yC6"/>
@@ -599,7 +612,7 @@
                                         </constraints>
                                     </view>
                                     <view tag="9" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fT-KW-sjW">
-                                        <rect key="frame" x="4" y="670" width="306" height="70"/>
+                                        <rect key="frame" x="4" y="670" width="376" height="70"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="superDistinguishedEng" translatesAutoresizingMaskIntoConstraints="NO" id="NrC-Rc-mmx">
                                                 <rect key="frame" x="4" y="4" width="60" height="62"/>
@@ -615,7 +628,7 @@
                                                 </connections>
                                             </button>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vlk-Wm-e78">
-                                                <rect key="frame" x="70" y="4" width="232" height="62"/>
+                                                <rect key="frame" x="70" y="4" width="302" height="62"/>
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
@@ -651,7 +664,7 @@
                                             <constraint firstItem="73v-Qz-4df" firstAttribute="leading" secondItem="NrC-Rc-mmx" secondAttribute="leading" id="R8k-Jd-4R1"/>
                                             <constraint firstItem="73v-Qz-4df" firstAttribute="trailing" secondItem="NrC-Rc-mmx" secondAttribute="trailing" id="SpY-PA-zfc"/>
                                             <constraint firstItem="U7i-Ey-efw" firstAttribute="leading" secondItem="73v-Qz-4df" secondAttribute="trailing" constant="8" id="TbH-BS-XrU"/>
-                                            <constraint firstAttribute="trailing" secondItem="U7i-Ey-efw" secondAttribute="trailing" constant="8" id="Yln-jr-zjI"/>
+                                            <constraint firstAttribute="trailing" secondItem="U7i-Ey-efw" secondAttribute="trailing" constant="78" id="Yln-jr-zjI"/>
                                             <constraint firstItem="JJ7-DF-Veb" firstAttribute="leading" secondItem="U7i-Ey-efw" secondAttribute="leading" id="hDl-3Z-ZfJ"/>
                                             <constraint firstAttribute="height" constant="70" id="iNE-a9-gWI"/>
                                             <constraint firstItem="JJ7-DF-Veb" firstAttribute="top" secondItem="U7i-Ey-efw" secondAttribute="bottom" constant="4" id="j1P-r4-T8H"/>
@@ -751,6 +764,7 @@
                         <outletCollection property="roleView" destination="Gxz-0V-Y1i" collectionClass="NSMutableArray" id="Vgp-rJ-ZBx"/>
                         <outletCollection property="roleView" destination="t8U-Df-RLX" collectionClass="NSMutableArray" id="OBC-38-EGH"/>
                         <outletCollection property="roleView" destination="3fT-KW-sjW" collectionClass="NSMutableArray" id="Eso-uF-dUZ"/>
+                        <outletCollection property="numRoles" destination="RXs-5z-sFF" collectionClass="NSMutableArray" id="OcS-FF-CUs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXE-qf-NeB" userLabel="First Responder" sceneMemberID="firstResponder"/>
