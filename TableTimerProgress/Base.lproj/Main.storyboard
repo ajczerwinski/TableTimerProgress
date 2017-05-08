@@ -742,7 +742,6 @@
                         <outletCollection property="buttonLbl" destination="hVM-vD-gf9" collectionClass="NSMutableArray" id="sRB-F4-ITf"/>
                         <outletCollection property="buttonLbl" destination="73v-Qz-4df" collectionClass="NSMutableArray" id="Ldk-9q-eGA"/>
                         <outletCollection property="roleView" destination="wTl-11-gAI" collectionClass="NSMutableArray" id="cOi-GB-JDJ"/>
-                        <outletCollection property="roleView" destination="wTl-11-gAI" collectionClass="NSMutableArray" id="2Mu-rW-6o2"/>
                         <outletCollection property="roleView" destination="cPX-ve-oSy" collectionClass="NSMutableArray" id="4om-UF-cPZ"/>
                         <outletCollection property="roleView" destination="kYq-6Z-qJf" collectionClass="NSMutableArray" id="Xf8-RR-TI3"/>
                         <outletCollection property="roleView" destination="8Va-ym-z8P" collectionClass="NSMutableArray" id="2c7-IU-6jb"/>
