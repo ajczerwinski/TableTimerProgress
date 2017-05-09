@@ -160,6 +160,8 @@ class JobsVC: UIViewController {
             
         }
         
+        
+        
     }
     
     func initialFormat() {
