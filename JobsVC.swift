@@ -19,6 +19,8 @@ class JobsVC: UIViewController {
     
     @IBOutlet var buttonLbl: [UIButton]!
     
+    
+    
     @IBOutlet var numRoles: [UIButton]!
     
     @IBOutlet var roleView: [UIView]!
@@ -48,7 +50,7 @@ class JobsVC: UIViewController {
     var isRoleEnabled: [Bool] = [true, false, false, false, false, false, false, false, false, false]
     var purchasePrice: [Double] = [0, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
     var roleBase: [Double] = [1, 5, 10, 20, 50, 100, 500, 1000, 2000, 10000]
-    var rolesOwned: [Double] = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    var rolesOwned: [Double] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,8 +72,18 @@ class JobsVC: UIViewController {
         
         let buttonTag = sender.tag
         
-        rolesOwned[buttonTag] += 1
+        spendMoney(tag: buttonTag)
+        
         print(rolesOwned)
+        
+    }
+    
+    func spendMoney(tag: Int) {
+        
+        rolesOwned[tag] += 1
+        purchasePrice[tag] *= 1.2
+        score -= purchasePrice[tag]
+        scoreLbl.text = moneyFormatter(amount: Float(score))
         
     }
     
@@ -80,7 +92,7 @@ class JobsVC: UIViewController {
         timesTapped[tag] += 0.1
         
         if progressBar[tag].progress == 1.0 {
-            score += multiplier[tag] * roleBase[tag]
+            score += multiplier[tag] * roleBase[tag] * rolesOwned[tag]
             scoreLbl.text = moneyFormatter(amount: Float(score))
             
             //formatImages()
@@ -126,18 +138,23 @@ class JobsVC: UIViewController {
                 isRoleEnabled[role] = true
                 buttonLbl[role].isEnabled = isRoleEnabled[role]
                 buttonLbl[role].isHidden = !isRoleEnabled[role]
+                numRoles[role].isEnabled = isRoleEnabled[role]
+                numRoles[role].isHidden = !isRoleEnabled[role]
                 roleView[role].alpha = 1.0
             } else if (!isRoleEnabled[role] && isRoleEnabled[role - 1]) {
                 
                 roleView[role].alpha = 0.5
                 buttonLbl[role].isHidden = true
                 buttonLbl[role].isEnabled = false
+                numRoles[role].isHidden = false
+                numRoles[role].isEnabled = false
 
                 
             } else {
                 
                 roleView[role].alpha = 0
                 buttonLbl[role].isHidden = true
+                numRoles[role].isHidden = true
                 
             }
             
