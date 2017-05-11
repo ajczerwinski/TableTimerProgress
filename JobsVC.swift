@@ -46,9 +46,9 @@ class JobsVC: UIViewController {
     // store # of times tapped for each role
     
     var timesTapped: [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    var multiplier: [Double] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    var multiplier: [Double] = [10, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     var isRoleEnabled: [Bool] = [true, false, false, false, false, false, false, false, false, false]
-    var purchasePrice: [Double] = [5, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
+    var purchasePrice: [Double] = [1, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
     var roleBase: [Double] = [1, 5, 10, 20, 50, 100, 500, 1000, 2000, 10000]
     var rolesOwned: [Double] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     
@@ -80,9 +80,9 @@ class JobsVC: UIViewController {
     
     func spendMoney(tag: Int) {
         
+        score -= purchasePrice[tag]
         rolesOwned[tag] += 1
         purchasePrice[tag] *= 1.2
-        score -= purchasePrice[tag]
         scoreLbl.text = moneyFormatter(amount: Float(score))
         formatUI()
         
@@ -143,8 +143,7 @@ class JobsVC: UIViewController {
                 buttonLbl[role].isEnabled = isRoleEnabled[role]
                 buttonLbl[role].isHidden = !isRoleEnabled[role]
                 
-                numRoles[role].isEnabled = isRoleEnabled[role]
-                numRoles[role].isHidden = !isRoleEnabled[role]
+            
                 
                 roleView[role].alpha = 1.0
             } else if (!isRoleEnabled[role] && isRoleEnabled[role - 1]) {
@@ -152,11 +151,10 @@ class JobsVC: UIViewController {
                 roleView[role].alpha = 0.5
                 buttonLbl[role].isHidden = true
                 buttonLbl[role].isEnabled = false
-                numRoles[role].isHidden = false
-                numRoles[role].isEnabled = false
+            
 
                 
-            } else {
+            } else if !isRoleEnabled[role] {
                 
                 roleView[role].alpha = 0
                 buttonLbl[role].isHidden = true
@@ -165,16 +163,28 @@ class JobsVC: UIViewController {
             }
             
         }
-        
-        
+       
+        formatPurchaseBtn()
         
     }
     
-    /*func formatPurchaseBtn() {
+    func formatPurchaseBtn() {
         
+        for role in 0...9 {
+            
+            if score >= purchasePrice[role] {
+                
+                numRoles[role].isEnabled = true
+                numRoles[role].isHidden = false
+                
+                
+            } else {
+                numRoles[role].isEnabled = false
+            }
+            
+        }
         
-        
-    }*/
+    }
     
     func initialFormat() {
         for role in 0...9 {
