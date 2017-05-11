@@ -50,7 +50,7 @@ class JobsVC: UIViewController {
     var isRoleEnabled: [Bool] = [true, false, false, false, false, false, false, false, false, false]
     var purchasePrice: [Double] = [1, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
     var roleBase: [Double] = [1, 5, 10, 20, 50, 100, 500, 1000, 2000, 10000]
-    var rolesOwned: [Double] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    var rolesOwned: [Double] = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -165,6 +165,7 @@ class JobsVC: UIViewController {
         }
        
         formatPurchaseBtn()
+        formatbuttonLbl()
         
     }
     
@@ -184,6 +185,24 @@ class JobsVC: UIViewController {
             
         }
         
+    }
+    
+    func formatbuttonLbl() {
+    
+        for role in 0...9 {
+    
+            if rolesOwned[role] >= 1 {
+                
+                buttonLbl[role].isEnabled = true
+                
+            } else {
+                
+                buttonLbl[role].isEnabled = false
+                
+            }
+    
+        }
+    
     }
     
     func initialFormat() {
