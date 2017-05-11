@@ -48,7 +48,7 @@ class JobsVC: UIViewController {
     var timesTapped: [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     var multiplier: [Double] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     var isRoleEnabled: [Bool] = [true, false, false, false, false, false, false, false, false, false]
-    var purchasePrice: [Double] = [0, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
+    var purchasePrice: [Double] = [5, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
     var roleBase: [Double] = [1, 5, 10, 20, 50, 100, 500, 1000, 2000, 10000]
     var rolesOwned: [Double] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     
@@ -84,6 +84,7 @@ class JobsVC: UIViewController {
         purchasePrice[tag] *= 1.2
         score -= purchasePrice[tag]
         scoreLbl.text = moneyFormatter(amount: Float(score))
+        formatUI()
         
     }
     
@@ -122,6 +123,9 @@ class JobsVC: UIViewController {
             roleImg[role].layer.cornerRadius = roleImg[role].frame.height / 2
             roleImg[role].clipsToBounds = true
             
+            numRoles[role].layer.cornerRadius = numRoles[role].frame.height / 2
+            numRoles[role].clipsToBounds = true
+            
         }
         
         formatUI()
@@ -131,15 +135,17 @@ class JobsVC: UIViewController {
     func formatUI() {
         
        for role in 1...9 {
-        
             
-            if score >= purchasePrice[role] {
+        if score >= purchasePrice[role]/* && (score - purchasePrice[role] > 0)*/ {
                 
                 isRoleEnabled[role] = true
+                
                 buttonLbl[role].isEnabled = isRoleEnabled[role]
                 buttonLbl[role].isHidden = !isRoleEnabled[role]
+                
                 numRoles[role].isEnabled = isRoleEnabled[role]
                 numRoles[role].isHidden = !isRoleEnabled[role]
+                
                 roleView[role].alpha = 1.0
             } else if (!isRoleEnabled[role] && isRoleEnabled[role - 1]) {
                 
@@ -163,6 +169,12 @@ class JobsVC: UIViewController {
         
         
     }
+    
+    /*func formatPurchaseBtn() {
+        
+        
+        
+    }*/
     
     func initialFormat() {
         for role in 0...9 {
