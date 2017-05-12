@@ -41,7 +41,8 @@ class JobsVC: UIViewController {
     
     // var timesTapped: Float = 0.0
     var timer = Timer()
-    var tenths = 100
+    var startingRoleTimeArray: [Double] = [100, 1000, 4000, 5000, 5000, 5000, 5000, 5000, 5000, 5000]
+    var updatingRoleTimeArray: [Double] = [100, 1000, 4000, 5000, 5000, 5000, 5000, 5000, 5000, 5000]
     var score: Double = 0.0
     
     var roleImages = [#imageLiteral(resourceName: "studentDev"), #imageLiteral(resourceName: "internDev"), #imageLiteral(resourceName: "juniorDev"), #imageLiteral(resourceName: "dev"), #imageLiteral(resourceName: "seniorDev"), #imageLiteral(resourceName: "leadDev"), #imageLiteral(resourceName: "staffEng"), #imageLiteral(resourceName: "seniorStaffEng"), #imageLiteral(resourceName: "distinguishedEng"), #imageLiteral(resourceName: "superDistinguishedEng")]
@@ -227,7 +228,68 @@ class JobsVC: UIViewController {
         
     }
     
+    func runTimer() {
+        
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
+        
+    }
     
+    func updateTimer() {
+        
+        for role in 0...9 {
+            if updatingRoleTimeArray[role] < 1 {
+                
+                //timerLbl.text = timerProgressFormatter(text: tenths)
+                progressBar[role].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[role]))
+                
+                score += multiplier[role] * roleBase[role] * rolesOwned[role]
+                scoreLbl.text = moneyFormatter(amount: Float(score))
+                updatingRoleTimeArray[role] = startingRoleTimeArray[role]
+                
+            } else if updatingRoleTimeArray[role] == startingRoleTimeArray[role] {
+                
+                //timerLbl.text = timerProgressFormatter(text: tenths)
+                progressBar[role].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[role]))
+                updatingRoleTimeArray[role] -= 1
+                
+                
+            } else {
+                
+                //timerLbl.text = timerProgressFormatter(text: tenths)
+                progressBar[role].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[role]))
+                updatingRoleTimeArray[role] -= 1
+                
+            }
+        }
+        
+    }
     
+    func updateTimerProgressBar(progress: Int) -> Float {
+        
+        // REVIEW - THIS MAY CAUSE PROBLEMS WITH TIMER
+        var progressStatus: Float = 0.0
+        for role in 0...9 {
+            progressStatus = 1 - (Float(updatingRoleTimeArray[role]) * 0.01)
+            
+        }
+        
+        return progressStatus
+        
+    }
     
+    /*func timerProgressFormatter(text: Int) -> String {
+        var formattedProgress: String = ""
+        for role in 0...9 {
+            let formatter = NumberFormatter()
+            formatter.maximumFractionDigits = 0
+            let progressStatus: Float = 1 - (Float(updatingRoleTimeArray[role]) * 0.01)
+            let progressPercent: Float = progressStatus * 100
+            formattedProgress = formatter.string(from: NSNumber(value: progressPercent))!
+            
+            
+        }
+        
+        return "\(formattedProgress)%"
+        
+    }*/
 }
