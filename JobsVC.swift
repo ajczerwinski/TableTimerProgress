@@ -19,9 +19,12 @@ class JobsVC: UIViewController {
     
     @IBOutlet var buttonLbl: [UIButton]!
     
+    @IBOutlet var rolesOwnedLbl: [UILabel]!
     
     
     @IBOutlet var numRoles: [UIButton]!
+    
+    
     
     @IBOutlet var roleView: [UIView]!
     
@@ -194,6 +197,7 @@ class JobsVC: UIViewController {
             if rolesOwned[role] >= 1 {
                 
                 buttonLbl[role].isEnabled = true
+                rolesOwnedLbl[role].text = "\(rolesOwned[role])"
                 
             } else {
                 
