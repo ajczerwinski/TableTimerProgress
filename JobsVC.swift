@@ -35,6 +35,7 @@ class JobsVC: UIViewController {
     
     @IBOutlet var progressBar: [UIProgressView]!
     
+    @IBOutlet var timerBar: [UIProgressView]!
     
     // var timesTapped: Float = 0.0
     var timer = Timer()
@@ -77,7 +78,8 @@ class JobsVC: UIViewController {
         // Need to use Subclassing to satisfy the #selector
         
         if rolesOwned[buttonTag] >= 25 {
-
+            progressBar[buttonTag].isHidden = true
+            timerBar[buttonTag].isHidden = false
             if updatingRoleTimeArray[buttonTag] < 1 {
                 switch buttonTag {
                 case 0:
@@ -104,6 +106,8 @@ class JobsVC: UIViewController {
                 default:
                     return
                 }
+            } else {
+                
             }
         }
         
@@ -116,7 +120,7 @@ class JobsVC: UIViewController {
         if updatingRoleTimeArray[0] < 1 {
             
             //timerLbl.text = timerProgressFormatter(text: tenths)
-            progressBar[0].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[0]))
+            timerBar[0].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[0]))
             
             score += multiplier[0] * roleBase[0] * rolesOwned[0]
             scoreLbl.text = moneyFormatter(amount: Float(score))
@@ -451,7 +455,7 @@ class JobsVC: UIViewController {
     
     func initialFormat() {
         for role in 0...9 {
-            
+            timerBar[role].isHidden = true
             print("Hi I'm view #",
                 "(\(roleView[role].tag))")
             
