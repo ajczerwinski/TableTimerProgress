@@ -24,10 +24,7 @@ class JobsVC: UIViewController {
     
     @IBOutlet var numRoles: [UIButton]!
     
-    
-    
     @IBOutlet var roleView: [UIView]!
-    
     
     // UI Images
     
@@ -65,7 +62,6 @@ class JobsVC: UIViewController {
 
     
     @IBAction func gameButton(_ sender: UIButton) {
-        
         let buttonTag = sender.tag
         
         addMoney(tag: buttonTag)
@@ -78,7 +74,250 @@ class JobsVC: UIViewController {
         
         spendMoney(tag: buttonTag)
         
+        // Need to use Subclassing to satisfy the #selector
+        
+        if rolesOwned[buttonTag] >= 25 {
+
+            if updatingRoleTimeArray[buttonTag] < 1 {
+                switch buttonTag {
+                case 0:
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStudentTimer)), userInfo: nil, repeats: true)
+                case 1:
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateInternTimer)), userInfo: nil, repeats: true)
+                case 2:
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateJuniorTimer)), userInfo: nil, repeats: true)
+                case 3:
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateDevTimer)), userInfo: nil, repeats: true)
+                case 4:
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSeniorTimer)), userInfo: nil, repeats: true)
+                case 5:
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateLeadTimer)), userInfo: nil, repeats: true)
+                case 6:
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStaffTimer)), userInfo: nil, repeats: true)
+                case 7:
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSeniorStaffTimer)), userInfo: nil, repeats: true)
+                case 8:
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateDistinguishedTimer)), userInfo: nil, repeats: true)
+                case 9:
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSuperDistinguishedTimer)), userInfo: nil, repeats: true)
+                    
+                default:
+                    return
+                }
+            }
+        }
+        
         print(rolesOwned)
+        
+    }
+    
+    func updateStudentTimer() {
+        
+        if updatingRoleTimeArray[0] < 1 {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[0].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[0]))
+            
+            score += multiplier[0] * roleBase[0] * rolesOwned[0]
+            scoreLbl.text = moneyFormatter(amount: Float(score))
+            updatingRoleTimeArray[0] = startingRoleTimeArray[0]
+            
+        } else {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[0].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[0]))
+            updatingRoleTimeArray[0] -= 1
+        
+        }
+        
+    }
+    
+    func updateInternTimer() {
+        
+        if updatingRoleTimeArray[1] < 1 {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[1].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[1]))
+            
+            score += multiplier[1] * roleBase[1] * rolesOwned[1]
+            scoreLbl.text = moneyFormatter(amount: Float(score))
+            updatingRoleTimeArray[1] = startingRoleTimeArray[1]
+            
+        } else {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[1].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[1]))
+            updatingRoleTimeArray[1] -= 1
+            
+        }
+        
+    }
+    
+    func updateJuniorTimer() {
+        
+        if updatingRoleTimeArray[2] < 1 {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[2].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[2]))
+            
+            score += multiplier[2] * roleBase[2] * rolesOwned[2]
+            scoreLbl.text = moneyFormatter(amount: Float(score))
+            updatingRoleTimeArray[2] = startingRoleTimeArray[2]
+            
+        } else {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[2].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[2]))
+            updatingRoleTimeArray[2] -= 1
+            
+        }
+        
+    }
+    
+    func updateDevTimer() {
+        
+        if updatingRoleTimeArray[3] < 1 {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[3].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[3]))
+            
+            score += multiplier[3] * roleBase[3] * rolesOwned[3]
+            scoreLbl.text = moneyFormatter(amount: Float(score))
+            updatingRoleTimeArray[3] = startingRoleTimeArray[3]
+            
+        } else {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[3].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[3]))
+            updatingRoleTimeArray[3] -= 1
+            
+        }
+        
+    }
+    
+    func updateSeniorTimer() {
+        
+        if updatingRoleTimeArray[4] < 1 {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[4].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[4]))
+            
+            score += multiplier[4] * roleBase[4] * rolesOwned[4]
+            scoreLbl.text = moneyFormatter(amount: Float(score))
+            updatingRoleTimeArray[4] = startingRoleTimeArray[4]
+            
+        } else {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[4].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[4]))
+            updatingRoleTimeArray[4] -= 1
+            
+        }
+        
+    }
+    
+    func updateLeadTimer() {
+        
+        if updatingRoleTimeArray[5] < 1 {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[5].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[5]))
+            
+            score += multiplier[5] * roleBase[5] * rolesOwned[5]
+            scoreLbl.text = moneyFormatter(amount: Float(score))
+            updatingRoleTimeArray[5] = startingRoleTimeArray[5]
+            
+        } else {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[5].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[5]))
+            updatingRoleTimeArray[5] -= 1
+            
+        }
+        
+    }
+    
+    func updateStaffTimer() {
+        
+        if updatingRoleTimeArray[6] < 1 {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[6].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[6]))
+            
+            score += multiplier[6] * roleBase[6] * rolesOwned[6]
+            scoreLbl.text = moneyFormatter(amount: Float(score))
+            updatingRoleTimeArray[6] = startingRoleTimeArray[6]
+            
+        } else {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[6].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[6]))
+            updatingRoleTimeArray[6] -= 1
+            
+        }
+        
+    }
+    
+    func updateSeniorStaffTimer() {
+        
+        if updatingRoleTimeArray[7] < 1 {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[7].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[7]))
+            
+            score += multiplier[7] * roleBase[7] * rolesOwned[7]
+            scoreLbl.text = moneyFormatter(amount: Float(score))
+            updatingRoleTimeArray[7] = startingRoleTimeArray[7]
+            
+        } else {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[7].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[7]))
+            updatingRoleTimeArray[7] -= 1
+            
+        }
+        
+    }
+    
+    func updateDistinguishedTimer() {
+        
+        if updatingRoleTimeArray[8] < 1 {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[8].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[8]))
+            
+            score += multiplier[8] * roleBase[8] * rolesOwned[8]
+            scoreLbl.text = moneyFormatter(amount: Float(score))
+            updatingRoleTimeArray[8] = startingRoleTimeArray[8]
+            
+        } else {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[8].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[8]))
+            updatingRoleTimeArray[8] -= 1
+            
+        }
+        
+    }
+    
+    func updateSuperDistinguishedTimer() {
+        
+        if updatingRoleTimeArray[9] < 1 {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[9].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[9]))
+            
+            score += multiplier[9] * roleBase[9] * rolesOwned[9]
+            scoreLbl.text = moneyFormatter(amount: Float(score))
+            updatingRoleTimeArray[9] = startingRoleTimeArray[9]
+            
+        } else {
+            
+            //timerLbl.text = timerProgressFormatter(text: tenths)
+            progressBar[9].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[9]))
+            updatingRoleTimeArray[9] -= 1
+            
+        }
         
     }
     
@@ -228,41 +467,18 @@ class JobsVC: UIViewController {
         
     }
     
-    func runTimer() {
-        
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
+    
+    
+    func timerButtonEnabled() {
         
     }
     
-    func updateTimer() {
+    /*func runTimer(tag: Int) {
+        timer.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateTimer(_:))), userInfo: nil, repeats: true)
         
-        for role in 0...9 {
-            if updatingRoleTimeArray[role] < 1 {
-                
-                //timerLbl.text = timerProgressFormatter(text: tenths)
-                progressBar[role].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[role]))
-                
-                score += multiplier[role] * roleBase[role] * rolesOwned[role]
-                scoreLbl.text = moneyFormatter(amount: Float(score))
-                updatingRoleTimeArray[role] = startingRoleTimeArray[role]
-                
-            } else if updatingRoleTimeArray[role] == startingRoleTimeArray[role] {
-                
-                //timerLbl.text = timerProgressFormatter(text: tenths)
-                progressBar[role].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[role]))
-                updatingRoleTimeArray[role] -= 1
-                
-                
-            } else {
-                
-                //timerLbl.text = timerProgressFormatter(text: tenths)
-                progressBar[role].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[role]))
-                updatingRoleTimeArray[role] -= 1
-                
-            }
-        }
         
-    }
+    }*/
     
     func updateTimerProgressBar(progress: Int) -> Float {
         
