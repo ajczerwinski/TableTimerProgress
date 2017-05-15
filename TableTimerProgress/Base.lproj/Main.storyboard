@@ -64,6 +64,8 @@
                                             </progressView>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="k0O-D1-9n4">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
+                                                <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="nxd-Ee-TJ2">
                                                 <rect key="frame" x="72" y="4" width="190" height="21"/>
@@ -156,6 +158,8 @@
                                             </progressView>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mln-tl-mPo">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
+                                                <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intern" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="CGW-cO-X95">
                                                 <rect key="frame" x="72" y="4" width="190" height="21"/>
@@ -247,6 +251,8 @@
                                             </progressView>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="j4v-rV-PfC">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
+                                                <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Junior Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="0Xu-mC-ts9">
                                                 <rect key="frame" x="72" y="4" width="190" height="21"/>
@@ -338,6 +344,8 @@
                                             </progressView>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ciS-FC-g9L">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
+                                                <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="VZy-0m-ouP">
                                                 <rect key="frame" x="72" y="4" width="190" height="21"/>
@@ -429,6 +437,8 @@
                                             </progressView>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SVP-aW-kba">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
+                                                <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senior Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Hk9-k8-vLp">
                                                 <rect key="frame" x="72" y="4" width="190" height="21"/>
@@ -520,6 +530,8 @@
                                             </progressView>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zUN-HJ-zx1">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
+                                                <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lead Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="DeW-3A-K3t">
                                                 <rect key="frame" x="72" y="4" width="190" height="21"/>
@@ -611,6 +623,8 @@
                                             </progressView>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sYN-ix-wiq">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
+                                                <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staff Engineer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Jxy-D7-65w">
                                                 <rect key="frame" x="72" y="4" width="190" height="21"/>
@@ -702,6 +716,8 @@
                                             </progressView>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KFi-bu-U6f">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
+                                                <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senior Staff Engineer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="WEu-Fg-z6n">
                                                 <rect key="frame" x="72" y="4" width="190" height="21"/>
@@ -793,6 +809,8 @@
                                             </progressView>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yNd-Mc-h8d">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
+                                                <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distinguished Engineer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="jYD-TF-wcJ">
                                                 <rect key="frame" x="72" y="4" width="190" height="21"/>
@@ -884,6 +902,8 @@
                                             </progressView>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3h8-oj-OdW">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
+                                                <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Super" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="U7i-Ey-efw">
                                                 <rect key="frame" x="72" y="4" width="190" height="21"/>
