@@ -80,35 +80,32 @@ class JobsVC: UIViewController {
         if rolesOwned[buttonTag] >= 25 {
             progressBar[buttonTag].isHidden = true
             timerBar[buttonTag].isHidden = false
-            if updatingRoleTimeArray[buttonTag] < 1 {
-                switch buttonTag {
-                case 0:
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStudentTimer)), userInfo: nil, repeats: true)
-                case 1:
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateInternTimer)), userInfo: nil, repeats: true)
-                case 2:
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateJuniorTimer)), userInfo: nil, repeats: true)
-                case 3:
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateDevTimer)), userInfo: nil, repeats: true)
-                case 4:
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSeniorTimer)), userInfo: nil, repeats: true)
-                case 5:
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateLeadTimer)), userInfo: nil, repeats: true)
-                case 6:
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStaffTimer)), userInfo: nil, repeats: true)
-                case 7:
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSeniorStaffTimer)), userInfo: nil, repeats: true)
-                case 8:
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateDistinguishedTimer)), userInfo: nil, repeats: true)
-                case 9:
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSuperDistinguishedTimer)), userInfo: nil, repeats: true)
-                    
-                default:
-                    return
-                }
-            } else {
+            switch buttonTag {
+            case 0:
+                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStudentTimer)), userInfo: nil, repeats: true)
+            case 1:
+                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateInternTimer)), userInfo: nil, repeats: true)
+            case 2:
+                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateJuniorTimer)), userInfo: nil, repeats: true)
+            case 3:
+                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateDevTimer)), userInfo: nil, repeats: true)
+            case 4:
+                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSeniorTimer)), userInfo: nil, repeats: true)
+            case 5:
+                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateLeadTimer)), userInfo: nil, repeats: true)
+            case 6:
+                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStaffTimer)), userInfo: nil, repeats: true)
+            case 7:
+                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSeniorStaffTimer)), userInfo: nil, repeats: true)
+            case 8:
+                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateDistinguishedTimer)), userInfo: nil, repeats: true)
+            case 9:
+                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSuperDistinguishedTimer)), userInfo: nil, repeats: true)
                 
+            default:
+                return
             }
+          
         }
         
         print(rolesOwned)
@@ -129,7 +126,7 @@ class JobsVC: UIViewController {
         } else {
             
             //timerLbl.text = timerProgressFormatter(text: tenths)
-            progressBar[0].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[0]))
+            timerBar[0].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[0]))
             updatingRoleTimeArray[0] -= 1
         
         }
