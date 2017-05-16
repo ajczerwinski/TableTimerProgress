@@ -62,7 +62,7 @@
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="k0O-D1-9n4">
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="k0O-D1-9n4">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
                                                 <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -156,7 +156,7 @@
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mln-tl-mPo">
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mln-tl-mPo">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
                                                 <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -249,7 +249,7 @@
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="j4v-rV-PfC">
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="j4v-rV-PfC">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
                                                 <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -342,7 +342,7 @@
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ciS-FC-g9L">
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ciS-FC-g9L">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
                                                 <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -435,7 +435,7 @@
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SVP-aW-kba">
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SVP-aW-kba">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
                                                 <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -528,7 +528,7 @@
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zUN-HJ-zx1">
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zUN-HJ-zx1">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
                                                 <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -621,7 +621,7 @@
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sYN-ix-wiq">
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sYN-ix-wiq">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
                                                 <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -714,7 +714,7 @@
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KFi-bu-U6f">
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KFi-bu-U6f">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
                                                 <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -807,7 +807,7 @@
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yNd-Mc-h8d">
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yNd-Mc-h8d">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
                                                 <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -900,7 +900,7 @@
                                                 <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </progressView>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3h8-oj-OdW">
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3h8-oj-OdW">
                                                 <rect key="frame" x="70" y="4" width="192" height="62"/>
                                                 <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

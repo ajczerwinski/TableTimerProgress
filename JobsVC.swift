@@ -13,45 +13,59 @@ class JobsVC: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
+    // Game Score Label
+    
     @IBOutlet weak var scoreLbl: UILabel!
     
-    // Button Labels
+    // Button Label and UI Label Collections
     
     @IBOutlet var buttonLbl: [UIButton]!
     
     @IBOutlet var rolesOwnedLbl: [UILabel]!
     
-    
     @IBOutlet var numRoles: [UIButton]!
     
     @IBOutlet var roleView: [UIView]!
     
-    // UI Images
+    // UI Images Collection
     
     @IBOutlet var roleImg: [UIImageView]!
     
-    
-    // Progress Bars
+    // Progress Bar Collections
     
     @IBOutlet var progressBar: [UIProgressView]!
     
     @IBOutlet var timerBar: [UIProgressView]!
     
-    // var timesTapped: Float = 0.0
     var timer = Timer()
+    
+    // Array of Doubles to store original countdown number to reset when counter gets to 0
     var startingRoleTimeArray: [Double] = [100, 1000, 4000, 5000, 5000, 5000, 5000, 5000, 5000, 5000]
+    
+    // Array of Doubles to store countdown timer numbers
     var updatingRoleTimeArray: [Double] = [100, 1000, 4000, 5000, 5000, 5000, 5000, 5000, 5000, 5000]
+    
     var score: Double = 0.0
     
     var roleImages = [#imageLiteral(resourceName: "studentDev"), #imageLiteral(resourceName: "internDev"), #imageLiteral(resourceName: "juniorDev"), #imageLiteral(resourceName: "dev"), #imageLiteral(resourceName: "seniorDev"), #imageLiteral(resourceName: "leadDev"), #imageLiteral(resourceName: "staffEng"), #imageLiteral(resourceName: "seniorStaffEng"), #imageLiteral(resourceName: "distinguishedEng"), #imageLiteral(resourceName: "superDistinguishedEng")]
     
-    // store # of times tapped for each role
+    // Store # of times tapped for each role
     
     var timesTapped: [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    
+    // Multiplier for each role
     var multiplier: [Double] = [1000, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    
+    // Array of Bools to determine if role should be visible/active or not
     var isRoleEnabled: [Bool] = [true, false, false, false, false, false, false, false, false, false]
+    
+    // Purchase price for each role
     var purchasePrice: [Double] = [1, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
+    
+    // Base score that each role increments up when completed
     var roleBase: [Double] = [1, 5, 10, 20, 50, 100, 500, 1000, 2000, 10000]
+    
+    // Number of roles owned
     var rolesOwned: [Double] = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     
     override func viewDidLoad() {
@@ -61,7 +75,7 @@ class JobsVC: UIViewController {
         initialFormat()
     }
 
-    
+    // UIButton to increment the progress bar for roles to increase the score
     @IBAction func gameButton(_ sender: UIButton) {
         let buttonTag = sender.tag
         
@@ -69,18 +83,23 @@ class JobsVC: UIViewController {
         
     }
     
+    // UIButton to purchase roles
     @IBAction func purchaseRole(_ sender: UIButton) {
         
         let buttonTag = sender.tag
         
         spendMoney(tag: buttonTag)
         
-        // Need to use Subclassing to satisfy the #selector
+        // If more 25 or more of a given role are owned, disable clickable progress bar enable timer
         
         if rolesOwned[buttonTag] >= 25 {
             progressBar[buttonTag].isHidden = true
             timerBar[buttonTag].isHidden = false
-            switch buttonTag {
+            
+            // Activate role timer based on which buttonTag is selected
+            // TODO - rewrite this to pass a parameter through with the selector function to obviate
+            // need to use switch statement and individual update timer functions
+            switch (buttonTag) {
             case 0:
                 timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStudentTimer)), userInfo: nil, repeats: true)
             case 1:
@@ -112,8 +131,11 @@ class JobsVC: UIViewController {
         
     }
     
+    // Role-specific timer functions to update score labels and timer progress bars for respective roles
+    // TODO - refactor these into one function that takes a parameter from the purchaseRole function above
     func updateStudentTimer() {
         
+        // If the countdown reaches 0, add score and reset countdown timer to original
         if updatingRoleTimeArray[0] < 1 {
             
             //timerLbl.text = timerProgressFormatter(text: tenths)
@@ -123,6 +145,7 @@ class JobsVC: UIViewController {
             scoreLbl.text = moneyFormatter(amount: Float(score))
             updatingRoleTimeArray[0] = startingRoleTimeArray[0]
             
+        // If countdown timer is 1 or higher, update timer progressBar and decrement countdown timer by 1
         } else {
             
             //timerLbl.text = timerProgressFormatter(text: tenths)
@@ -322,6 +345,8 @@ class JobsVC: UIViewController {
         
     }
     
+    // Button to purchase a role, decrease the score by the purchase price of the role, increase purchase price
+    // of role by 20%, update score label and UI
     func spendMoney(tag: Int) {
         
         score -= purchasePrice[tag]
@@ -332,24 +357,29 @@ class JobsVC: UIViewController {
         
     }
     
+    // Button to manually make money with a role
     func addMoney(tag: Int) {
         
+        // Increment the number of times tapped for given role by 1
         timesTapped[tag] += 0.1
         
+        // If the progress bar has filled up, increment score by the amount for the role, update score label
+        // then reset the progress bar back to 0
         if progressBar[tag].progress == 1.0 {
             score += multiplier[tag] * roleBase[tag] * rolesOwned[tag]
             scoreLbl.text = moneyFormatter(amount: Float(score))
             
-            //formatImages()
             formatUI()
             progressBar[tag].progress = 0
             
+        // If the progress bar isn't full, increment it
         } else {
             progressBar[tag].progress += 0.1
         }
         
     }
     
+    // Helper function to format the score into a currency String
     func moneyFormatter(amount: Float) -> String {
         
         let formatter = NumberFormatter()
@@ -359,6 +389,7 @@ class JobsVC: UIViewController {
         
     }
     
+    // Format images into circles (technically slight ovals since width and height aren't quite equal)
     func formatImages() {
         
         for role in 0...9 {
@@ -376,11 +407,13 @@ class JobsVC: UIViewController {
         
     }
     
+    // Helper function to only display views that are active (score is high enough to purchase them)
+    // plus a 50% grayed out preview of the next role
     func formatUI() {
         
        for role in 1...9 {
             
-        if score >= purchasePrice[role]/* && (score - purchasePrice[role] > 0)*/ {
+        if score >= purchasePrice[role] {
                 
                 isRoleEnabled[role] = true
                 
@@ -413,6 +446,7 @@ class JobsVC: UIViewController {
         
     }
     
+    // Show and enable the role purchase button if score is high enough, otherwise disable it
     func formatPurchaseBtn() {
         
         for role in 0...9 {
@@ -431,6 +465,7 @@ class JobsVC: UIViewController {
         
     }
     
+    // Keep track of number of roles owned and update the button label with the number
     func formatbuttonLbl() {
     
         for role in 0...9 {
@@ -450,6 +485,7 @@ class JobsVC: UIViewController {
     
     }
     
+    // Set initial UIView formatting when the game is first loaded
     func initialFormat() {
         for role in 0...9 {
             timerBar[role].isHidden = true
@@ -468,43 +504,16 @@ class JobsVC: UIViewController {
         
     }
     
-    
-    
-    func timerButtonEnabled() {
-        
-    }
-    
-    /*func runTimer(tag: Int) {
-        timer.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateTimer(_:))), userInfo: nil, repeats: true)
-        
-        
-    }*/
-    
+    // Helper function for tracking and updating the timer progress bar
     func updateTimerProgressBar(progress: Int, role: Int) -> Float {
         
         // REVIEW - THIS MAY CAUSE PROBLEMS WITH TIMER
         var progressStatus: Float = 0.0
-        print(progress)
+        
         progressStatus = 1 - (Float(updatingRoleTimeArray[role]) * 0.01)
         
         return progressStatus
         
     }
-    
-    /*func timerProgressFormatter(text: Int) -> String {
-        var formattedProgress: String = ""
-        for role in 0...9 {
-            let formatter = NumberFormatter()
-            formatter.maximumFractionDigits = 0
-            let progressStatus: Float = 1 - (Float(updatingRoleTimeArray[role]) * 0.01)
-            let progressPercent: Float = progressStatus * 100
-            formattedProgress = formatter.string(from: NSNumber(value: progressPercent))!
-            
-            
-        }
-        
-        return "\(formattedProgress)%"
-        
-    }*/
+
 }
