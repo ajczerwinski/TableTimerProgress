@@ -40,10 +40,10 @@ class JobsVC: UIViewController {
     var timer = Timer()
     
     // Array of Doubles to store original countdown number to reset when counter gets to 0
-    var startingRoleTimeArray: [Double] = [100, 1000, 4000, 5000, 5000, 5000, 5000, 5000, 5000, 5000]
+    var startingRoleTimeArray: [Double] = [100, 200, 300, 400, 500, 600, 700, 800, 1900, 1000]
     
     // Array of Doubles to store countdown timer numbers
-    var updatingRoleTimeArray: [Double] = [100, 1000, 4000, 5000, 5000, 5000, 5000, 5000, 5000, 5000]
+    var updatingRoleTimeArray: [Double] = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
     
     var score: Double = 0.0
     
@@ -91,8 +91,9 @@ class JobsVC: UIViewController {
         spendMoney(tag: buttonTag)
         
         // If more 25 or more of a given role are owned, disable clickable progress bar enable timer
+        let timeCounter: Int = Int(rolesOwned[buttonTag])
         
-        if rolesOwned[buttonTag] >= 25 {
+        if timeCounter == 25  {
             progressBar[buttonTag].isHidden = true
             timerBar[buttonTag].isHidden = false
             
@@ -345,6 +346,19 @@ class JobsVC: UIViewController {
         
     }
     
+    func updateTimerProgressBar(progress: Int, role: Int) -> Float {
+        
+        // REVIEW - THIS MAY CAUSE PROBLEMS WITH TIMER
+        var progressStatus: Float = 0.0
+        
+        progressStatus = 1 - Float(updatingRoleTimeArray[role] / startingRoleTimeArray[role])
+        //progressStatus = 1 - (Float(updatingRoleTimeArray[role]) * (Float(updatingRoleTimeArray[role] / startingRoleTimeArray[role]))) / startingRoleTimeArray[role]
+        print(progressStatus)
+        
+        return progressStatus
+        
+    }
+    
     // Button to purchase a role, decrease the score by the purchase price of the role, increase purchase price
     // of role by 20%, update score label and UI
     func spendMoney(tag: Int) {
@@ -505,15 +519,6 @@ class JobsVC: UIViewController {
     }
     
     // Helper function for tracking and updating the timer progress bar
-    func updateTimerProgressBar(progress: Int, role: Int) -> Float {
-        
-        // REVIEW - THIS MAY CAUSE PROBLEMS WITH TIMER
-        var progressStatus: Float = 0.0
-        
-        progressStatus = 1 - (Float(updatingRoleTimeArray[role]) * 0.01)
-        
-        return progressStatus
-        
-    }
+    
 
 }
