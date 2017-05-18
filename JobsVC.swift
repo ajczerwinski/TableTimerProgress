@@ -23,6 +23,8 @@ class JobsVC: UIViewController {
     
     @IBOutlet var rolesOwnedLbl: [UILabel]!
     
+    @IBOutlet var priceToPurchaseLbl: [UILabel]!
+    
     @IBOutlet var numRoles: [UIButton]!
     
     @IBOutlet var roleView: [UIView]!
@@ -54,7 +56,7 @@ class JobsVC: UIViewController {
     var timesTapped: [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     
     // Multiplier for each role
-    var multiplier: [Double] = [1000, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    var multiplier: [Double] = [1000000, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     
     // Array of Bools to determine if role should be visible/active or not
     var isRoleEnabled: [Bool] = [true, false, false, false, false, false, false, false, false, false]
@@ -488,6 +490,7 @@ class JobsVC: UIViewController {
                 
                 buttonLbl[role].isEnabled = true
                 rolesOwnedLbl[role].text = "\(rolesOwned[role])"
+                //rolesOwnedLbl[role].text = "\(rolesOwned[role])"
                 
             } else {
                 
