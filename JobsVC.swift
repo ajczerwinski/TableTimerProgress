@@ -490,7 +490,8 @@ class JobsVC: UIViewController {
                 
                 buttonLbl[role].isEnabled = true
                 rolesOwnedLbl[role].text = "\(rolesOwned[role])"
-                //rolesOwnedLbl[role].text = "\(rolesOwned[role])"
+                //priceToPurchaseLbl[role].text = "\(purchasePrice[role])"
+                priceToPurchaseLbl[role].text = moneyFormatter(amount: Float(purchasePrice[role]))
                 
             } else {
                 
