@@ -17,6 +17,8 @@ class JobsVC: UIViewController {
     
     @IBOutlet weak var scoreLbl: UILabel!
     
+    @IBOutlet weak var assistantsLbl: UILabel!
+    
     // Button Label and UI Label Collections
     
     @IBOutlet var buttonLbl: [UIButton]!

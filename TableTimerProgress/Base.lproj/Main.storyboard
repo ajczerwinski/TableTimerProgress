@@ -25,8 +25,18 @@
                             <view tag="11" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mSJ-Op-HbN">
                                 <rect key="frame" x="20" y="28" width="335" height="40"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Assistants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdw-Fs-FLd">
+                                        <rect key="frame" x="227" y="0.0" width="100" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="0eW-5y-K1N"/>
+                                            <constraint firstAttribute="height" constant="21" id="qcv-Ld-sHJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2j9-fy-5Y0">
-                                        <rect key="frame" x="8" y="10" width="319" height="21"/>
+                                        <rect key="frame" x="8" y="19" width="319" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="gT7-sl-dKS"/>
                                         </constraints>
@@ -37,11 +47,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="2j9-fy-5Y0" firstAttribute="centerY" secondItem="mSJ-Op-HbN" secondAttribute="centerY" id="8Aj-db-QNm"/>
                                     <constraint firstAttribute="trailing" secondItem="2j9-fy-5Y0" secondAttribute="trailing" constant="8" id="FzJ-xL-jOB"/>
                                     <constraint firstItem="2j9-fy-5Y0" firstAttribute="leading" secondItem="mSJ-Op-HbN" secondAttribute="leading" constant="8" id="GQi-Mi-wSb"/>
+                                    <constraint firstAttribute="bottom" secondItem="2j9-fy-5Y0" secondAttribute="bottom" id="PLN-iW-S1W"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tdw-Fs-FLd" secondAttribute="trailing" constant="8" id="ZVE-Rn-mgC"/>
                                     <constraint firstAttribute="height" constant="40" id="iCj-HH-DHo"/>
-                                    <constraint firstItem="2j9-fy-5Y0" firstAttribute="centerX" secondItem="mSJ-Op-HbN" secondAttribute="centerX" id="o5Q-fG-Ydh"/>
+                                    <constraint firstItem="Tdw-Fs-FLd" firstAttribute="top" secondItem="mSJ-Op-HbN" secondAttribute="top" id="kOd-Yd-YbE"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3o-D5-yOW">
@@ -1149,6 +1160,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="assistantsLbl" destination="Tdw-Fs-FLd" id="NX2-VY-P3x"/>
                         <outlet property="scoreLbl" destination="2j9-fy-5Y0" id="7Jc-Tr-Eh1"/>
                         <outlet property="scrollView" destination="t3o-D5-yOW" id="rUg-gc-cxa"/>
                         <outletCollection property="progressBar" destination="KxG-8V-viU" collectionClass="NSMutableArray" id="v5x-ZP-ZfK"/>
