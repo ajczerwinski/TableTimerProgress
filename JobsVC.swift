@@ -23,6 +23,8 @@ class JobsVC: UIViewController {
     
     @IBOutlet var buttonLbl: [UIButton]!
     
+    @IBOutlet weak var assistantButtonLbl: UIButton!
+    
     @IBOutlet var rolesOwnedLbl: [UILabel]!
     
     @IBOutlet var priceToPurchaseLbl: [UILabel]!
@@ -49,7 +51,13 @@ class JobsVC: UIViewController {
     // Array of Doubles to store countdown timer numbers
     var updatingRoleTimeArray: [Double] = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
     
+    var assistantPrice: Double = 1000000
+    
     var score: Double = 0.0
+    
+    var assistantsAvailable: Double = 0.0
+    
+    var assistantsPurchased: Double = 0.0
     
     var roleImages = [#imageLiteral(resourceName: "studentDev"), #imageLiteral(resourceName: "internDev"), #imageLiteral(resourceName: "juniorDev"), #imageLiteral(resourceName: "dev"), #imageLiteral(resourceName: "seniorDev"), #imageLiteral(resourceName: "leadDev"), #imageLiteral(resourceName: "staffEng"), #imageLiteral(resourceName: "seniorStaffEng"), #imageLiteral(resourceName: "distinguishedEng"), #imageLiteral(resourceName: "superDistinguishedEng")]
     
@@ -521,6 +529,8 @@ class JobsVC: UIViewController {
         roleView[1].alpha = 0.5
         buttonLbl[1].isEnabled = false
         buttonLbl[1].isHidden = true
+        
+        assistantButtonLbl.setTitle("Get \(Int(assistantsAvailable)) assistants", for: .normal)
         
     }
     
