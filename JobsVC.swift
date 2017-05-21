@@ -23,7 +23,9 @@ class JobsVC: UIViewController {
     
     @IBOutlet var buttonLbl: [UIButton]!
     
-    @IBOutlet weak var assistantButtonLbl: UIButton!
+    @IBOutlet var assistantButtonLbl: UIButton!
+    
+    @IBOutlet weak var assistantsAvailableLbl: UILabel!
     
     @IBOutlet var rolesOwnedLbl: [UILabel]!
     
@@ -554,7 +556,9 @@ class JobsVC: UIViewController {
         buttonLbl[1].isEnabled = false
         buttonLbl[1].isHidden = true
         
-        assistantButtonLbl.setTitle("Get \(Int(assistantsAvailable)) assistants", for: .normal)
+        manageAssistantsAvailableBtnAndLbl()
+        
+        //assistantButtonLbl.setTitle("Get \(Int(assistantsAvailable)) assistants", for: .normal)
         
     }
     
@@ -566,7 +570,23 @@ class JobsVC: UIViewController {
             assistantPrice *= 1.1
         }
         
-        assistantButtonLbl.setTitle("Get \(Int(assistantsAvailable)) assistants", for: .normal)
+        manageAssistantsAvailableBtnAndLbl()
+        //assistantButtonLbl.setTitle("Get \(Int(assistantsAvailable)) assistants", for: .normal)
+    }
+    
+    func manageAssistantsAvailableBtnAndLbl() {
+        let intAvailableAssistants = Int(assistantsAvailable)
+        
+        if intAvailableAssistants == 0 {
+            assistantsAvailableLbl.isHidden = true
+            assistantButtonLbl.isHidden = true
+        } else if intAvailableAssistants == 1 {
+            assistantsAvailableLbl.isHidden = false
+            assistantButtonLbl.isHidden = false
+            assistantsAvailableLbl.text = "\(intAvailableAssistants) assistant"
+        } else {
+            assistantsAvailableLbl.text = "\(intAvailableAssistants) assistants"
+        }
     }
     
 

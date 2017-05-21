@@ -25,13 +25,26 @@
                             <view tag="11" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mSJ-Op-HbN">
                                 <rect key="frame" x="20" y="28" width="335" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNd-8F-hNa">
-                                        <rect key="frame" x="4" y="0.0" width="60" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5d-3W-klD">
+                                        <rect key="frame" x="4" y="18" width="80" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="SoB-AE-5Oj"/>
-                                            <constraint firstAttribute="width" constant="60" id="lM4-Lg-PrO"/>
+                                            <constraint firstAttribute="width" constant="80" id="JnL-1I-V8n"/>
+                                            <constraint firstAttribute="height" constant="21" id="xNb-fk-BwI"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNd-8F-hNa">
+                                        <rect key="frame" x="4" y="0.0" width="40" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="SoB-AE-5Oj"/>
+                                            <constraint firstAttribute="width" constant="40" id="lM4-Lg-PrO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <state key="normal" title="Reset for">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Assistants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdw-Fs-FLd">
                                         <rect key="frame" x="227" y="0.0" width="100" height="21"/>
@@ -56,6 +69,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="D5d-3W-klD" firstAttribute="leading" secondItem="aNd-8F-hNa" secondAttribute="leading" id="Be9-Y1-27w"/>
                                     <constraint firstItem="aNd-8F-hNa" firstAttribute="leading" secondItem="mSJ-Op-HbN" secondAttribute="leading" constant="4" id="EcU-k3-J7G"/>
                                     <constraint firstItem="aNd-8F-hNa" firstAttribute="top" secondItem="mSJ-Op-HbN" secondAttribute="top" id="JzG-6F-dnu"/>
                                     <constraint firstAttribute="bottom" secondItem="2j9-fy-5Y0" secondAttribute="bottom" id="PLN-iW-S1W"/>
@@ -63,6 +77,7 @@
                                     <constraint firstAttribute="height" constant="40" id="iCj-HH-DHo"/>
                                     <constraint firstItem="Tdw-Fs-FLd" firstAttribute="top" secondItem="mSJ-Op-HbN" secondAttribute="top" id="kOd-Yd-YbE"/>
                                     <constraint firstItem="2j9-fy-5Y0" firstAttribute="centerX" secondItem="mSJ-Op-HbN" secondAttribute="centerX" id="sJ5-9S-FmE"/>
+                                    <constraint firstAttribute="bottom" secondItem="D5d-3W-klD" secondAttribute="bottom" constant="1" id="vs5-JT-Skz"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3o-D5-yOW">
@@ -1170,7 +1185,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="assistantButtonLbl" destination="aNd-8F-hNa" id="h8k-uE-IDm"/>
+                        <outlet property="assistantButtonLbl" destination="aNd-8F-hNa" id="XQV-ko-KiU"/>
+                        <outlet property="assistantsAvailableLbl" destination="D5d-3W-klD" id="lAt-5i-Fm2"/>
                         <outlet property="assistantsLbl" destination="Tdw-Fs-FLd" id="NX2-VY-P3x"/>
                         <outlet property="scoreLbl" destination="2j9-fy-5Y0" id="7Jc-Tr-Eh1"/>
                         <outlet property="scrollView" destination="t3o-D5-yOW" id="rUg-gc-cxa"/>
