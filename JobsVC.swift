@@ -63,6 +63,9 @@ class JobsVC: UIViewController {
     
     var assistantsPurchased: Double = 0.0
     
+    var assistantsPurchasedMultiplier: Double = 1.0
+        //= (1 + assistantsPurchased / 100)
+    
     var roleImages = [#imageLiteral(resourceName: "studentDev"), #imageLiteral(resourceName: "internDev"), #imageLiteral(resourceName: "juniorDev"), #imageLiteral(resourceName: "dev"), #imageLiteral(resourceName: "seniorDev"), #imageLiteral(resourceName: "leadDev"), #imageLiteral(resourceName: "staffEng"), #imageLiteral(resourceName: "seniorStaffEng"), #imageLiteral(resourceName: "distinguishedEng"), #imageLiteral(resourceName: "superDistinguishedEng")]
     
     // Store # of times tapped for each role
@@ -159,8 +162,8 @@ class JobsVC: UIViewController {
             //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[0].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[0]), role: 0)
             
-            runningScore += multiplier[0] * roleBase[0] * rolesOwned[0]
-            totalScore += multiplier[0] * roleBase[0] * rolesOwned[0]
+            runningScore += multiplier[0] * roleBase[0] * rolesOwned[0] * assistantsPurchasedMultiplier
+            totalScore += multiplier[0] * roleBase[0] * rolesOwned[0] * assistantsPurchasedMultiplier
             scoreLbl.text = moneyFormatter(amount: Float(runningScore))
             updatingRoleTimeArray[0] = startingRoleTimeArray[0]
             trackAvailableAssistants()
@@ -183,8 +186,8 @@ class JobsVC: UIViewController {
             //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[1].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[1]), role: 1)
             
-            runningScore += multiplier[1] * roleBase[1] * rolesOwned[1]
-            totalScore += multiplier[1] * roleBase[1] * rolesOwned[1]
+            runningScore += multiplier[1] * roleBase[1] * rolesOwned[1] * assistantsPurchasedMultiplier
+            totalScore += multiplier[1] * roleBase[1] * rolesOwned[1] * assistantsPurchasedMultiplier
             scoreLbl.text = moneyFormatter(amount: Float(runningScore))
             updatingRoleTimeArray[1] = startingRoleTimeArray[1]
             trackAvailableAssistants()
@@ -206,8 +209,8 @@ class JobsVC: UIViewController {
             //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[2].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[2]), role: 2)
             
-            runningScore += multiplier[2] * roleBase[2] * rolesOwned[2]
-            totalScore += multiplier[2] * roleBase[2] * rolesOwned[2]
+            runningScore += multiplier[2] * roleBase[2] * rolesOwned[2] * assistantsPurchasedMultiplier
+            totalScore += multiplier[2] * roleBase[2] * rolesOwned[2] * assistantsPurchasedMultiplier
             scoreLbl.text = moneyFormatter(amount: Float(runningScore))
             updatingRoleTimeArray[2] = startingRoleTimeArray[2]
             trackAvailableAssistants()
@@ -229,8 +232,8 @@ class JobsVC: UIViewController {
             //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[3].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[3]), role: 3)
             
-            runningScore += multiplier[3] * roleBase[3] * rolesOwned[3]
-            totalScore += multiplier[3] * roleBase[3] * rolesOwned[3]
+            runningScore += multiplier[3] * roleBase[3] * rolesOwned[3] * assistantsPurchasedMultiplier
+            totalScore += multiplier[3] * roleBase[3] * rolesOwned[3] * assistantsPurchasedMultiplier
             scoreLbl.text = moneyFormatter(amount: Float(runningScore))
             updatingRoleTimeArray[3] = startingRoleTimeArray[3]
             trackAvailableAssistants()
@@ -252,8 +255,8 @@ class JobsVC: UIViewController {
             //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[4].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[4]), role: 4)
             
-            runningScore += multiplier[4] * roleBase[4] * rolesOwned[4]
-            totalScore += multiplier[4] * roleBase[4] * rolesOwned[4]
+            runningScore += multiplier[4] * roleBase[4] * rolesOwned[4] * assistantsPurchasedMultiplier
+            totalScore += multiplier[4] * roleBase[4] * rolesOwned[4] * assistantsPurchasedMultiplier
             scoreLbl.text = moneyFormatter(amount: Float(runningScore))
             updatingRoleTimeArray[4] = startingRoleTimeArray[4]
             trackAvailableAssistants()
@@ -275,8 +278,8 @@ class JobsVC: UIViewController {
             //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[5].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[5]), role: 5)
             
-            runningScore += multiplier[5] * roleBase[5] * rolesOwned[5]
-            totalScore += multiplier[5] * roleBase[5] * rolesOwned[5]
+            runningScore += multiplier[5] * roleBase[5] * rolesOwned[5] * assistantsPurchasedMultiplier
+            totalScore += multiplier[5] * roleBase[5] * rolesOwned[5] * assistantsPurchasedMultiplier
             scoreLbl.text = moneyFormatter(amount: Float(runningScore))
             updatingRoleTimeArray[5] = startingRoleTimeArray[5]
             trackAvailableAssistants()
@@ -298,8 +301,8 @@ class JobsVC: UIViewController {
             //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[6].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[6]), role: 6)
             
-            runningScore += multiplier[6] * roleBase[6] * rolesOwned[6]
-            totalScore += multiplier[6] * roleBase[6] * rolesOwned[6]
+            runningScore += multiplier[6] * roleBase[6] * rolesOwned[6] * assistantsPurchasedMultiplier
+            totalScore += multiplier[6] * roleBase[6] * rolesOwned[6] * assistantsPurchasedMultiplier
             scoreLbl.text = moneyFormatter(amount: Float(runningScore))
             updatingRoleTimeArray[6] = startingRoleTimeArray[6]
             trackAvailableAssistants()
@@ -321,8 +324,8 @@ class JobsVC: UIViewController {
             //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[7].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[7]), role: 7)
             
-            runningScore += multiplier[7] * roleBase[7] * rolesOwned[7]
-            totalScore += multiplier[7] * roleBase[7] * rolesOwned[7]
+            runningScore += multiplier[7] * roleBase[7] * rolesOwned[7] * assistantsPurchasedMultiplier
+            totalScore += multiplier[7] * roleBase[7] * rolesOwned[7] * assistantsPurchasedMultiplier
             scoreLbl.text = moneyFormatter(amount: Float(runningScore))
             updatingRoleTimeArray[7] = startingRoleTimeArray[7]
             trackAvailableAssistants()
@@ -344,8 +347,8 @@ class JobsVC: UIViewController {
             //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[8].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[8]), role: 8)
             
-            runningScore += multiplier[8] * roleBase[8] * rolesOwned[8]
-            totalScore += multiplier[8] * roleBase[8] * rolesOwned[8]
+            runningScore += multiplier[8] * roleBase[8] * rolesOwned[8] * assistantsPurchasedMultiplier
+            totalScore += multiplier[8] * roleBase[8] * rolesOwned[8] * assistantsPurchasedMultiplier
             scoreLbl.text = moneyFormatter(amount: Float(runningScore))
             updatingRoleTimeArray[8] = startingRoleTimeArray[8]
             trackAvailableAssistants()
@@ -367,8 +370,8 @@ class JobsVC: UIViewController {
             //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[9].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[9]), role: 9)
             
-            runningScore += multiplier[9] * roleBase[9] * rolesOwned[9]
-            totalScore += multiplier[9] * roleBase[9] * rolesOwned[9]
+            runningScore += multiplier[9] * roleBase[9] * rolesOwned[9] * assistantsPurchasedMultiplier
+            totalScore += multiplier[9] * roleBase[9] * rolesOwned[9] * assistantsPurchasedMultiplier
             scoreLbl.text = moneyFormatter(amount: Float(runningScore))
             updatingRoleTimeArray[9] = startingRoleTimeArray[9]
             trackAvailableAssistants()
@@ -417,8 +420,8 @@ class JobsVC: UIViewController {
         // If the progress bar has filled up, increment score by the amount for the role, update score label
         // then reset the progress bar back to 0
         if progressBar[tag].progress == 1.0 {
-            runningScore += multiplier[tag] * roleBase[tag] * rolesOwned[tag]
-            totalScore += multiplier[tag] * roleBase[tag] * rolesOwned[tag]
+            runningScore += multiplier[tag] * roleBase[tag] * rolesOwned[tag] * assistantsPurchasedMultiplier
+            totalScore += multiplier[tag] * roleBase[tag] * rolesOwned[tag] * assistantsPurchasedMultiplier
             scoreLbl.text = moneyFormatter(amount: Float(runningScore))
             
             formatUI()
@@ -589,5 +592,44 @@ class JobsVC: UIViewController {
         }
     }
     
+    @IBAction func assistantsResetBtn(_ sender: UIButton) {
+        
+        rolesOwned = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        timesTapped = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        multiplier = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        assistantsPurchased = assistantsAvailable
+        assistantsAvailable = 0
+        assistantsPurchasedMultiplier = (1 + assistantsPurchased / 100)
+        runningScore = 0
+        totalScore = 0
+        let formattedAssistantsPurchased = Int(assistantsPurchased)
+        assistantsLbl.text = "\(formattedAssistantsPurchased) assistants"
+        
+        for role in 0...9 {
+            
+            progressBar[role].progress = 0.0
+            progressBar[role].isHidden = false
+            //timerBar[role].isHidden = true
+            timerBar[role].progress = 0.0
+            updatingRoleTimeArray[role] = startingRoleTimeArray[role]
+            
+            
+            
+        }
+        formatImages()
+        initialFormat()
+        formatUI()
+        formatbuttonLbl()
+        formatPurchaseBtn()
+        print(assistantsPurchasedMultiplier)
+        
+        
+    }
+    
+    func invalidateTimer() {
+        
+        timer.invalidate()
+        
+    }
 
 }
