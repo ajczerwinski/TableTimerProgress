@@ -131,31 +131,75 @@ class JobsVC: UIViewController {
             switch (buttonTag) {
             case 0:
                 if !repeats {
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector (invalidateTimer)), userInfo: nil, repeats: repeats)
-                    //timer.invalidate()
+                    timer.invalidate()
+                
                 } else {
                     timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStudentTimer)), userInfo: nil, repeats: repeats)
                 }
                 
             case 1:
-                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateInternTimer)), userInfo: nil, repeats: repeats)
+                if !repeats {
+                    timer.invalidate()
+                    
+                } else {
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateInternTimer)), userInfo: nil, repeats: repeats)
+                }
             case 2:
-                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateJuniorTimer)), userInfo: nil, repeats: repeats)
+                if !repeats {
+                    timer.invalidate()
+                    
+                } else {
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateJuniorTimer)), userInfo: nil, repeats: repeats)
+                }
             case 3:
-                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateDevTimer)), userInfo: nil, repeats: repeats)
+                if !repeats {
+                    timer.invalidate()
+                    
+                } else {
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateDevTimer)), userInfo: nil, repeats: repeats)
+                }
             case 4:
-                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSeniorTimer)), userInfo: nil, repeats: repeats)
+                if !repeats {
+                    timer.invalidate()
+                    
+                } else {
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSeniorTimer)), userInfo: nil, repeats: repeats)
+                }
             case 5:
-                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateLeadTimer)), userInfo: nil, repeats: repeats)
+                if !repeats {
+                    timer.invalidate()
+                    
+                } else {
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateLeadTimer)), userInfo: nil, repeats: repeats)
+                }
             case 6:
-                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStaffTimer)), userInfo: nil, repeats: repeats)
+                if !repeats {
+                    timer.invalidate()
+                    
+                } else {
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStaffTimer)), userInfo: nil, repeats: repeats)
+                }
             case 7:
-                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSeniorStaffTimer)), userInfo: nil, repeats: repeats)
+                if !repeats {
+                    timer.invalidate()
+                    
+                } else {
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSeniorStaffTimer)), userInfo: nil, repeats: repeats)
+                }
             case 8:
-                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateDistinguishedTimer)), userInfo: nil, repeats: repeats)
+                if !repeats {
+                    timer.invalidate()
+                    
+                } else {
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateDistinguishedTimer)), userInfo: nil, repeats: repeats)
+                }
             case 9:
-                timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSuperDistinguishedTimer)), userInfo: nil, repeats: repeats)
-                
+                if !repeats {
+                    timer.invalidate()
+                    
+                } else {
+                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSuperDistinguishedTimer)), userInfo: nil, repeats: repeats)
+                }
             default:
                 return
             }
@@ -606,6 +650,19 @@ class JobsVC: UIViewController {
     
     @IBAction func assistantsResetBtn(_ sender: UIButton) {
         
+        for role in 0...9 {
+            
+            toggleTimer(counter: 25, buttonTag: role, repeats: false)
+            progressBar[role].progress = 0.0
+            progressBar[role].isHidden = false
+            //timerBar[role].isHidden = true
+            timerBar[role].progress = 0.0
+            
+            updatingRoleTimeArray[role] = startingRoleTimeArray[role]
+            
+            
+        }
+        
         rolesOwned = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         timesTapped = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         multiplier = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
@@ -618,19 +675,6 @@ class JobsVC: UIViewController {
         let formattedAssistantsPurchased = Int(assistantsPurchased)
         assistantsLbl.text = "\(formattedAssistantsPurchased) assistants"
         
-        for role in 0...9 {
-            
-            progressBar[role].progress = 0.0
-            progressBar[role].isHidden = false
-            //timerBar[role].isHidden = true
-            timerBar[role].progress = 0.0
-            
-            updatingRoleTimeArray[role] = startingRoleTimeArray[role]
-            
-            toggleTimer(counter: 25, buttonTag: role, repeats: false)
-            
-            
-        }
         formatImages()
         initialFormat()
         formatUI()

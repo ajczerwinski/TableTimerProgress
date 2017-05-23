@@ -11,6 +11,7 @@
 		BF705C0F1EAC423F006C102E /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF705C0E1EAC423F006C102E /* JobsViewController.swift */; };
 		BF705C111EAFF026006C102E /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF705C101EAFF026006C102E /* TitleCell.swift */; };
 		BF705C3C1EB409BC006C102E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF705C3B1EB409BC006C102E /* Constants.swift */; };
+		BFB76ACE1ED4A33C00F95D29 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB76ACD1ED4A33B00F95D29 /* Role.swift */; };
 		BFBA5AEC1EA858A3008D322E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5AEB1EA858A3008D322E /* AppDelegate.swift */; };
 		BFBA5AF11EA858A3008D322E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBA5AEF1EA858A3008D322E /* Main.storyboard */; };
 		BFBA5AF31EA858A3008D322E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBA5AF21EA858A3008D322E /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		BF705C0E1EAC423F006C102E /* JobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
 		BF705C101EAFF026006C102E /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		BF705C3B1EB409BC006C102E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BFB76ACD1ED4A33B00F95D29 /* Role.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		BFBA5AE81EA858A3008D322E /* TableTimerProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableTimerProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBA5AEB1EA858A3008D322E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFBA5AF01EA858A3008D322E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				BFBA5B151EAAEEFF008D322E /* Player+CoreDataProperties.swift */,
 				BFBA5B161EAAEEFF008D322E /* Job.swift */,
 				BFBA5B171EAAEEFF008D322E /* Job+CoreDataProperties.swift */,
+				BFB76ACD1ED4A33B00F95D29 /* Role.swift */,
 			);
 			name = Models;
 			path = ..;
@@ -192,6 +195,7 @@
 				BFBA5AFE1EA869F1008D322E /* JobCell.swift in Sources */,
 				BF705C0F1EAC423F006C102E /* JobsViewController.swift in Sources */,
 				BFBA5AEC1EA858A3008D322E /* AppDelegate.swift in Sources */,
+				BFB76ACE1ED4A33C00F95D29 /* Role.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
