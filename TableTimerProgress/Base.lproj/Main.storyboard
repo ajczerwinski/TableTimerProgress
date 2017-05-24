@@ -100,7 +100,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="0gK-BM-8k9"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -207,7 +207,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="bw8-sS-QcQ"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -312,7 +312,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="7RR-LB-LtV"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -417,7 +417,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="1R1-9B-NHk"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -522,7 +522,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="fQr-7T-dhy"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -627,7 +627,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="44w-5T-8oV"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -732,7 +732,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="Llu-AX-jR4"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -837,7 +837,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="NmN-F8-V4s"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -942,7 +942,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="HZA-Dw-oY5"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1047,7 +1047,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="hK1-D7-kx3"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1281,15 +1281,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dev" width="178" height="117"/>
-        <image name="distinguishedEng" width="279" height="136"/>
-        <image name="internDev" width="105" height="103"/>
-        <image name="juniorDev" width="150" height="100"/>
-        <image name="leadDev" width="257" height="140"/>
-        <image name="seniorDev" width="185" height="70"/>
-        <image name="seniorStaffEng" width="164" height="68"/>
-        <image name="staffEng" width="161" height="98"/>
-        <image name="studentDev" width="147" height="120"/>
-        <image name="superDistinguishedEng" width="248" height="148"/>
+        <image name="dev" width="600" height="600"/>
+        <image name="distinguishedEng" width="600" height="600"/>
+        <image name="internDev" width="600" height="600"/>
+        <image name="juniorDev" width="600" height="600"/>
+        <image name="leadDev" width="600" height="600"/>
+        <image name="seniorDev" width="600" height="600"/>
+        <image name="seniorStaffEng" width="600" height="600"/>
+        <image name="staffEng" width="600" height="600"/>
+        <image name="studentDev" width="600" height="600"/>
+        <image name="superDistinguishedEng" width="600" height="600"/>
     </resources>
 </document>

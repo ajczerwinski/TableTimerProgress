@@ -121,7 +121,7 @@ class JobsVC: UIViewController {
     
     func toggleTimer(counter: Int, buttonTag: Int, repeats: Bool) {
         
-        if counter == 25  {
+        if counter == 25 {
             progressBar[buttonTag].isHidden = true
             timerBar[buttonTag].isHidden = false
             
@@ -131,7 +131,7 @@ class JobsVC: UIViewController {
             switch (buttonTag) {
             case 0:
                 if !repeats {
-                    timer.invalidate()
+                    self.timer.invalidate()
                 
                 } else {
                     timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStudentTimer)), userInfo: nil, repeats: repeats)
@@ -139,7 +139,7 @@ class JobsVC: UIViewController {
                 
             case 1:
                 if !repeats {
-                    timer.invalidate()
+                    self.timer.invalidate()
                     
                 } else {
                     timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateInternTimer)), userInfo: nil, repeats: repeats)
@@ -584,7 +584,7 @@ class JobsVC: UIViewController {
             if rolesOwned[role] >= 1 {
                 
                 buttonLbl[role].isEnabled = true
-                rolesOwnedLbl[role].text = "\(rolesOwned[role])"
+                rolesOwnedLbl[role].text = "\(Int(rolesOwned[role]))"
                 //priceToPurchaseLbl[role].text = "\(purchasePrice[role])"
                 priceToPurchaseLbl[role].text = moneyFormatter(amount: Float(purchasePrice[role]))
                 
