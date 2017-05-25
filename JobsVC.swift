@@ -650,6 +650,20 @@ class JobsVC: UIViewController {
     
     @IBAction func assistantsResetBtn(_ sender: UIButton) {
         
+        rolesOwned = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        timesTapped = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        multiplier = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        isRoleEnabled = [true, false, false, false, false, false, false, false, false, false]
+        purchasePrice = [1, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
+        assistantsPurchased = assistantsAvailable
+        assistantsAvailable = 0
+        assistantsPurchasedMultiplier = (1 + assistantsPurchased / 100)
+        runningScore = 0
+        totalScore = 0
+        scoreLbl.text = moneyFormatter(amount: Float(runningScore))
+        let formattedAssistantsPurchased = Int(assistantsPurchased)
+        assistantsLbl.text = "\(formattedAssistantsPurchased) assistants"
+        
         for role in 0...9 {
             
             toggleTimer(counter: 25, buttonTag: role, repeats: false)
@@ -657,23 +671,13 @@ class JobsVC: UIViewController {
             progressBar[role].isHidden = false
             //timerBar[role].isHidden = true
             timerBar[role].progress = 0.0
+            rolesOwnedLbl[role].text = "\(Int(rolesOwned[role]))"
+            priceToPurchaseLbl[role].text = moneyFormatter(amount: Float(purchasePrice[role]))
             
             updatingRoleTimeArray[role] = startingRoleTimeArray[role]
             
             
         }
-        
-        rolesOwned = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        timesTapped = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        multiplier = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-        purchasePrice = [1, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
-        assistantsPurchased = assistantsAvailable
-        assistantsAvailable = 0
-        assistantsPurchasedMultiplier = (1 + assistantsPurchased / 100)
-        runningScore = 0
-        totalScore = 0
-        let formattedAssistantsPurchased = Int(assistantsPurchased)
-        assistantsLbl.text = "\(formattedAssistantsPurchased) assistants"
         
         formatImages()
         initialFormat()
