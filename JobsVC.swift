@@ -45,7 +45,7 @@ class JobsVC: UIViewController {
     
     @IBOutlet var timerBar: [UIProgressView]!
     
-    var timer = Timer()
+    var timer: [Timer] = [Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer()]
     
     // Array of Doubles to store original countdown number to reset when counter gets to 0
     var startingRoleTimeArray: [Double] = [100, 200, 300, 400, 500, 600, 700, 800, 1900, 1000]
@@ -131,74 +131,77 @@ class JobsVC: UIViewController {
             switch (buttonTag) {
             case 0:
                 if !repeats {
-                    self.timer.invalidate()
+                    timer[0].invalidate()
+                    return
                 
                 } else {
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStudentTimer)), userInfo: nil, repeats: repeats)
+                    timer[0] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStudentTimer)), userInfo: nil, repeats: repeats)
                 }
                 
             case 1:
                 if !repeats {
-                    self.timer.invalidate()
+                    timer[1].invalidate()
+                    return
                     
                 } else {
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateInternTimer)), userInfo: nil, repeats: repeats)
+                    timer[1] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateInternTimer)), userInfo: nil, repeats: repeats)
                 }
             case 2:
                 if !repeats {
-                    timer.invalidate()
+                    timer[2].invalidate()
+                    return
                     
                 } else {
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateJuniorTimer)), userInfo: nil, repeats: repeats)
+                    timer[2] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateJuniorTimer)), userInfo: nil, repeats: repeats)
                 }
             case 3:
                 if !repeats {
-                    timer.invalidate()
+                    timer[3].invalidate()
                     
                 } else {
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateDevTimer)), userInfo: nil, repeats: repeats)
+                    timer[3] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateDevTimer)), userInfo: nil, repeats: repeats)
                 }
             case 4:
                 if !repeats {
-                    timer.invalidate()
+                    timer[4].invalidate()
                     
                 } else {
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSeniorTimer)), userInfo: nil, repeats: repeats)
+                    timer[4] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSeniorTimer)), userInfo: nil, repeats: repeats)
                 }
             case 5:
                 if !repeats {
-                    timer.invalidate()
+                    timer[5].invalidate()
                     
                 } else {
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateLeadTimer)), userInfo: nil, repeats: repeats)
+                    timer[5] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateLeadTimer)), userInfo: nil, repeats: repeats)
                 }
             case 6:
                 if !repeats {
-                    timer.invalidate()
+                    timer[6].invalidate()
                     
                 } else {
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStaffTimer)), userInfo: nil, repeats: repeats)
+                    timer[6] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStaffTimer)), userInfo: nil, repeats: repeats)
                 }
             case 7:
                 if !repeats {
-                    timer.invalidate()
+                    timer[7].invalidate()
                     
                 } else {
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSeniorStaffTimer)), userInfo: nil, repeats: repeats)
+                    timer[7] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSeniorStaffTimer)), userInfo: nil, repeats: repeats)
                 }
             case 8:
                 if !repeats {
-                    timer.invalidate()
+                    timer[8].invalidate()
                     
                 } else {
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateDistinguishedTimer)), userInfo: nil, repeats: repeats)
+                    timer[8] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateDistinguishedTimer)), userInfo: nil, repeats: repeats)
                 }
             case 9:
                 if !repeats {
-                    timer.invalidate()
+                    timer[9].invalidate()
                     
                 } else {
-                    timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSuperDistinguishedTimer)), userInfo: nil, repeats: repeats)
+                    timer[9] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSuperDistinguishedTimer)), userInfo: nil, repeats: repeats)
                 }
             default:
                 return
@@ -455,6 +458,14 @@ class JobsVC: UIViewController {
         
     }
     
+    /*func invalidateTimerProgressBar(role: Int, repeats: Bool) {
+        
+        let progressStatus: Float = Float(role)
+        timerBar[role].progress = progressStatus
+        timer.invalidate()
+        
+    }*/
+    
     // Button to purchase a role, decrease the score by the purchase price of the role, increase purchase price
     // of role by 20%, update score label and UI
     func spendMoney(tag: Int) {
@@ -675,6 +686,7 @@ class JobsVC: UIViewController {
             priceToPurchaseLbl[role].text = moneyFormatter(amount: Float(purchasePrice[role]))
             
             updatingRoleTimeArray[role] = startingRoleTimeArray[role]
+            timer[role].invalidate()
             
             
         }
@@ -689,8 +701,8 @@ class JobsVC: UIViewController {
         
     }
     
-    func invalidateTimer() {
+    /*func invalidateTimer() {
          timer.invalidate()
-    }
+    }*/
     
 }
