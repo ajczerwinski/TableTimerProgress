@@ -73,7 +73,7 @@ class JobsVC: UIViewController {
     var timesTapped: [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     
     // Multiplier for each role
-    var multiplier: [Double] = [1000000, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    var multiplier: [Double] = [100000000000, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     
     // Array of Bools to determine if role should be visible/active or not
     var isRoleEnabled: [Bool] = [true, false, false, false, false, false, false, false, false, false]
@@ -212,6 +212,38 @@ class JobsVC: UIViewController {
         
     }
     
+    func scoreFormatter(amount: Double) -> String {
+        var score = 0.0
+        var subScore = 0.0
+        var scoreString = ""
+        switch (amount) {
+            
+        case 0..<1000:
+            scoreString = "$" + String(format: "%.2f", score)
+            
+            //score = "$\(Int(amount))"
+            
+        case 1001..<1000000:
+            subScore = amount / 1000
+            scoreString = "$" + String(format: "%.2f", subScore) + "K"
+            //score = "$\(Int(subScore))K"
+        case 1000001..<1000000000:
+            subScore = amount / 1000000
+            scoreString = "$" + String(format: "%.2f", subScore) + "M"
+            //score = "$\(Int(subScore))M"
+        case 1000000001..<1000000000000:
+            subScore = amount / 1000000000
+            scoreString = "$" + String(format: "%.2f", subScore) + "B"
+        case 1000000000001..<1000000000000000:
+            subScore = amount / 1000000000000
+            scoreString = "$" + String(format: "%.2f", subScore) + "T"
+        default:
+            return scoreString
+        }
+        
+        return scoreString
+    }
+    
     // Role-specific timer functions to update score labels and timer progress bars for respective roles
     // TODO - refactor these into one function that takes a parameter from the purchaseRole function above
     func updateStudentTimer() {
@@ -224,7 +256,7 @@ class JobsVC: UIViewController {
             
             runningScore += multiplier[0] * roleBase[0] * rolesOwned[0] * assistantsPurchasedMultiplier
             totalScore += multiplier[0] * roleBase[0] * rolesOwned[0] * assistantsPurchasedMultiplier
-            scoreLbl.text = moneyFormatter(amount: Float(runningScore))
+            scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[0] = startingRoleTimeArray[0]
             trackAvailableAssistants()
             
@@ -248,7 +280,7 @@ class JobsVC: UIViewController {
             
             runningScore += multiplier[1] * roleBase[1] * rolesOwned[1] * assistantsPurchasedMultiplier
             totalScore += multiplier[1] * roleBase[1] * rolesOwned[1] * assistantsPurchasedMultiplier
-            scoreLbl.text = moneyFormatter(amount: Float(runningScore))
+            scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[1] = startingRoleTimeArray[1]
             trackAvailableAssistants()
             
@@ -271,7 +303,7 @@ class JobsVC: UIViewController {
             
             runningScore += multiplier[2] * roleBase[2] * rolesOwned[2] * assistantsPurchasedMultiplier
             totalScore += multiplier[2] * roleBase[2] * rolesOwned[2] * assistantsPurchasedMultiplier
-            scoreLbl.text = moneyFormatter(amount: Float(runningScore))
+            scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[2] = startingRoleTimeArray[2]
             trackAvailableAssistants()
             
@@ -294,7 +326,7 @@ class JobsVC: UIViewController {
             
             runningScore += multiplier[3] * roleBase[3] * rolesOwned[3] * assistantsPurchasedMultiplier
             totalScore += multiplier[3] * roleBase[3] * rolesOwned[3] * assistantsPurchasedMultiplier
-            scoreLbl.text = moneyFormatter(amount: Float(runningScore))
+            scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[3] = startingRoleTimeArray[3]
             trackAvailableAssistants()
             
@@ -317,7 +349,7 @@ class JobsVC: UIViewController {
             
             runningScore += multiplier[4] * roleBase[4] * rolesOwned[4] * assistantsPurchasedMultiplier
             totalScore += multiplier[4] * roleBase[4] * rolesOwned[4] * assistantsPurchasedMultiplier
-            scoreLbl.text = moneyFormatter(amount: Float(runningScore))
+            scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[4] = startingRoleTimeArray[4]
             trackAvailableAssistants()
             
@@ -340,7 +372,7 @@ class JobsVC: UIViewController {
             
             runningScore += multiplier[5] * roleBase[5] * rolesOwned[5] * assistantsPurchasedMultiplier
             totalScore += multiplier[5] * roleBase[5] * rolesOwned[5] * assistantsPurchasedMultiplier
-            scoreLbl.text = moneyFormatter(amount: Float(runningScore))
+            scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[5] = startingRoleTimeArray[5]
             trackAvailableAssistants()
             
@@ -363,7 +395,7 @@ class JobsVC: UIViewController {
             
             runningScore += multiplier[6] * roleBase[6] * rolesOwned[6] * assistantsPurchasedMultiplier
             totalScore += multiplier[6] * roleBase[6] * rolesOwned[6] * assistantsPurchasedMultiplier
-            scoreLbl.text = moneyFormatter(amount: Float(runningScore))
+            scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[6] = startingRoleTimeArray[6]
             trackAvailableAssistants()
             
@@ -386,7 +418,7 @@ class JobsVC: UIViewController {
             
             runningScore += multiplier[7] * roleBase[7] * rolesOwned[7] * assistantsPurchasedMultiplier
             totalScore += multiplier[7] * roleBase[7] * rolesOwned[7] * assistantsPurchasedMultiplier
-            scoreLbl.text = moneyFormatter(amount: Float(runningScore))
+            scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[7] = startingRoleTimeArray[7]
             trackAvailableAssistants()
             
@@ -409,7 +441,7 @@ class JobsVC: UIViewController {
             
             runningScore += multiplier[8] * roleBase[8] * rolesOwned[8] * assistantsPurchasedMultiplier
             totalScore += multiplier[8] * roleBase[8] * rolesOwned[8] * assistantsPurchasedMultiplier
-            scoreLbl.text = moneyFormatter(amount: Float(runningScore))
+            scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[8] = startingRoleTimeArray[8]
             trackAvailableAssistants()
             
@@ -432,7 +464,7 @@ class JobsVC: UIViewController {
             
             runningScore += multiplier[9] * roleBase[9] * rolesOwned[9] * assistantsPurchasedMultiplier
             totalScore += multiplier[9] * roleBase[9] * rolesOwned[9] * assistantsPurchasedMultiplier
-            scoreLbl.text = moneyFormatter(amount: Float(runningScore))
+            scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[9] = startingRoleTimeArray[9]
             trackAvailableAssistants()
             
@@ -473,7 +505,7 @@ class JobsVC: UIViewController {
         runningScore -= purchasePrice[tag]
         rolesOwned[tag] += 1
         purchasePrice[tag] *= 1.2
-        scoreLbl.text = moneyFormatter(amount: Float(runningScore))
+        scoreLbl.text = scoreFormatter(amount: runningScore)
         formatUI()
         
     }
@@ -489,7 +521,7 @@ class JobsVC: UIViewController {
         if progressBar[tag].progress == 1.0 {
             runningScore += multiplier[tag] * roleBase[tag] * rolesOwned[tag] * assistantsPurchasedMultiplier
             totalScore += multiplier[tag] * roleBase[tag] * rolesOwned[tag] * assistantsPurchasedMultiplier
-            scoreLbl.text = moneyFormatter(amount: Float(runningScore))
+            scoreLbl.text = scoreFormatter(amount: runningScore)
             
             formatUI()
             progressBar[tag].progress = 0
@@ -502,14 +534,16 @@ class JobsVC: UIViewController {
     }
     
     // Helper function to format the score into a currency String
-    func moneyFormatter(amount: Float) -> String {
+    /*func moneyFormatter(amount: Float) -> String {
         
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         
         return formatter.string(from: NSNumber(value: amount))!
         
-    }
+    }*/
+    
+    
     
     // Format images into circles (technically slight ovals since width and height aren't quite equal)
     func formatImages() {
@@ -597,7 +631,7 @@ class JobsVC: UIViewController {
                 buttonLbl[role].isEnabled = true
                 rolesOwnedLbl[role].text = "\(Int(rolesOwned[role]))"
                 //priceToPurchaseLbl[role].text = "\(purchasePrice[role])"
-                priceToPurchaseLbl[role].text = moneyFormatter(amount: Float(purchasePrice[role]))
+                priceToPurchaseLbl[role].text = scoreFormatter(amount: purchasePrice[role])
                 
             } else {
                 
@@ -671,7 +705,7 @@ class JobsVC: UIViewController {
         assistantsPurchasedMultiplier = (1 + assistantsPurchased / 100)
         runningScore = 0
         totalScore = 0
-        scoreLbl.text = moneyFormatter(amount: Float(runningScore))
+        scoreLbl.text = scoreFormatter(amount: runningScore)
         let formattedAssistantsPurchased = Int(assistantsPurchased)
         assistantsLbl.text = "\(formattedAssistantsPurchased) assistants"
         
@@ -683,7 +717,7 @@ class JobsVC: UIViewController {
             //timerBar[role].isHidden = true
             timerBar[role].progress = 0.0
             rolesOwnedLbl[role].text = "\(Int(rolesOwned[role]))"
-            priceToPurchaseLbl[role].text = moneyFormatter(amount: Float(purchasePrice[role]))
+            priceToPurchaseLbl[role].text = scoreFormatter(amount: purchasePrice[role])
             
             updatingRoleTimeArray[role] = startingRoleTimeArray[role]
             timer[role].invalidate()
