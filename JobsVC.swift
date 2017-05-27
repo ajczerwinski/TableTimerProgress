@@ -92,6 +92,9 @@ class JobsVC: UIViewController {
         
         formatImages()
         initialFormat()
+        
+        assistantsAvailableLbl.isHidden = false
+        assistantsAvailableLbl.text = "Hi There"
     }
 
     // UIButton to increment the progress bar for roles to increase the score
@@ -681,16 +684,18 @@ class JobsVC: UIViewController {
     func manageAssistantsAvailableBtnAndLbl() {
         let intAvailableAssistants = Int(assistantsAvailable)
         
-        if intAvailableAssistants == 0 {
+        /*if intAvailableAssistants == 0 {
             assistantsAvailableLbl.isHidden = true
             assistantButtonLbl.isHidden = true
-        } else if intAvailableAssistants == 1 {
+        } else */
+        if intAvailableAssistants == 1 {
             assistantsAvailableLbl.isHidden = false
             assistantButtonLbl.isHidden = false
             assistantsAvailableLbl.text = "\(intAvailableAssistants) assistant"
         } else {
             assistantsAvailableLbl.text = "\(intAvailableAssistants) assistants"
         }
+        print("\(intAvailableAssistants)")
     }
     
     @IBAction func assistantsResetBtn(_ sender: UIButton) {
@@ -721,7 +726,6 @@ class JobsVC: UIViewController {
             
             updatingRoleTimeArray[role] = startingRoleTimeArray[role]
             timer[role].invalidate()
-            
             
         }
         
