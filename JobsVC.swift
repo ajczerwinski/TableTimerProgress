@@ -93,8 +93,7 @@ class JobsVC: UIViewController {
         formatImages()
         initialFormat()
         
-        assistantsAvailableLbl.isHidden = false
-        assistantsAvailableLbl.text = "Hi There"
+
     }
 
     // UIButton to increment the progress bar for roles to increase the score
@@ -131,7 +130,7 @@ class JobsVC: UIViewController {
             // Activate role timer based on which buttonTag is selected
             // TODO - rewrite this to pass a parameter through with the selector function to obviate
             // need to use switch statement and individual update timer functions
-            switch (buttonTag) {
+            switch buttonTag {
             case 0:
                 if !repeats {
                     timer[0].invalidate()
@@ -219,10 +218,11 @@ class JobsVC: UIViewController {
         var score = 0.0
         var subScore = 0.0
         var scoreString = ""
-        switch (amount) {
+        
+        switch amount {
             
         case 0..<1000:
-            scoreString = "$" + String(format: "%.2f", score)
+            scoreString = "$" + String(format: "%.2f", amount)
             
             //score = "$\(Int(amount))"
             
@@ -633,7 +633,6 @@ class JobsVC: UIViewController {
                 
                 buttonLbl[role].isEnabled = true
                 rolesOwnedLbl[role].text = "\(Int(rolesOwned[role]))"
-                //priceToPurchaseLbl[role].text = "\(purchasePrice[role])"
                 priceToPurchaseLbl[role].text = scoreFormatter(amount: purchasePrice[role])
                 
             } else {
@@ -665,8 +664,6 @@ class JobsVC: UIViewController {
         
         manageAssistantsAvailableBtnAndLbl()
         
-        //assistantButtonLbl.setTitle("Get \(Int(assistantsAvailable)) assistants", for: .normal)
-        
     }
     
     // Helper function to increment assistants available and increase
@@ -684,10 +681,6 @@ class JobsVC: UIViewController {
     func manageAssistantsAvailableBtnAndLbl() {
         let intAvailableAssistants = Int(assistantsAvailable)
         
-        /*if intAvailableAssistants == 0 {
-            assistantsAvailableLbl.isHidden = true
-            assistantButtonLbl.isHidden = true
-        } else */
         if intAvailableAssistants == 1 {
             assistantsAvailableLbl.isHidden = false
             assistantButtonLbl.isHidden = false
