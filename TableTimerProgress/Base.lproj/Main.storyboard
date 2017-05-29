@@ -1081,7 +1081,6 @@
                                             </label>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73v-Qz-4df">
                                                 <rect key="frame" x="4" y="4" width="60" height="62"/>
-                                                <state key="normal" title="Button"/>
                                                 <connections>
                                                     <action selector="gameButton:" destination="WHI-CN-HQS" eventType="touchUpInside" id="5Xg-Hh-Jp7"/>
                                                 </connections>

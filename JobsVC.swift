@@ -48,7 +48,7 @@ class JobsVC: UIViewController {
     var timer: [Timer] = [Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer()]
     
     // Array of Doubles to store original countdown number to reset when counter gets to 0
-    var startingRoleTimeArray: [Double] = [100, 200, 300, 400, 500, 600, 700, 800, 1900, 1000]
+    var startingRoleTimeArray: [Double] = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
     
     // Array of Doubles to store countdown timer numbers
     var updatingRoleTimeArray: [Double] = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
@@ -523,9 +523,9 @@ class JobsVC: UIViewController {
         
         for role in 0...9 {
 
-            roleImg[role].image = roleImages[role]
+            /*roleImg[role].image = roleImages[role]
             roleImg[role].layer.cornerRadius = roleImg[role].frame.height / 2
-            roleImg[role].clipsToBounds = true
+            roleImg[role].clipsToBounds = true*/
             
             numRoles[role].layer.cornerRadius = numRoles[role].frame.height / 2
             numRoles[role].clipsToBounds = true
