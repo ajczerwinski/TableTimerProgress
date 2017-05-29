@@ -64,7 +64,6 @@ class JobsVC: UIViewController {
     var assistantsPurchased: Double = 0.0
     
     var assistantsPurchasedMultiplier: Double = 1.0
-        //= (1 + assistantsPurchased / 100)
     
     var roleImages = [#imageLiteral(resourceName: "studentDev"), #imageLiteral(resourceName: "internDev"), #imageLiteral(resourceName: "juniorDev"), #imageLiteral(resourceName: "dev"), #imageLiteral(resourceName: "seniorDev"), #imageLiteral(resourceName: "leadDev"), #imageLiteral(resourceName: "staffEng"), #imageLiteral(resourceName: "seniorStaffEng"), #imageLiteral(resourceName: "distinguishedEng"), #imageLiteral(resourceName: "superDistinguishedEng")]
     
@@ -214,8 +213,10 @@ class JobsVC: UIViewController {
         
     }
     
+    // Helper function for rounding score to nearest 2 decimal places
+    // and adding a label to help user track score amount rather than show
+    // very large and unwieldy numbers
     func scoreFormatter(amount: Double) -> String {
-        var score = 0.0
         var subScore = 0.0
         var scoreString = ""
         
@@ -223,23 +224,21 @@ class JobsVC: UIViewController {
             
         case 0..<1000:
             scoreString = "$" + String(format: "%.2f", amount)
-            
-            //score = "$\(Int(amount))"
-            
         case 1001..<1000000:
             subScore = amount / 1000
             scoreString = "$" + String(format: "%.2f", subScore) + "K"
-            //score = "$\(Int(subScore))K"
         case 1000001..<1000000000:
             subScore = amount / 1000000
             scoreString = "$" + String(format: "%.2f", subScore) + "M"
-            //score = "$\(Int(subScore))M"
         case 1000000001..<1000000000000:
             subScore = amount / 1000000000
             scoreString = "$" + String(format: "%.2f", subScore) + "B"
         case 1000000000001..<1000000000000000:
             subScore = amount / 1000000000000
             scoreString = "$" + String(format: "%.2f", subScore) + "T"
+        case 1000000000000001..<1000000000000000000:
+            subScore = amount / 1000000000000000
+            scoreString = "$" + String(format: "%.2f", subScore) + "Qa"
         default:
             return scoreString
         }
@@ -266,7 +265,6 @@ class JobsVC: UIViewController {
         // If countdown timer is 1 or higher, update timer progressBar and decrement countdown timer by 1
         } else {
             
-            //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[0].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[0]), role: 0)
             updatingRoleTimeArray[0] -= 1
         
@@ -278,9 +276,7 @@ class JobsVC: UIViewController {
         
         if updatingRoleTimeArray[1] < 1 {
             
-            //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[1].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[1]), role: 1)
-            
             runningScore += multiplier[1] * roleBase[1] * rolesOwned[1] * assistantsPurchasedMultiplier
             totalScore += multiplier[1] * roleBase[1] * rolesOwned[1] * assistantsPurchasedMultiplier
             scoreLbl.text = scoreFormatter(amount: runningScore)
@@ -289,7 +285,6 @@ class JobsVC: UIViewController {
             
         } else {
             
-            //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[1].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[1]), role: 1)
             updatingRoleTimeArray[1] -= 1
             
@@ -301,7 +296,6 @@ class JobsVC: UIViewController {
         
         if updatingRoleTimeArray[2] < 1 {
             
-            //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[2].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[2]), role: 2)
             
             runningScore += multiplier[2] * roleBase[2] * rolesOwned[2] * assistantsPurchasedMultiplier
@@ -312,7 +306,6 @@ class JobsVC: UIViewController {
             
         } else {
             
-            //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[2].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[2]), role: 2)
             updatingRoleTimeArray[2] -= 1
             
@@ -324,7 +317,6 @@ class JobsVC: UIViewController {
         
         if updatingRoleTimeArray[3] < 1 {
             
-            //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[3].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[3]), role: 3)
             
             runningScore += multiplier[3] * roleBase[3] * rolesOwned[3] * assistantsPurchasedMultiplier
@@ -335,7 +327,6 @@ class JobsVC: UIViewController {
             
         } else {
             
-            //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[3].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[3]), role: 3)
             updatingRoleTimeArray[3] -= 1
             
@@ -347,7 +338,6 @@ class JobsVC: UIViewController {
         
         if updatingRoleTimeArray[4] < 1 {
             
-            //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[4].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[4]), role: 4)
             
             runningScore += multiplier[4] * roleBase[4] * rolesOwned[4] * assistantsPurchasedMultiplier
@@ -358,7 +348,6 @@ class JobsVC: UIViewController {
             
         } else {
             
-            //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[4].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[4]), role: 4)
             updatingRoleTimeArray[4] -= 1
             
@@ -370,7 +359,6 @@ class JobsVC: UIViewController {
         
         if updatingRoleTimeArray[5] < 1 {
             
-            //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[5].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[5]), role: 5)
             
             runningScore += multiplier[5] * roleBase[5] * rolesOwned[5] * assistantsPurchasedMultiplier
@@ -381,7 +369,6 @@ class JobsVC: UIViewController {
             
         } else {
             
-            //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[5].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[5]), role: 5)
             updatingRoleTimeArray[5] -= 1
             
@@ -392,8 +379,7 @@ class JobsVC: UIViewController {
     func updateStaffTimer() {
         
         if updatingRoleTimeArray[6] < 1 {
-            
-            //timerLbl.text = timerProgressFormatter(text: tenths)
+
             timerBar[6].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[6]), role: 6)
             
             runningScore += multiplier[6] * roleBase[6] * rolesOwned[6] * assistantsPurchasedMultiplier
@@ -404,7 +390,6 @@ class JobsVC: UIViewController {
             
         } else {
             
-            //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[6].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[6]), role: 6)
             updatingRoleTimeArray[6] -= 1
             
@@ -415,8 +400,7 @@ class JobsVC: UIViewController {
     func updateSeniorStaffTimer() {
         
         if updatingRoleTimeArray[7] < 1 {
-            
-            //timerLbl.text = timerProgressFormatter(text: tenths)
+
             timerBar[7].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[7]), role: 7)
             
             runningScore += multiplier[7] * roleBase[7] * rolesOwned[7] * assistantsPurchasedMultiplier
@@ -426,8 +410,7 @@ class JobsVC: UIViewController {
             trackAvailableAssistants()
             
         } else {
-            
-            //timerLbl.text = timerProgressFormatter(text: tenths)
+
             timerBar[7].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[7]), role: 7)
             updatingRoleTimeArray[7] -= 1
             
@@ -439,7 +422,6 @@ class JobsVC: UIViewController {
         
         if updatingRoleTimeArray[8] < 1 {
             
-            //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[8].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[8]), role: 8)
             
             runningScore += multiplier[8] * roleBase[8] * rolesOwned[8] * assistantsPurchasedMultiplier
@@ -449,8 +431,7 @@ class JobsVC: UIViewController {
             trackAvailableAssistants()
             
         } else {
-            
-            //timerLbl.text = timerProgressFormatter(text: tenths)
+
             timerBar[8].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[8]), role: 8)
             updatingRoleTimeArray[8] -= 1
             
@@ -461,8 +442,7 @@ class JobsVC: UIViewController {
     func updateSuperDistinguishedTimer() {
         
         if updatingRoleTimeArray[9] < 1 {
-            
-            //timerLbl.text = timerProgressFormatter(text: tenths)
+
             timerBar[9].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[9]), role: 9)
             
             runningScore += multiplier[9] * roleBase[9] * rolesOwned[9] * assistantsPurchasedMultiplier
@@ -473,7 +453,6 @@ class JobsVC: UIViewController {
             
         } else {
             
-            //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[9].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[9]), role: 9)
             updatingRoleTimeArray[9] -= 1
             
@@ -486,20 +465,11 @@ class JobsVC: UIViewController {
         // REVIEW - THIS MAY CAUSE PROBLEMS WITH TIMER
         var progressStatus: Float = 0.0
         progressStatus = 1 - Float(updatingRoleTimeArray[role] / startingRoleTimeArray[role])
-        //progressStatus = 1 - (Float(updatingRoleTimeArray[role]) * (Float(updatingRoleTimeArray[role] / startingRoleTimeArray[role]))) / startingRoleTimeArray[role]
         print(progressStatus)
         
         return progressStatus
         
     }
-    
-    /*func invalidateTimerProgressBar(role: Int, repeats: Bool) {
-        
-        let progressStatus: Float = Float(role)
-        timerBar[role].progress = progressStatus
-        timer.invalidate()
-        
-    }*/
     
     // Button to purchase a role, decrease the score by the purchase price of the role, increase purchase price
     // of role by 20%, update score label and UI
@@ -712,7 +682,6 @@ class JobsVC: UIViewController {
             toggleTimer(counter: 25, buttonTag: role, repeats: false)
             progressBar[role].progress = 0.0
             progressBar[role].isHidden = false
-            //timerBar[role].isHidden = true
             timerBar[role].progress = 0.0
             rolesOwnedLbl[role].text = "\(Int(rolesOwned[role]))"
             priceToPurchaseLbl[role].text = scoreFormatter(amount: purchasePrice[role])
@@ -731,9 +700,5 @@ class JobsVC: UIViewController {
         
         
     }
-    
-    /*func invalidateTimer() {
-         timer.invalidate()
-    }*/
     
 }
