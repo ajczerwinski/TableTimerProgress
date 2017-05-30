@@ -80,7 +80,7 @@ class JobsVC: UIViewController {
     // Purchase price for each role
     var purchasePrice: [Double] = [1, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
     
-    // Base score that each role increments up when completed
+    // Base score that each role gives when progressBar or progressTimer completes
     var roleBase: [Double] = [1, 5, 10, 20, 50, 100, 500, 1000, 2000, 10000]
     
     // Number of roles owned

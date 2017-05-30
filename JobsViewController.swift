@@ -71,13 +71,13 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    func configureTitleCell(cell: TitleCell, indexPath: NSIndexPath) {
+    /*func configureTitleCell(cell: TitleCell, indexPath: NSIndexPath) {
         
         if let score = fetchedResultsController.object(at: indexPath as IndexPath) as? Player {
             cell.configureTitleCell(player: score)
         }
         
-    }
+    }*/
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return icRoles.count
@@ -135,7 +135,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     }
     
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    /*func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         
         switch(type) {
         case .insert:
@@ -165,6 +165,6 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             break
         }
         
-    }
+    }*/
     
 }
