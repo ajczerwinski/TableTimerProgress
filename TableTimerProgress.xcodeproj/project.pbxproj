@@ -70,9 +70,6 @@
 		BFBA5ADF1EA858A3008D322E = {
 			isa = PBXGroup;
 			children = (
-				BF2DFE281EDD37AC00343B45 /* Assistant+CoreDataClass.swift */,
-				BF2DFE2A1EDD37AC00343B45 /* Score+CoreDataClass.swift */,
-				BF2DFE2C1EDD37AC00343B45 /* Role+CoreDataClass.swift */,
 				BFBA5AEA1EA858A3008D322E /* TableTimerProgress */,
 				BFBA5AE91EA858A3008D322E /* Products */,
 			);
@@ -91,7 +88,7 @@
 			children = (
 				BFBA5B1D1EAC1A7D008D322E /* Controllers */,
 				BFBA5AEB1EA858A3008D322E /* AppDelegate.swift */,
-				BFBA5B1C1EAC19ED008D322E /* Models */,
+				BFBA5B1C1EAC19ED008D322E /* Model */,
 				BFBA5AEF1EA858A3008D322E /* Main.storyboard */,
 				BFBA5AF21EA858A3008D322E /* Assets.xcassets */,
 				BFBA5AF41EA858A3008D322E /* LaunchScreen.storyboard */,
@@ -103,13 +100,16 @@
 			path = TableTimerProgress;
 			sourceTree = "<group>";
 		};
-		BFBA5B1C1EAC19ED008D322E /* Models */ = {
+		BFBA5B1C1EAC19ED008D322E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF2DFE281EDD37AC00343B45 /* Assistant+CoreDataClass.swift */,
+				BF2DFE2A1EDD37AC00343B45 /* Score+CoreDataClass.swift */,
+				BF2DFE2C1EDD37AC00343B45 /* Role+CoreDataClass.swift */,
 				BF2DFE271EDD35E700343B45 /* Generated */,
 				BFBA5AFF1EAAAC32008D322E /* Model.xcdatamodeld */,
 			);
-			name = Models;
+			name = Model;
 			path = ..;
 			sourceTree = "<group>";
 		};
