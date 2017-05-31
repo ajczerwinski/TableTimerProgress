@@ -23,8 +23,8 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var icImages = [#imageLiteral(resourceName: "studentDev"), #imageLiteral(resourceName: "internDev"), #imageLiteral(resourceName: "juniorDev"), #imageLiteral(resourceName: "dev"), #imageLiteral(resourceName: "seniorDev"), #imageLiteral(resourceName: "leadDev"), #imageLiteral(resourceName: "staffEng"), #imageLiteral(resourceName: "seniorStaffEng"), #imageLiteral(resourceName: "distinguishedEng"), #imageLiteral(resourceName: "superDistinguishedEng")]
     
-    var playerScore: Float = 0.0
     var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +32,9 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         tableView.delegate = self
         
-        attemptFetch()
+        //attemptFetch()
         
-        setBackground()
+        //setBackground()
         
     }
     
@@ -737,40 +737,42 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let returnCell = tableView.dequeueReusableCell(withIdentifier: "JobCell", for: indexPath) as! JobCell
+        let returnCell = tableView.dequeueReusableCell(withIdentifier: "RoleCell", for: indexPath) as! RoleCell
         
-        //if indexPath.row == 0 {
+        /*if indexPath.row == 0 {
             
-            //let returnCell = tableView.dequeueReusableCell(withIdentifier: "TitleCell", for: indexPath) as! TitleCell
-            //var score = playerScore
-            //returnCell.backgroundColor = UIColor.white
-            //returnCell.mainImg.isHidden = true
-            //returnCell.roleLbl.isHidden = true
-            //returnCell.descLbl.isHidden = true
-            //returnCell.scoreLbl.text = "\(playerScore + returnCell.scoreIncrementer)"
-            //cell.configureCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
-            //return returnCell
+            let returnCell = tableView.dequeueReusableCell(withIdentifier: "TitleCell", for: indexPath) as! TitleCell
+            var score = playerScore
+            returnCell.backgroundColor = UIColor.white
+            returnCell.mainImg.isHidden = true
+            returnCell.roleLbl.isHidden = true
+            returnCell.descLbl.isHidden = true
+            returnCell.scoreLbl.text = "\(playerScore + returnCell.scoreIncrementer)"
+            cell.configureCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
+            return returnCell*/
             
         //} else {
             
             //let returnCell = tableView.dequeueReusableCell(withIdentifier: "JobCell", for: indexPath) as! JobCell
             
             returnCell.backgroundColor = .clear
-            returnCell.scoreLbl.text = "\(playerScore + returnCell.scoreIncrementer)"
+            //returnCell.scoreLbl.text = "\(playerScore + returnCell.scoreIncrementer)"
             returnCell.configureCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
             
             return returnCell
         
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    /*func numberOfSections(in tableView: UITableView) -> Int {
         if let sections = fetchedResultsController.sections {
             return sections.count
         }
         
         return 0
         
-    }
+        
+        
+    }*/
     
     /*func configureTitleCell(cell: TitleCell, indexPath: NSIndexPath) {
         
@@ -784,7 +786,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         return icRoles.count
     }
     
-    func setBackground() {
+    /*func setBackground() {
         
         let imageView = UIImageView(frame: self.view.frame)
         let image = #imageLiteral(resourceName: "background")
@@ -794,9 +796,9 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.addSubview(imageView)
         self.tableView.sendSubview(toBack: imageView)
         
-    }
+    }*/
     
-    func attemptFetch() {
+    /*func attemptFetch() {
         setFetchedResults()
         
         do {
@@ -806,14 +808,14 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             print("\(error), \(error.userInfo)")
         }
         
-    }
+    }*/
     
-    func setFetchedResults() {
+    /*func setFetchedResults() {
         
         //let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Role")
         
-        let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: ad.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
@@ -822,7 +824,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         fetchedResultsController = controller
         
-    }
+    }*/
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         

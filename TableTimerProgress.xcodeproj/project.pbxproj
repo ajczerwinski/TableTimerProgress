@@ -21,7 +21,7 @@
 		BFBA5AF11EA858A3008D322E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBA5AEF1EA858A3008D322E /* Main.storyboard */; };
 		BFBA5AF31EA858A3008D322E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBA5AF21EA858A3008D322E /* Assets.xcassets */; };
 		BFBA5AF61EA858A3008D322E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBA5AF41EA858A3008D322E /* LaunchScreen.storyboard */; };
-		BFBA5AFE1EA869F1008D322E /* JobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5AFD1EA869F1008D322E /* JobCell.swift */; };
+		BFBA5AFE1EA869F1008D322E /* RoleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5AFD1EA869F1008D322E /* RoleCell.swift */; };
 		BFBA5B011EAAAC33008D322E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5AFF1EAAAC32008D322E /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +42,7 @@
 		BFBA5AF21EA858A3008D322E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFBA5AF51EA858A3008D322E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFBA5AF71EA858A3008D322E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFBA5AFD1EA869F1008D322E /* JobCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobCell.swift; sourceTree = "<group>"; };
+		BFBA5AFD1EA869F1008D322E /* RoleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleCell.swift; sourceTree = "<group>"; };
 		BFBA5B001EAAAC33008D322E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,7 +93,7 @@
 				BFBA5AF21EA858A3008D322E /* Assets.xcassets */,
 				BFBA5AF41EA858A3008D322E /* LaunchScreen.storyboard */,
 				BFBA5AF71EA858A3008D322E /* Info.plist */,
-				BFBA5AFD1EA869F1008D322E /* JobCell.swift */,
+				BFBA5AFD1EA869F1008D322E /* RoleCell.swift */,
 				BF705C101EAFF026006C102E /* TitleCell.swift */,
 				BF705C3B1EB409BC006C102E /* Constants.swift */,
 			);
@@ -200,7 +200,7 @@
 				BF1BA7C71EBABC960048B95B /* JobsVC.swift in Sources */,
 				BFBA5B011EAAAC33008D322E /* Model.xcdatamodeld in Sources */,
 				BF705C3C1EB409BC006C102E /* Constants.swift in Sources */,
-				BFBA5AFE1EA869F1008D322E /* JobCell.swift in Sources */,
+				BFBA5AFE1EA869F1008D322E /* RoleCell.swift in Sources */,
 				BF705C0F1EAC423F006C102E /* JobsViewController.swift in Sources */,
 				BF2DFE2F1EDD37AC00343B45 /* Assistant+CoreDataProperties.swift in Sources */,
 				BF2DFE2E1EDD37AC00343B45 /* Assistant+CoreDataClass.swift in Sources */,
