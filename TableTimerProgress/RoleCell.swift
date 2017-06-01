@@ -15,8 +15,10 @@ class RoleCell: UITableViewCell {
     @IBOutlet weak var roleDescLbl: UILabel!
     @IBOutlet weak var tapProgressBar: UIProgressView!
     @IBOutlet weak var timerProgressBar: UIProgressView!
-    @IBOutlet weak var jobBtnLbl: UIButton!
-    @IBOutlet weak var scoreLbl: UILabel!
+    @IBOutlet weak var tapRoleBtnLbl: UIButton!
+    @IBOutlet weak var purchaseRoleBtnLbl: UIButton!
+    @IBOutlet weak var numRolesLbl: UILabel!
+    @IBOutlet weak var priceToPurchaseLbl: UILabel!
     
     var timesTapped: Float = 0.0
     var scoreIncrementer: Float = 0.0
@@ -24,8 +26,8 @@ class RoleCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        mainImg.layer.cornerRadius = mainImg.frame.height / 2
-        mainImg.clipsToBounds = true
+        purchaseRoleBtnLbl.layer.cornerRadius = mainImg.frame.height / 2
+        purchaseRoleBtnLbl.clipsToBounds = true
         
         tapProgressBar.progress = 0.0
         
@@ -44,9 +46,10 @@ class RoleCell: UITableViewCell {
         mainImg.image = image
         roleTitleLbl.text = role
         roleDescLbl.text = desc
+        
     }
     
-    @IBAction func jobButton(_ sender: UIButton) {
+    @IBAction func tapRoleBtn(_ sender: UIButton) {
         
         timesTapped += 0.1
         //scoreLbl.text = "\(playerScore)"
@@ -67,4 +70,9 @@ class RoleCell: UITableViewCell {
         
     }
 
+    @IBAction func purchaseRoleBtn(_ sender: UIButton) {
+        
+        
+        
+    }
 }
