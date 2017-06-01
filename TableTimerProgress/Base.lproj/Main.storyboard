@@ -1311,27 +1311,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset for" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAh-qk-104">
-                                                    <rect key="frame" x="8" y="8" width="40" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Assistants" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAh-qk-104">
+                                                    <rect key="frame" x="8" y="32" width="80" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="5Xx-fF-c6V"/>
-                                                        <constraint firstAttribute="width" constant="40" id="RLH-bb-573"/>
+                                                        <constraint firstAttribute="width" constant="80" id="GgF-Ru-Q3a"/>
+                                                        <constraint firstAttribute="height" constant="21" id="cek-zK-694"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfb-fH-j18">
-                                                    <rect key="frame" x="8" y="40" width="80" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="FLa-G4-gXB"/>
-                                                        <constraint firstAttribute="width" constant="80" id="KQl-5Q-jAQ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                                    <state key="normal" title="0 Assistants">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Assistants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VwU-Cr-f2O">
                                                     <rect key="frame" x="259" y="8" width="100" height="21"/>
                                                     <constraints>
@@ -1342,18 +1331,34 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfb-fH-j18">
+                                                    <rect key="frame" x="8" y="8" width="40" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="KMo-ns-6vF"/>
+                                                        <constraint firstAttribute="height" constant="20" id="XH5-za-Ct2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                    <state key="normal" title="Reset for">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="bfb-fH-j18" firstAttribute="top" secondItem="EGJ-3Y-32s" secondAttribute="topMargin" id="DId-cj-Kf5"/>
                                                 <constraint firstItem="IMW-dF-Qe1" firstAttribute="centerY" secondItem="EGJ-3Y-32s" secondAttribute="centerY" id="HKi-rx-R4M"/>
                                                 <constraint firstItem="VwU-Cr-f2O" firstAttribute="top" secondItem="EGJ-3Y-32s" secondAttribute="topMargin" id="IY7-E7-HGw"/>
-                                                <constraint firstItem="WAh-qk-104" firstAttribute="leading" secondItem="EGJ-3Y-32s" secondAttribute="leadingMargin" id="W1o-Do-CSj"/>
+                                                <constraint firstItem="WAh-qk-104" firstAttribute="leading" secondItem="bfb-fH-j18" secondAttribute="leading" id="acl-WV-tnk"/>
                                                 <constraint firstItem="IMW-dF-Qe1" firstAttribute="centerX" secondItem="EGJ-3Y-32s" secondAttribute="centerX" id="dB7-4b-GfZ"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="bfb-fH-j18" secondAttribute="bottom" id="eWz-Pe-cnN"/>
-                                                <constraint firstItem="bfb-fH-j18" firstAttribute="leading" secondItem="WAh-qk-104" secondAttribute="leading" id="yda-VN-2BU"/>
+                                                <constraint firstItem="WAh-qk-104" firstAttribute="top" secondItem="bfb-fH-j18" secondAttribute="bottom" constant="4" id="fEv-9Q-gdk"/>
+                                                <constraint firstItem="bfb-fH-j18" firstAttribute="leading" secondItem="EGJ-3Y-32s" secondAttribute="leadingMargin" id="uuV-59-Mxn"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="VwU-Cr-f2O" secondAttribute="trailing" constant="8" id="zVA-1I-iki"/>
-                                                <constraint firstItem="WAh-qk-104" firstAttribute="top" secondItem="EGJ-3Y-32s" secondAttribute="topMargin" id="zee-Eo-W34"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="assistantsAvailableLbl" destination="WAh-qk-104" id="igu-X2-TzA"/>
+                                            <outlet property="assistantsLbl" destination="VwU-Cr-f2O" id="Pnp-T0-kgS"/>
+                                            <outlet property="scoreLbl" destination="IMW-dF-Qe1" id="lYQ-Iw-X8F"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoleCell" id="Hpe-Gz-y5A" customClass="RoleCell" customModule="TableTimerProgress" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="98" width="375" height="70"/>

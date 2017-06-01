@@ -12,9 +12,19 @@ class TitleCell: UITableViewCell {
     
     @IBOutlet weak var scoreLbl: UILabel!
     
-    /*func configureTitleCell(player: Player) {
-        scoreLbl.text = "\(Constants.playerScore)"
-    }*/
+    @IBOutlet weak var assistantsLbl: UILabel!
     
+    @IBOutlet weak var assistantsAvailableLbl: UILabel!
+    
+    func configureScore(score: Score) {
+        scoreLbl.text = "\(score.runningScore)"
+        
+    }
+    
+    func configureAssistants(assistant: Assistant) {
+        
+        assistantsLbl.text = "\(assistant.numPurchased)"
+        assistantsAvailableLbl.text = "\(assistant.numAvailable)"
+    }
     
 }

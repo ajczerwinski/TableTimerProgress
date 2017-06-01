@@ -10,6 +10,6 @@ import UIKit
 
 struct Constants {
     
-    static var playerScore: Float = 0.0
+    static var runningScore: Double = 0.0
     
 }

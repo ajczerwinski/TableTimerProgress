@@ -737,31 +737,52 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let returnCell = tableView.dequeueReusableCell(withIdentifier: "RoleCell", for: indexPath) as! RoleCell
-        
-        /*if indexPath.row == 0 {
+        if indexPath.row == 0 {
             
             let returnCell = tableView.dequeueReusableCell(withIdentifier: "TitleCell", for: indexPath) as! TitleCell
-            var score = playerScore
-            returnCell.backgroundColor = UIColor.white
-            returnCell.mainImg.isHidden = true
-            returnCell.roleLbl.isHidden = true
-            returnCell.descLbl.isHidden = true
-            returnCell.scoreLbl.text = "\(playerScore + returnCell.scoreIncrementer)"
-            cell.configureCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
-            return returnCell*/
             
-        //} else {
+            configureScore(cell: returnCell, indexPath: indexPath as NSIndexPath)
             
-            //let returnCell = tableView.dequeueReusableCell(withIdentifier: "JobCell", for: indexPath) as! JobCell
+            
+            configureAssistants(cell: returnCell, indexPath: indexPath as NSIndexPath)
+            
+            //returnCell.configureScore(score: )
+            //returnCell.backgroundColor = UIColor.white
+            //returnCell.mainImg.isHidden = true
+            //returnCell.roleLbl.isHidden = true
+            //returnCell.descLbl.isHidden = true
+            //returnCell.scoreLbl.text = "\(playerScore + returnCell.scoreIncrementer)"
+            //cell.configureCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
+            return returnCell
+            
+        } else {
+            
+            let returnCell = tableView.dequeueReusableCell(withIdentifier: "RoleCell", for: indexPath) as! RoleCell
             
             returnCell.backgroundColor = .clear
             //returnCell.scoreLbl.text = "\(playerScore + returnCell.scoreIncrementer)"
             returnCell.configureCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
             
             return returnCell
+        }
         
     }
+    
+    func configureScore(cell: TitleCell, indexPath: NSIndexPath) {
+        
+        let score = scoreController.object(at: indexPath as IndexPath)
+        cell.configureScore(score: score)
+        
+    }
+    
+    func configureAssistants(cell: TitleCell, indexPath: NSIndexPath) {
+        
+        let assistant = assistantController.object(at: indexPath as IndexPath)
+        cell.configureAssistants(assistant: assistant)
+        
+    }
+            
+            
     
     /*func numberOfSections(in tableView: UITableView) -> Int {
         if let sections = fetchedResultsController.sections {
