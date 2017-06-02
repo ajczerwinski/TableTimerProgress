@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-var assistantController: NSFetchedResultsController<Assistant>!
+//var assistantController: NSFetchedResultsController<Assistant>!
 var roleController: NSFetchedResultsController<Role>!
 var scoreController: NSFetchedResultsController<Score>!
 

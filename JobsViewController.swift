@@ -23,7 +23,10 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var icImages = [#imageLiteral(resourceName: "studentDev"), #imageLiteral(resourceName: "internDev"), #imageLiteral(resourceName: "juniorDev"), #imageLiteral(resourceName: "dev"), #imageLiteral(resourceName: "seniorDev"), #imageLiteral(resourceName: "leadDev"), #imageLiteral(resourceName: "staffEng"), #imageLiteral(resourceName: "seniorStaffEng"), #imageLiteral(resourceName: "distinguishedEng"), #imageLiteral(resourceName: "superDistinguishedEng")]
     
-    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
+    var roleFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
+    var scoreFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
+    var assistantFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
+    
     
     
     override func viewDidLoad() {
@@ -32,7 +35,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         tableView.delegate = self
         
-        //attemptFetch()
+        attemptFetch()
         
         //setBackground()
         
@@ -741,7 +744,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             let returnCell = tableView.dequeueReusableCell(withIdentifier: "TitleCell", for: indexPath) as! TitleCell
             
-            configureScore(cell: returnCell, indexPath: indexPath as NSIndexPath)
+            //configureScore(cell: returnCell, indexPath: indexPath as NSIndexPath)
             
             
             configureAssistants(cell: returnCell, indexPath: indexPath as NSIndexPath)
@@ -768,12 +771,12 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    func configureScore(cell: TitleCell, indexPath: NSIndexPath) {
+    /*func configureScore(cell: TitleCell, indexPath: NSIndexPath) {
         
         let score = scoreController.object(at: indexPath as IndexPath)
         cell.configureScore(score: score)
         
-    }
+    }*/
     
     func configureAssistants(cell: TitleCell, indexPath: NSIndexPath) {
         
@@ -795,13 +798,13 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }*/
     
-    /*func configureTitleCell(cell: TitleCell, indexPath: NSIndexPath) {
+    func configureTitleCell(cell: TitleCell, indexPath: NSIndexPath) {
         
-        if let score = fetchedResultsController.object(at: indexPath as IndexPath) as? Player {
-            cell.configureTitleCell(player: score)
+        if let score = scoreFetchedResultsController.object(at: indexPath as IndexPath) as? Score {
+            cell.configureScore(score: score)
         }
         
-    }*/
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return icRoles.count
@@ -819,33 +822,64 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }*/
     
-    /*func attemptFetch() {
+    func attemptFetch() {
         setFetchedResults()
         
         do {
-            try self.fetchedResultsController.performFetch()
+            try self.roleFetchedResultsController.performFetch()
         } catch {
             let error = error as NSError
             print("\(error), \(error.userInfo)")
         }
         
-    }*/
+        do {
+            try self.scoreFetchedResultsController.performFetch()
+        } catch {
+            let error = error as NSError
+            print("\(error), \(error.userInfo)")
+        }
+        
+        do {
+            try self.assistantFetchedResultsController.performFetch()
+        } catch {
+            let error = error as NSError
+            print("\(error), \(error.userInfo)")
+        }
+        
+    }
     
-    /*func setFetchedResults() {
+    func setFetchedResults() {
         
         //let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Role")
+        let roleFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Role")
+        let scoreFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Score")
+        let assistantFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Assistant")
         
-        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
+        let roleSortDescriptor = NSSortDescriptor(key: "title", ascending: true)
         
-        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: ad.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        let scoreSortDescriptor = NSSortDescriptor(key: "runningScore", ascending: true)
         
-        controller.delegate = self
+        let assistantSortDescriptor = NSSortDescriptor(key: "numAvailable", ascending: true)
         
-        fetchedResultsController = controller
+        roleFetchRequest.sortDescriptors = [roleSortDescriptor]
         
-    }*/
+        scoreFetchRequest.sortDescriptors = [scoreSortDescriptor]
+        
+        assistantFetchRequest.sortDescriptors = [assistantSortDescriptor]
+        
+        let roleController = NSFetchedResultsController(fetchRequest: roleFetchRequest, managedObjectContext: ad.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        let scoreController = NSFetchedResultsController(fetchRequest: scoreFetchRequest, managedObjectContext: ad.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        let assistantController = NSFetchedResultsController(fetchRequest: assistantFetchRequest, managedObjectContext: ad.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        
+        roleController.delegate = self
+        scoreController.delegate = self
+        assistantController.delegate = self
+        
+        roleFetchedResultsController = roleController
+        scoreFetchedResultsController = scoreController
+        assistantFetchedResultsController = assistantController
+        
+    }
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         
@@ -859,7 +893,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     }
     
-    /*func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         
         switch(type) {
         case .insert:
@@ -889,6 +923,6 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             break
         }
         
-    }*/
+    }
     
 }

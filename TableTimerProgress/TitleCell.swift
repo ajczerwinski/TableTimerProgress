@@ -16,6 +16,9 @@ class TitleCell: UITableViewCell {
     
     @IBOutlet weak var assistantsAvailableLbl: UILabel!
     
+    var score = 0.0
+    
+    
     func configureScore(score: Score) {
         scoreLbl.text = "\(score.runningScore)"
         
