@@ -747,7 +747,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             //configureScore(cell: returnCell, indexPath: indexPath as NSIndexPath)
             
             
-            configureAssistants(cell: returnCell, indexPath: indexPath as NSIndexPath)
+            //configureAssistants(cell: returnCell, indexPath: indexPath as NSIndexPath)
             
             //returnCell.configureScore(score: )
             //returnCell.backgroundColor = UIColor.white
@@ -778,12 +778,12 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }*/
     
-    func configureAssistants(cell: TitleCell, indexPath: NSIndexPath) {
+    /*func configureAssistants(cell: TitleCell, indexPath: NSIndexPath) {
         
         let assistant = assistantController.object(at: indexPath as IndexPath)
         cell.configureAssistants(assistant: assistant)
         
-    }
+    }*/
             
             
     

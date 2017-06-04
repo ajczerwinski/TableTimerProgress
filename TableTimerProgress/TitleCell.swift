@@ -17,6 +17,12 @@ class TitleCell: UITableViewCell {
     @IBOutlet weak var assistantsAvailableLbl: UILabel!
     
     var score = 0.0
+    var price = 0.0
+    
+    var runningScore = 0.0
+    var numAvailable = 0.0
+    var numPurchased = 0.0
+    
     
     
     func configureScore(score: Score) {
