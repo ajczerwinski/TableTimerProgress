@@ -771,19 +771,21 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    /*func configureScore(cell: TitleCell, indexPath: NSIndexPath) {
+    func configureScore(cell: TitleCell, indexPath: NSIndexPath) {
         
-        let score = scoreController.object(at: indexPath as IndexPath)
-        cell.configureScore(score: score)
+        let score = scoreFetchedResultsController.object(at: indexPath as IndexPath)
+        cell.configureScore(score: score as! Score)
         
-    }*/
+        
+    }
     
-    /*func configureAssistants(cell: TitleCell, indexPath: NSIndexPath) {
+    func configureAssistants(cell: TitleCell, indexPath: NSIndexPath) {
         
-        let assistant = assistantController.object(at: indexPath as IndexPath)
-        cell.configureAssistants(assistant: assistant)
+        let assistant = assistantFetchedResultsController.object(at: indexPath as IndexPath)
+        cell.configureAssistants(assistant: assistant as! Assistant)
         
-    }*/
+        
+    }
             
             
     
