@@ -1298,7 +1298,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cm1-sh-h5w" id="EGJ-3Y-32s">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMW-dF-Qe1">
@@ -1423,16 +1423,20 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RWD-qB-pDA">
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="RWD-qB-pDA">
                                                     <rect key="frame" x="72" y="4" width="231" height="62"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="tintColor" red="0.107194684445858" green="0.51424223184585571" blue="0.36186474561691284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="62" id="29n-1Z-4Nq"/>
                                                     </constraints>
+                                                    <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </progressView>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="968-Oe-4sN">
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="968-Oe-4sN">
                                                     <rect key="frame" x="72" y="4" width="231" height="62"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="tintColor" red="0.91849368810653687" green="0.27487564086914062" blue="0.040360771119594574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </progressView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1468,12 +1472,13 @@
                                                 <constraint firstAttribute="trailing" secondItem="kfg-FD-Ffp" secondAttribute="trailing" constant="4" id="ybl-j9-GHH"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.066666666669999999" green="0.57254901960000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.066666666666666666" green="0.57254901960000004" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="mainImg" destination="3DD-4z-dbT" id="i6h-dp-1Zx"/>
                                             <outlet property="numRolesLbl" destination="cKk-21-e6D" id="fhL-Ci-4Do"/>
                                             <outlet property="priceToPurchaseLbl" destination="KZ4-Sb-xz3" id="eqb-aq-o34"/>
                                             <outlet property="purchaseRoleBtnLbl" destination="kfg-FD-Ffp" id="SCq-vT-uqf"/>
+                                            <outlet property="roleCellView" destination="hz6-8H-ZDk" id="CVb-z6-Lm1"/>
                                             <outlet property="roleDescLbl" destination="Bdz-Ub-d6T" id="wPh-aC-10A"/>
                                             <outlet property="roleTitleLbl" destination="WKZ-V2-NkJ" id="WE5-Vy-hB2"/>
                                             <outlet property="tapProgressBar" destination="RWD-qB-pDA" id="LWU-9Y-68M"/>

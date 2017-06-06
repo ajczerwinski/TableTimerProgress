@@ -26,7 +26,7 @@
                   moduleName = "TableTimerProgress"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/allenczerwinski/Desktop/TableTimerProgress/Score+CoreDataClass.swift"
-                  timestampString = "518315598.142535"
+                  timestampString = "518400799.822105"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -41,7 +41,7 @@
                   moduleName = "TableTimerProgress"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/allenczerwinski/Desktop/TableTimerProgress/Score+CoreDataClass.swift"
-                  timestampString = "518315598.146108"
+                  timestampString = "518400799.82562"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -56,7 +56,7 @@
                   moduleName = "TableTimerProgress"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/allenczerwinski/Desktop/TableTimerProgress/Score+CoreDataClass.swift"
-                  timestampString = "518315598.149505"
+                  timestampString = "518400799.829108"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -64,54 +64,6 @@
                   offsetFromSymbolStart = "4">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Score+CoreDataProperties.swift"
-            timestampString = "518052138.262044"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "fetchRequest()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Score+CoreDataProperties.swift"
-            timestampString = "518052139.563811"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "Score"
-            landmarkType = "4">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Score+CoreDataProperties.swift"
-            timestampString = "518052140.287862"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "Score"
-            landmarkType = "4">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

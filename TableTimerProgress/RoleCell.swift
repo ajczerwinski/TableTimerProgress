@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class RoleCell: UITableViewCell {
     
@@ -19,6 +20,7 @@ class RoleCell: UITableViewCell {
     @IBOutlet weak var purchaseRoleBtnLbl: UIButton!
     @IBOutlet weak var numRolesLbl: UILabel!
     @IBOutlet weak var priceToPurchaseLbl: UILabel!
+    @IBOutlet weak var roleCellView: UIView!
     
     var timesTapped: Float = 0.0
     var scoreIncrementer: Float = 0.0
@@ -28,6 +30,7 @@ class RoleCell: UITableViewCell {
         super.awakeFromNib()
         purchaseRoleBtnLbl.layer.cornerRadius = mainImg.frame.height / 2
         purchaseRoleBtnLbl.clipsToBounds = true
+        roleCellView.backgroundColor = UIColor(red: 17.0 / 255.0 , green: 146.0 / 255.0, blue: 212.0 / 255.0, alpha: 1.0)
         
         tapProgressBar.progress = 0.0
         
@@ -60,6 +63,10 @@ class RoleCell: UITableViewCell {
             scoreIncrementer = 1.0
             tapProgressBar.progress = 0.0
             timesTapped = 0.0
+            Constants.runningScore += 1
+            print(Constants.runningScore)
+            
+            
         }
         
         tapProgressBar.progress = timesTapped

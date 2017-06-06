@@ -26,7 +26,7 @@ class TitleCell: UITableViewCell {
     
     
     func configureScore(score: Score) {
-        scoreLbl.text = "\(score.runningScore)"
+        scoreLbl.text = "\(Constants.runningScore)"
         
     }
     
