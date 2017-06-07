@@ -28,8 +28,8 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     var assistantFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
     
     var scoreClass = Score.init(entity: NSEntityDescription.entity(forEntityName: "Score", in: context)!, insertInto: context)
-    var assistantClass: Assistant?
-    var roleClass: Role?
+    var assistantClass = Assistant.init(entity: NSEntityDescription.entity(forEntityName: "Assistant", in: context)!, insertInto: context)
+    var roleClass = Role.init(entity: NSEntityDescription.entity(forEntityName: "Role", in: context)!, insertInto: context)
     
     
     override func viewDidLoad() {
@@ -45,37 +45,6 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     /*
-        // Game Score Label
-        
-        @IBOutlet weak var scoreLbl: UILabel!
-        
-        @IBOutlet weak var assistantsLbl: UILabel!
-        
-        // Button Label and UI Label Collections
-        
-        @IBOutlet var buttonLbl: [UIButton]!
-        
-        @IBOutlet var assistantButtonLbl: UIButton!
-        
-        @IBOutlet weak var assistantsAvailableLbl: UILabel!
-        
-        @IBOutlet var rolesOwnedLbl: [UILabel]!
-        
-        @IBOutlet var priceToPurchaseLbl: [UILabel]!
-        
-        @IBOutlet var numRoles: [UIButton]!
-        
-        @IBOutlet var roleView: [UIView]!
-        
-        // UI Images Collection
-        
-        @IBOutlet var roleImg: [UIImageView]!
-        
-        // Progress Bar Collections
-        
-        @IBOutlet var progressBar: [UIProgressView]!
-        
-        @IBOutlet var timerBar: [UIProgressView]!
         
         var timer: [Timer] = [Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer()]
         
@@ -776,7 +745,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    func configureScore(cell: TitleCell, indexPath: NSIndexPath) {
+    /*func configureScore(cell: TitleCell, indexPath: NSIndexPath) {
         
         let score = scoreFetchedResultsController.object(at: indexPath as IndexPath)
         cell.configureScore(score: score as! Score)
@@ -790,11 +759,11 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.configureAssistants(assistant: assistant as! Assistant)
         
         
-    }
+    }*/
             
             
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    /*func numberOfSections(in tableView: UITableView) -> Int {
         if let sections = scoreFetchedResultsController.sections {
             return sections.count
         } else if let sections = roleFetchedResultsController.sections {
@@ -807,15 +776,15 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         
-    }
+    }*/
     
-    func configureTitleCell(cell: RoleCell, indexPath: NSIndexPath) {
+    /*func configureTitleCell(cell: RoleCell, indexPath: NSIndexPath) {
         
         if let score = scoreFetchedResultsController.object(at: indexPath as IndexPath) as? Score {
             cell.configureScoreCell(score: scoreClass.runningScore, assistants: 8, assistantsAvailable: 8)
         }
         
-    }
+    }*/
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return icRoles.count
@@ -920,7 +889,8 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         case .update:
             if let indexPath = indexPath {
                 let cell = tableView.cellForRow(at: indexPath) as! RoleCell
-                configureTitleCell(cell: cell, indexPath: indexPath as NSIndexPath)
+                //configureTitleCell(cell: cell, indexPath: indexPath as NSIndexPath)*/
+            
             }
             break
         case .move:
@@ -931,6 +901,8 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             if let newIndexPath = newIndexPath {
                 tableView.insertRows(at: [indexPath!], with: .fade)
             }
+            break
+        default:
             break
         }
         
