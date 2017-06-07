@@ -17,11 +17,11 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     var roleController: NSFetchedResultsController<Role>!
     var scoreController: NSFetchedResultsController<Score>!
     
-    var icRoles = ["student", "intern", "junior developer", "developer", "senior developer", "lead developer", "staff engineer", "senior staff engineer", "distinguished engineer", "super distinguished engineer"]
+    var icRoles = ["placeholder", "student", "intern", "junior developer", "developer", "senior developer", "lead developer", "staff engineer", "senior staff engineer", "distinguished engineer", "super distinguished engineer"]
     
-    var icDescriptions = ["just tryin' to learn", "get a taste of work life", "bottom of the totem pole", "finally credible", "really hitting your stride", "you're in charge now", "build critical components", "build critical major tech", "industry expert", "time for that acm award"]
+    var icDescriptions = ["placeholder description", "just tryin' to learn", "get a taste of work life", "bottom of the totem pole", "finally credible", "really hitting your stride", "you're in charge now", "build critical components", "build critical major tech", "industry expert", "time for that acm award"]
     
-    var icImages = [#imageLiteral(resourceName: "studentDev"), #imageLiteral(resourceName: "internDev"), #imageLiteral(resourceName: "juniorDev"), #imageLiteral(resourceName: "dev"), #imageLiteral(resourceName: "seniorDev"), #imageLiteral(resourceName: "leadDev"), #imageLiteral(resourceName: "staffEng"), #imageLiteral(resourceName: "seniorStaffEng"), #imageLiteral(resourceName: "distinguishedEng"), #imageLiteral(resourceName: "superDistinguishedEng")]
+    var icImages = [#imageLiteral(resourceName: "placeholder"), #imageLiteral(resourceName: "studentDev"), #imageLiteral(resourceName: "internDev"), #imageLiteral(resourceName: "juniorDev"), #imageLiteral(resourceName: "dev"), #imageLiteral(resourceName: "seniorDev"), #imageLiteral(resourceName: "leadDev"), #imageLiteral(resourceName: "staffEng"), #imageLiteral(resourceName: "seniorStaffEng"), #imageLiteral(resourceName: "distinguishedEng"), #imageLiteral(resourceName: "superDistinguishedEng")]
     
     var roleFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
     var scoreFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
@@ -743,34 +743,36 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let returnCell = tableView.dequeueReusableCell(withIdentifier: "RoleCell", for: indexPath) as! RoleCell
+        
         if indexPath.row == 0 {
             
-            let returnCell = tableView.dequeueReusableCell(withIdentifier: "TitleCell", for: indexPath) as! TitleCell
+            returnCell.mainImg.isHidden = true
+            returnCell.roleTitleLbl.isHidden = true
+            returnCell.roleDescLbl.isHidden = true
+            returnCell.tapProgressBar.isHidden = true
+            returnCell.timerProgressBar.isHidden = true
+            returnCell.tapRoleBtnLbl.isHidden = true
+            returnCell.purchaseRoleBtnLbl.isHidden = true
+            returnCell.numRolesLbl.isHidden = true
+            returnCell.priceToPurchaseLbl.isHidden = true
             
-            //configureScore(cell: returnCell, indexPath: indexPath as NSIndexPath)
-            
-            
-            //configureAssistants(cell: returnCell, indexPath: indexPath as NSIndexPath)
-            
-            //returnCell.configureScore(score: )
-            //returnCell.backgroundColor = UIColor.white
-            //returnCell.mainImg.isHidden = true
-            //returnCell.roleLbl.isHidden = true
-            //returnCell.descLbl.isHidden = true
-            //returnCell.scoreLbl.text = "\(playerScore + returnCell.scoreIncrementer)"
-            //cell.configureCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
-            return returnCell
+            returnCell.roleCellView.backgroundColor = UIColor.white
             
         } else {
             
-            let returnCell = tableView.dequeueReusableCell(withIdentifier: "RoleCell", for: indexPath) as! RoleCell
+            returnCell.scoreLbl.isHidden = true
+            returnCell.assistantsLbl.isHidden = true
+            returnCell.assistantsAvailableLbl.isHidden = true
+            returnCell.resetButtonLbl.isHidden = true
             
-            returnCell.backgroundColor = .clear
+            //returnCell.backgroundColor = .clear
             //returnCell.scoreLbl.text = "\(playerScore + returnCell.scoreIncrementer)"
             returnCell.configureRoleCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
             
-            return returnCell
         }
+        
+        return returnCell
         
     }
     
