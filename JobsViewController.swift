@@ -27,6 +27,9 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     var scoreFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
     var assistantFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
     
+    var scoreClass = Score.init(entity: NSEntityDescription.entity(forEntityName: "Score", in: context)!, insertInto: context)
+    var assistantClass: Assistant?
+    var roleClass: Role?
     
     
     override func viewDidLoad() {
@@ -764,7 +767,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             returnCell.backgroundColor = .clear
             //returnCell.scoreLbl.text = "\(playerScore + returnCell.scoreIncrementer)"
-            returnCell.configureCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
+            returnCell.configureRoleCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
             
             return returnCell
         }
@@ -789,8 +792,12 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             
     
-    /*func numberOfSections(in tableView: UITableView) -> Int {
-        if let sections = fetchedResultsController.sections {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if let sections = scoreFetchedResultsController.sections {
+            return sections.count
+        } else if let sections = roleFetchedResultsController.sections {
+            return sections.count
+        } else if let sections = assistantFetchedResultsController.sections {
             return sections.count
         }
         
@@ -798,12 +805,12 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         
-    }*/
+    }
     
-    func configureTitleCell(cell: TitleCell, indexPath: NSIndexPath) {
+    func configureTitleCell(cell: RoleCell, indexPath: NSIndexPath) {
         
         if let score = scoreFetchedResultsController.object(at: indexPath as IndexPath) as? Score {
-            cell.configureScore(score: score)
+            cell.configureScoreCell(score: scoreClass.runningScore, assistants: 8, assistantsAvailable: 8)
         }
         
     }
@@ -910,7 +917,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             break
         case .update:
             if let indexPath = indexPath {
-                let cell = tableView.cellForRow(at: indexPath) as! TitleCell
+                let cell = tableView.cellForRow(at: indexPath) as! RoleCell
                 configureTitleCell(cell: cell, indexPath: indexPath as NSIndexPath)
             }
             break

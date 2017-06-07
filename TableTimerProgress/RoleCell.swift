@@ -11,6 +11,7 @@ import CoreData
 
 class RoleCell: UITableViewCell {
     
+    // Role Cell outlets
     @IBOutlet weak var mainImg: UIImageView!
     @IBOutlet weak var roleTitleLbl: UILabel!
     @IBOutlet weak var roleDescLbl: UILabel!
@@ -22,8 +23,19 @@ class RoleCell: UITableViewCell {
     @IBOutlet weak var priceToPurchaseLbl: UILabel!
     @IBOutlet weak var roleCellView: UIView!
     
+    // Title Cell outlets
+    @IBOutlet weak var scoreLbl: UILabel!
+    @IBOutlet weak var assistantsLbl: UILabel!
+    @IBOutlet weak var assistantsAvailableLbl: UILabel!
+    @IBOutlet weak var resetButtonLbl: UIButton!
+    
+    
     var timesTapped: Float = 0.0
     var scoreIncrementer: Float = 0.0
+    
+    var scoreClass = Score.init(entity: NSEntityDescription.entity(forEntityName: "Score", in: context)!, insertInto: context)
+    var assistantClass: Assistant?
+    var roleClass: Role?
     
 
     override func awakeFromNib() {
@@ -45,10 +57,18 @@ class RoleCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(image:UIImage, role:String, desc:String) {
+    func configureRoleCell(image: UIImage, role: String, desc: String) {
         mainImg.image = image
         roleTitleLbl.text = role
         roleDescLbl.text = desc
+        
+    }
+    
+    func configureScoreCell(score: Double, assistants: Double, assistantsAvailable: Double) {
+        
+        scoreLbl.text = "\(score)"
+        assistantsLbl.text = "\(assistants)"
+        assistantsAvailableLbl.text = "\(assistantsAvailable)"
         
     }
     
@@ -65,7 +85,12 @@ class RoleCell: UITableViewCell {
             timesTapped = 0.0
             Constants.runningScore += 1
             print(Constants.runningScore)
-            
+            scoreClass.runningScore += 1
+            print(scoreClass.runningScore)
+            /*var counter = scoreClass?.runningScore
+            counter! + 1
+            scoreClass!.runningScore += 1
+            print(counter!)*/
             
         }
         
