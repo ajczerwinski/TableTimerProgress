@@ -170,6 +170,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             if let indexPath = indexPath {
                 let cell = tableView.cellForRow(at: indexPath) as! RoleCell
                 //configureTitleCell(cell: cell, indexPath: indexPath as NSIndexPath)*/
+                
             
             }
             break

@@ -6,6 +6,8 @@
 //  Copyright © 2017 Allen Czerwinski. All rights reserved.
 //
 
+
+/*
 import UIKit
 
 class TitleCell: UITableViewCell {
@@ -36,4 +38,4 @@ class TitleCell: UITableViewCell {
         assistantsAvailableLbl.text = "\(assistant.numAvailable)"
     }
     
-}
+}*/

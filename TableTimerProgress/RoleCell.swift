@@ -85,8 +85,9 @@ class RoleCell: UITableViewCell {
             timesTapped = 0.0
             Constants.runningScore += 1
             print(Constants.runningScore)
-            scoreClass.runningScore += 1
+            //scoreClass.runningScore += 1
             print(scoreClass.runningScore)
+            scoreClass.runningScore += scoreClass.scoreIncrementer()
             /*var counter = scoreClass?.runningScore
             counter! + 1
             scoreClass!.runningScore += 1
