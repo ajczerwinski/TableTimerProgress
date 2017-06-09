@@ -36,6 +36,7 @@ class RoleCell: UITableViewCell {
     var scoreClass = Score.init(entity: NSEntityDescription.entity(forEntityName: "Score", in: context)!, insertInto: context)
     var assistantClass: Assistant?
     var roleClass: Role?
+    var roleIndex: Int?
     
 
     override func awakeFromNib() {
@@ -83,11 +84,9 @@ class RoleCell: UITableViewCell {
             scoreIncrementer = 1.0
             tapProgressBar.progress = 0.0
             timesTapped = 0.0
-            Constants.runningScore += 1
-            print(Constants.runningScore)
-            //scoreClass.runningScore += 1
-            print(scoreClass.runningScore)
-            scoreClass.runningScore += scoreClass.scoreIncrementer()
+            scoreClass.runningScore += scoreClass.scoreIncrementer(multiplier: roleIndex!)
+            print("I'm the running score: \(scoreClass.runningScore)")
+            print("I'm the indexPath: \(roleIndex!)")
             /*var counter = scoreClass?.runningScore
             counter! + 1
             scoreClass!.runningScore += 1

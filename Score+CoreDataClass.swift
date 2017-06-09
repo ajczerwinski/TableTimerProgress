@@ -12,17 +12,11 @@ import CoreData
 
 public class Score: NSManagedObject {
 
-    func scoreIncrementer() -> Double {
+    func scoreIncrementer(multiplier: Int) -> Double {
         
-        var roleMultiplier: [Double] = [1, 5, 10, 50, 100, 250, 750, 2500, 10000, 25000]
-        var returnValue: Double = 0
-        for role in roleMultiplier {
-            
-            returnValue = role
-            
-        }
+        var roleMultiplier: [Double] = [1, 1, 5, 10, 50, 100, 250, 750, 2500, 10000, 25000]
         
-        return returnValue
+        return roleMultiplier[multiplier]
         
     }
     

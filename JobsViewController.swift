@@ -69,6 +69,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             returnCell.assistantsLbl.isHidden = true
             returnCell.assistantsAvailableLbl.isHidden = true
             returnCell.resetButtonLbl.isHidden = true
+            returnCell.roleIndex = indexPath.row
             
             returnCell.configureRoleCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
             
@@ -153,7 +154,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     }
     
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    /*func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         
         switch(type) {
         case .insert:
@@ -168,10 +169,13 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             break
         case .update:
             if let indexPath = indexPath {
-                let cell = tableView.cellForRow(at: indexPath) as! RoleCell
-                //configureTitleCell(cell: cell, indexPath: indexPath as NSIndexPath)*/
-                
+                //let cell = tableView.cellForRow(at: indexPath) as! RoleCell
+                //configureTitleCell(cell: cell, indexPath: indexPath as NSIndexPath)
             
+                let cell = tableView.cellForRow(at: indexPath) as! RoleCell
+                
+                scoreClass.runningScore += cell.scoreClass.scoreIncrementer()
+
             }
             break
         case .move:
@@ -187,6 +191,6 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             break
         }
         
-    }
+    }*/
     
 }
