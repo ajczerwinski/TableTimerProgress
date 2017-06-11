@@ -31,7 +31,6 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     var assistantClass = Assistant.init(entity: NSEntityDescription.entity(forEntityName: "Assistant", in: context)!, insertInto: context)
     var roleClass = Role.init(entity: NSEntityDescription.entity(forEntityName: "Role", in: context)!, insertInto: context)
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,6 +59,10 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             returnCell.purchaseRoleBtnLbl.isHidden = true
             returnCell.numRolesLbl.isHidden = true
             returnCell.priceToPurchaseLbl.isHidden = true
+            returnCell.roleIndex = 0
+            
+            scoreClass.runningScore += scoreClass.scoreIncrementer(roleIndex: indexPath.row)
+            returnCell.scoreLbl.text = "\(scoreClass.runningScore)"
             
             returnCell.roleCellView.backgroundColor = UIColor.white
             
@@ -70,7 +73,11 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             returnCell.assistantsAvailableLbl.isHidden = true
             returnCell.resetButtonLbl.isHidden = true
             returnCell.roleIndex = indexPath.row
+            scoreClass.runningScore += scoreClass.scoreIncrementer(roleIndex: indexPath.row)
             
+            print("\(scoreClass.runningScore)")
+            
+            returnCell.scoreLbl.text = "\(scoreClass.runningScore)"
             returnCell.configureRoleCell(image: icImages[indexPath.row], role: icRoles[indexPath.row], desc: icDescriptions[indexPath.row])
             
         }
