@@ -88,10 +88,6 @@ class RoleCell: UITableViewCell {
             //print("I'm the running score: \(scoreClass.runningScore)")
             //print("I'm the indexPath: \(roleIndex!)")
             print("\(scoreClass.runningScore)")
-            scoreLbl.text = "\(scoreClass.runningScore)"
-            
-            
-            
             /*var counter = scoreClass?.runningScore
             counter! + 1
             scoreClass!.runningScore += 1

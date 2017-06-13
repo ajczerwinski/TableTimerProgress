@@ -43,6 +43,12 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? RoleCell {
+            let cellScoreLbl = cell.scoreLbl
+        }
+        
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
