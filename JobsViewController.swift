@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class JobsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+class JobsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, DataSentDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -44,9 +44,16 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let cell = sender as? RoleCell {
-            let cellScoreLbl = cell.scoreLbl
+        if segue.identifier == "RoleCell" {
+            let roleCell: RoleCell = segue.destination as! RoleCell
+            roleCell.delegate = self
+            
         }
+    }
+    
+    func sendDataToJobsVC(data: String) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RoleCell") as! RoleCell
+        cell.scoreLbl.text = data
         
     }
     

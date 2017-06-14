@@ -9,7 +9,13 @@
 import UIKit
 import CoreData
 
+protocol DataSentDelegate {
+    func sendDataToJobsVC(data: String)
+}
+
 class RoleCell: UITableViewCell {
+    
+    var delegate: DataSentDelegate? = nil
     
     // Role Cell outlets
     @IBOutlet weak var mainImg: UIImageView!
@@ -92,6 +98,7 @@ class RoleCell: UITableViewCell {
             counter! + 1
             scoreClass!.runningScore += 1
             print(counter!)*/
+            delegate?.sendDataToJobsVC(data: "Hi there")
             
         }
         
