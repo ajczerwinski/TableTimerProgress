@@ -7,11 +7,6 @@
 //
 
 import UIKit
-import CoreData
-
-//var assistantController: NSFetchedResultsController<Assistant>!
-var roleController: NSFetchedResultsController<Role>!
-var scoreController: NSFetchedResultsController<Score>!
 
 
 class JobsVC: UIViewController {
@@ -511,16 +506,6 @@ class JobsVC: UIViewController {
         
     }
     
-    // Helper function to format the score into a currency String
-    /*func moneyFormatter(amount: Float) -> String {
-        
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        
-        return formatter.string(from: NSNumber(value: amount))!
-        
-    }*/
-    
     
     
     // Format images into circles (technically slight ovals since width and height aren't quite equal)
@@ -528,10 +513,6 @@ class JobsVC: UIViewController {
         
         for role in 0...9 {
 
-            /*roleImg[role].image = roleImages[role]
-            roleImg[role].layer.cornerRadius = roleImg[role].frame.height / 2
-            roleImg[role].clipsToBounds = true*/
-            
             numRoles[role].layer.cornerRadius = numRoles[role].frame.height / 2
             numRoles[role].clipsToBounds = true
             

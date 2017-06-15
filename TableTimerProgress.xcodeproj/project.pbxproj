@@ -8,42 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		BF1BA7C71EBABC960048B95B /* JobsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BA7C51EB570FB0048B95B /* JobsVC.swift */; };
-		BF2DFE2E1EDD37AC00343B45 /* Assistant+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2DFE281EDD37AC00343B45 /* Assistant+CoreDataClass.swift */; };
-		BF2DFE2F1EDD37AC00343B45 /* Assistant+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2DFE291EDD37AC00343B45 /* Assistant+CoreDataProperties.swift */; };
-		BF2DFE301EDD37AC00343B45 /* Score+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2DFE2A1EDD37AC00343B45 /* Score+CoreDataClass.swift */; };
-		BF2DFE311EDD37AC00343B45 /* Score+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2DFE2B1EDD37AC00343B45 /* Score+CoreDataProperties.swift */; };
-		BF2DFE321EDD37AC00343B45 /* Role+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2DFE2C1EDD37AC00343B45 /* Role+CoreDataClass.swift */; };
-		BF2DFE331EDD37AC00343B45 /* Role+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2DFE2D1EDD37AC00343B45 /* Role+CoreDataProperties.swift */; };
-		BF705C0F1EAC423F006C102E /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF705C0E1EAC423F006C102E /* JobsViewController.swift */; };
-		BF705C111EAFF026006C102E /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF705C101EAFF026006C102E /* TitleCell.swift */; };
-		BF705C3C1EB409BC006C102E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF705C3B1EB409BC006C102E /* Constants.swift */; };
 		BFBA5AEC1EA858A3008D322E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5AEB1EA858A3008D322E /* AppDelegate.swift */; };
 		BFBA5AF11EA858A3008D322E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBA5AEF1EA858A3008D322E /* Main.storyboard */; };
 		BFBA5AF31EA858A3008D322E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBA5AF21EA858A3008D322E /* Assets.xcassets */; };
 		BFBA5AF61EA858A3008D322E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBA5AF41EA858A3008D322E /* LaunchScreen.storyboard */; };
-		BFBA5AFE1EA869F1008D322E /* RoleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5AFD1EA869F1008D322E /* RoleCell.swift */; };
-		BFBA5B011EAAAC33008D322E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5AFF1EAAAC32008D322E /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BF1BA7C51EB570FB0048B95B /* JobsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsVC.swift; sourceTree = "<group>"; };
-		BF2DFE281EDD37AC00343B45 /* Assistant+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assistant+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BF2DFE291EDD37AC00343B45 /* Assistant+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assistant+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BF2DFE2A1EDD37AC00343B45 /* Score+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Score+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BF2DFE2B1EDD37AC00343B45 /* Score+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Score+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BF2DFE2C1EDD37AC00343B45 /* Role+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Role+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BF2DFE2D1EDD37AC00343B45 /* Role+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Role+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BF705C0E1EAC423F006C102E /* JobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
-		BF705C101EAFF026006C102E /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
-		BF705C3B1EB409BC006C102E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BFBA5AE81EA858A3008D322E /* TableTimerProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableTimerProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBA5AEB1EA858A3008D322E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFBA5AF01EA858A3008D322E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFBA5AF21EA858A3008D322E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFBA5AF51EA858A3008D322E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFBA5AF71EA858A3008D322E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFBA5AFD1EA869F1008D322E /* RoleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleCell.swift; sourceTree = "<group>"; };
-		BFBA5B001EAAAC33008D322E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,16 +35,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BF2DFE271EDD35E700343B45 /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-				BF2DFE291EDD37AC00343B45 /* Assistant+CoreDataProperties.swift */,
-				BF2DFE2B1EDD37AC00343B45 /* Score+CoreDataProperties.swift */,
-				BF2DFE2D1EDD37AC00343B45 /* Role+CoreDataProperties.swift */,
-			);
-			name = Generated;
-			sourceTree = "<group>";
-		};
 		BFBA5ADF1EA858A3008D322E = {
 			isa = PBXGroup;
 			children = (
@@ -88,35 +56,17 @@
 			children = (
 				BFBA5B1D1EAC1A7D008D322E /* Controllers */,
 				BFBA5AEB1EA858A3008D322E /* AppDelegate.swift */,
-				BFBA5B1C1EAC19ED008D322E /* Model */,
 				BFBA5AEF1EA858A3008D322E /* Main.storyboard */,
 				BFBA5AF21EA858A3008D322E /* Assets.xcassets */,
 				BFBA5AF41EA858A3008D322E /* LaunchScreen.storyboard */,
 				BFBA5AF71EA858A3008D322E /* Info.plist */,
-				BFBA5AFD1EA869F1008D322E /* RoleCell.swift */,
-				BF705C101EAFF026006C102E /* TitleCell.swift */,
-				BF705C3B1EB409BC006C102E /* Constants.swift */,
 			);
 			path = TableTimerProgress;
-			sourceTree = "<group>";
-		};
-		BFBA5B1C1EAC19ED008D322E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				BF2DFE281EDD37AC00343B45 /* Assistant+CoreDataClass.swift */,
-				BF2DFE2A1EDD37AC00343B45 /* Score+CoreDataClass.swift */,
-				BF2DFE2C1EDD37AC00343B45 /* Role+CoreDataClass.swift */,
-				BF2DFE271EDD35E700343B45 /* Generated */,
-				BFBA5AFF1EAAAC32008D322E /* Model.xcdatamodeld */,
-			);
-			name = Model;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		BFBA5B1D1EAC1A7D008D322E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BF705C0E1EAC423F006C102E /* JobsViewController.swift */,
 				BF1BA7C51EB570FB0048B95B /* JobsVC.swift */,
 			);
 			name = Controllers;
@@ -155,6 +105,7 @@
 				TargetAttributes = {
 					BFBA5AE71EA858A3008D322E = {
 						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = B36SK2M974;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -195,18 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF2DFE311EDD37AC00343B45 /* Score+CoreDataProperties.swift in Sources */,
-				BF705C111EAFF026006C102E /* TitleCell.swift in Sources */,
 				BF1BA7C71EBABC960048B95B /* JobsVC.swift in Sources */,
-				BFBA5B011EAAAC33008D322E /* Model.xcdatamodeld in Sources */,
-				BF705C3C1EB409BC006C102E /* Constants.swift in Sources */,
-				BFBA5AFE1EA869F1008D322E /* RoleCell.swift in Sources */,
-				BF705C0F1EAC423F006C102E /* JobsViewController.swift in Sources */,
-				BF2DFE2F1EDD37AC00343B45 /* Assistant+CoreDataProperties.swift in Sources */,
-				BF2DFE2E1EDD37AC00343B45 /* Assistant+CoreDataClass.swift in Sources */,
-				BF2DFE321EDD37AC00343B45 /* Role+CoreDataClass.swift in Sources */,
-				BF2DFE331EDD37AC00343B45 /* Role+CoreDataProperties.swift in Sources */,
-				BF2DFE301EDD37AC00343B45 /* Score+CoreDataClass.swift in Sources */,
 				BFBA5AEC1EA858A3008D322E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +272,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B36SK2M974;
 				INFOPLIST_FILE = TableTimerProgress/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.allen.czerwinski.TableTimerProgress;
@@ -344,6 +285,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B36SK2M974;
 				INFOPLIST_FILE = TableTimerProgress/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.allen.czerwinski.TableTimerProgress;
@@ -374,20 +316,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		BFBA5AFF1EAAAC32008D322E /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				BFBA5B001EAAAC33008D322E /* Model.xcdatamodel */,
-			);
-			currentVersion = BFBA5B001EAAAC33008D322E /* Model.xcdatamodel */;
-			name = Model.xcdatamodeld;
-			path = TableTimerProgress/Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = BFBA5AE01EA858A3008D322E /* Project object */;
 }
