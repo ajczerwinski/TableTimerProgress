@@ -654,7 +654,7 @@ class JobsVC: UIViewController {
         multiplier = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
         isRoleEnabled = [true, false, false, false, false, false, false, false, false, false]
         purchasePrice = [1, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
-        assistantsPurchased = assistantsAvailable
+        assistantsPurchased = assistantsAvailable + assistantsPurchased
         assistantsAvailable = 0
         assistantsPurchasedMultiplier = (1 + assistantsPurchased / 100)
         runningScore = 0
