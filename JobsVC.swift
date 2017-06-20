@@ -72,7 +72,7 @@ class JobsVC: UIViewController {
     var timesTapped: [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     
     // Multiplier for each role
-    var multiplier: [Double] = [100000000000, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    var multiplier: [Double] = [1000000000, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     
     // Array of Bools to determine if role should be visible/active or not
     var isRoleEnabled: [Bool] = [true, false, false, false, false, false, false, false, false, false]
@@ -109,9 +109,16 @@ class JobsVC: UIViewController {
         
         let buttonTag = sender.tag
         
+        /*if runningScore < purchasePrice[buttonTag] {
+            numRoles[buttonTag].isHidden = true
+            priceToPurchaseLbl[buttonTag].isOpaque = false
+        } else {
+            numRoles[buttonTag].isHidden = false
+            priceToPurchaseLbl[buttonTag].isOpaque = true
+        }*/
+        
         spendMoney(tag: buttonTag)
         
-        // If more 25 or more of a given role are owned, disable clickable progress bar enable timer
         let timeCounter: Int = Int(rolesOwned[buttonTag])
         
         toggleTimer(counter: timeCounter, buttonTag: buttonTag, repeats: true)
@@ -119,6 +126,8 @@ class JobsVC: UIViewController {
         print(rolesOwned)
         
     }
+    
+    // If more 25 or more of a given role are owned, disable clickable progress bar enable timer
     
     func toggleTimer(counter: Int, buttonTag: Int, repeats: Bool) {
         
