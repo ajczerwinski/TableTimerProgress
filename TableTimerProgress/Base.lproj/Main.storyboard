@@ -13,7 +13,7 @@
         <!--JobsVC-->
         <scene sceneID="xBx-vc-4gp">
             <objects>
-                <viewController title="JobsVC" id="WHI-CN-HQS" customClass="JobsVC" customModule="TableTimerProgress" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WHI-CN-HQS" customClass="JobsVC" customModule="TableTimerProgress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VYK-sF-r0c"/>
                         <viewControllerLayoutGuide type="bottom" id="rKq-dL-0eA"/>

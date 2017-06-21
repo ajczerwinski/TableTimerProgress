@@ -256,7 +256,7 @@ class JobsVC: UIViewController {
     }
     
     // Role-specific timer functions to update score labels and timer progress bars for respective roles
-    // TODO - refactor these into one function that takes a parameter from the purchaseRole function above
+    
     func updateStudentTimer() {
         
         // If the countdown reaches 0, add score and reset countdown timer to original
