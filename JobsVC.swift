@@ -109,14 +109,6 @@ class JobsVC: UIViewController {
         
         let buttonTag = sender.tag
         
-        /*if runningScore < purchasePrice[buttonTag] {
-            numRoles[buttonTag].isHidden = true
-            priceToPurchaseLbl[buttonTag].isOpaque = false
-        } else {
-            numRoles[buttonTag].isHidden = false
-            priceToPurchaseLbl[buttonTag].isOpaque = true
-        }*/
-        
         spendMoney(tag: buttonTag)
         
         let timeCounter: Int = Int(rolesOwned[buttonTag])
@@ -571,6 +563,7 @@ class JobsVC: UIViewController {
        
         formatPurchaseBtn()
         formatbuttonLbl()
+        manageAssistantsAvailableBtnAndLbl()
         
     }
     
@@ -647,11 +640,15 @@ class JobsVC: UIViewController {
     func manageAssistantsAvailableBtnAndLbl() {
         let intAvailableAssistants = Int(assistantsAvailable)
         
-        if intAvailableAssistants == 1 {
+        if intAvailableAssistants < 1 {
+            assistantButtonLbl.isHidden = true
+            assistantsAvailableLbl.text = ""
+        } else if intAvailableAssistants == 1 {
             assistantsAvailableLbl.isHidden = false
             assistantButtonLbl.isHidden = false
             assistantsAvailableLbl.text = "\(intAvailableAssistants) assistant"
         } else {
+            assistantButtonLbl.isHidden = false
             assistantsAvailableLbl.text = "\(intAvailableAssistants) assistants"
         }
 
@@ -659,10 +656,13 @@ class JobsVC: UIViewController {
     
     @IBAction func assistantsResetBtn(_ sender: UIButton) {
         
-        //if assistantsAvailable < 1 {
-            
-        //}
-        
+        /*if assistantsAvailable < 1 {
+            let assistantsAlert = UIAlertController(title: "No Assistants", message: "You can't reset assistants until you have some available!", preferredStyle: UIAlertControllerStyle.alert)
+            assistantsAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                    self.dismiss(animated: true, completion: nil)
+            }))
+            present(assistantsAlert, animated: true, completion: nil)
+        } else {*/
         rolesOwned = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         timesTapped = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         multiplier = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
