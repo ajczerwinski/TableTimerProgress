@@ -13,7 +13,7 @@
         <!--JobsVC-->
         <scene sceneID="xBx-vc-4gp">
             <objects>
-                <viewController id="WHI-CN-HQS" customClass="JobsVC" customModule="TableTimerProgress" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="JobsVC" id="WHI-CN-HQS" customClass="JobsVC" customModule="TableTimerProgress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VYK-sF-r0c"/>
                         <viewControllerLayoutGuide type="bottom" id="rKq-dL-0eA"/>
@@ -25,6 +25,16 @@
                             <view tag="11" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mSJ-Op-HbN">
                                 <rect key="frame" x="20" y="28" width="335" height="40"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2j9-fy-5Y0">
+                                        <rect key="frame" x="122" y="19" width="90" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="gT7-sl-dKS"/>
+                                            <constraint firstAttribute="width" constant="90" id="qJH-gq-Nj0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5d-3W-klD">
                                         <rect key="frame" x="4" y="18" width="80" height="21"/>
                                         <constraints>
@@ -54,16 +64,6 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="0eW-5y-K1N"/>
                                             <constraint firstAttribute="height" constant="21" id="qcv-Ld-sHJ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2j9-fy-5Y0">
-                                        <rect key="frame" x="122.5" y="19" width="90" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="gT7-sl-dKS"/>
-                                            <constraint firstAttribute="width" constant="90" id="qJH-gq-Nj0"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>

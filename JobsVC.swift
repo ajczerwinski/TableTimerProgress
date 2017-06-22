@@ -72,7 +72,7 @@ class JobsVC: UIViewController {
     var timesTapped: [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     
     // Multiplier for each role
-    var multiplier: [Double] = [1000000000, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    var multiplier: [Double] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     
     // Array of Bools to determine if role should be visible/active or not
     var isRoleEnabled: [Bool] = [true, false, false, false, false, false, false, false, false, false]
@@ -123,8 +123,6 @@ class JobsVC: UIViewController {
         
         toggleTimer(counter: timeCounter, buttonTag: buttonTag, repeats: true)
         
-        print(rolesOwned)
-        
     }
     
     // If more 25 or more of a given role are owned, disable clickable progress bar enable timer
@@ -136,8 +134,6 @@ class JobsVC: UIViewController {
             timerBar[buttonTag].isHidden = false
             
             // Activate role timer based on which buttonTag is selected
-            // TODO - rewrite this to pass a parameter through with the selector function to obviate
-            // need to use switch statement and individual update timer functions
             switch buttonTag {
             case 0:
                 if !repeats {
@@ -270,6 +266,7 @@ class JobsVC: UIViewController {
             scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[0] = startingRoleTimeArray[0]
             trackAvailableAssistants()
+            formatUI()
             
         // If countdown timer is 1 or higher, update timer progressBar and decrement countdown timer by 1
         } else {
@@ -291,6 +288,7 @@ class JobsVC: UIViewController {
             scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[1] = startingRoleTimeArray[1]
             trackAvailableAssistants()
+            formatUI()
             
         } else {
             
@@ -312,6 +310,7 @@ class JobsVC: UIViewController {
             scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[2] = startingRoleTimeArray[2]
             trackAvailableAssistants()
+            formatUI()
             
         } else {
             
@@ -333,6 +332,7 @@ class JobsVC: UIViewController {
             scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[3] = startingRoleTimeArray[3]
             trackAvailableAssistants()
+            formatUI()
             
         } else {
             
@@ -354,6 +354,7 @@ class JobsVC: UIViewController {
             scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[4] = startingRoleTimeArray[4]
             trackAvailableAssistants()
+            formatUI()
             
         } else {
             
@@ -375,6 +376,7 @@ class JobsVC: UIViewController {
             scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[5] = startingRoleTimeArray[5]
             trackAvailableAssistants()
+            formatUI()
             
         } else {
             
@@ -396,6 +398,7 @@ class JobsVC: UIViewController {
             scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[6] = startingRoleTimeArray[6]
             trackAvailableAssistants()
+            formatUI()
             
         } else {
             
@@ -417,6 +420,7 @@ class JobsVC: UIViewController {
             scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[7] = startingRoleTimeArray[7]
             trackAvailableAssistants()
+            formatUI()
             
         } else {
 
@@ -438,6 +442,7 @@ class JobsVC: UIViewController {
             scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[8] = startingRoleTimeArray[8]
             trackAvailableAssistants()
+            formatUI()
             
         } else {
 
@@ -459,6 +464,7 @@ class JobsVC: UIViewController {
             scoreLbl.text = scoreFormatter(amount: runningScore)
             updatingRoleTimeArray[9] = startingRoleTimeArray[9]
             trackAvailableAssistants()
+            formatUI()
             
         } else {
             
@@ -471,10 +477,8 @@ class JobsVC: UIViewController {
     
     func updateTimerProgressBar(progress: Int, role: Int) -> Float {
         
-        // REVIEW - THIS MAY CAUSE PROBLEMS WITH TIMER
         var progressStatus: Float = 0.0
         progressStatus = 1 - Float(updatingRoleTimeArray[role] / startingRoleTimeArray[role])
-        print(progressStatus)
         
         return progressStatus
         
@@ -492,7 +496,7 @@ class JobsVC: UIViewController {
         
     }
     
-    // Button to manually make money with a role
+    // Manually make money with a role
     func addMoney(tag: Int) {
         
         // Increment the number of times tapped for given role by 1
@@ -517,7 +521,7 @@ class JobsVC: UIViewController {
     
     
     
-    // Format images into circles (technically slight ovals since width and height aren't quite equal)
+    // Format images into ovals
     func formatImages() {
         
         for role in 0...9 {
@@ -614,8 +618,6 @@ class JobsVC: UIViewController {
     func initialFormat() {
         for role in 0...9 {
             timerBar[role].isHidden = true
-            print("Hi I'm view #",
-                "(\(roleView[role].tag))")
             
         }
         isRoleEnabled[0] = true
@@ -640,7 +642,6 @@ class JobsVC: UIViewController {
         }
         
         manageAssistantsAvailableBtnAndLbl()
-        //assistantButtonLbl.setTitle("Get \(Int(assistantsAvailable)) assistants", for: .normal)
     }
     
     func manageAssistantsAvailableBtnAndLbl() {
@@ -653,10 +654,14 @@ class JobsVC: UIViewController {
         } else {
             assistantsAvailableLbl.text = "\(intAvailableAssistants) assistants"
         }
-        print("\(intAvailableAssistants)")
+
     }
     
     @IBAction func assistantsResetBtn(_ sender: UIButton) {
+        
+        //if assistantsAvailable < 1 {
+            
+        //}
         
         rolesOwned = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         timesTapped = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -680,20 +685,13 @@ class JobsVC: UIViewController {
             timerBar[role].progress = 0.0
             rolesOwnedLbl[role].text = "\(Int(rolesOwned[role]))"
             priceToPurchaseLbl[role].text = scoreFormatter(amount: purchasePrice[role])
-            
             updatingRoleTimeArray[role] = startingRoleTimeArray[role]
             timer[role].invalidate()
-            
         }
-        
         formatImages()
         initialFormat()
         formatUI()
         formatbuttonLbl()
         formatPurchaseBtn()
-        print(assistantsPurchasedMultiplier)
-        
-        
     }
-    
 }
