@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF1BA7C71EBABC960048B95B /* JobsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BA7C51EB570FB0048B95B /* JobsVC.swift */; };
+		BF0E17B31EFC5B5400E633B8 /* JobsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BA7C51EB570FB0048B95B /* JobsVC.swift */; };
 		BFBA5AEC1EA858A3008D322E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5AEB1EA858A3008D322E /* AppDelegate.swift */; };
 		BFBA5AF11EA858A3008D322E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBA5AEF1EA858A3008D322E /* Main.storyboard */; };
 		BFBA5AF31EA858A3008D322E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBA5AF21EA858A3008D322E /* Assets.xcassets */; };
@@ -16,7 +16,7 @@
 
 /* Begin PBXFileReference section */
 		BF1BA7C51EB570FB0048B95B /* JobsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsVC.swift; sourceTree = "<group>"; };
-		BFBA5AE81EA858A3008D322E /* TableTimerProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableTimerProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFBA5AE81EA858A3008D322E /* ClickDevTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClickDevTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBA5AEB1EA858A3008D322E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFBA5AF01EA858A3008D322E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFBA5AF21EA858A3008D322E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,7 +38,7 @@
 		BFBA5ADF1EA858A3008D322E = {
 			isa = PBXGroup;
 			children = (
-				BFBA5AEA1EA858A3008D322E /* TableTimerProgress */,
+				BFBA5AEA1EA858A3008D322E /* ClickDevTime */,
 				BFBA5AE91EA858A3008D322E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,39 +46,40 @@
 		BFBA5AE91EA858A3008D322E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BFBA5AE81EA858A3008D322E /* TableTimerProgress.app */,
+				BFBA5AE81EA858A3008D322E /* ClickDevTime.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BFBA5AEA1EA858A3008D322E /* TableTimerProgress */ = {
+		BFBA5AEA1EA858A3008D322E /* ClickDevTime */ = {
 			isa = PBXGroup;
 			children = (
-				BFBA5B1D1EAC1A7D008D322E /* Controllers */,
+				BFBA5B1D1EAC1A7D008D322E /* Controller */,
 				BFBA5AEB1EA858A3008D322E /* AppDelegate.swift */,
 				BFBA5AEF1EA858A3008D322E /* Main.storyboard */,
 				BFBA5AF21EA858A3008D322E /* Assets.xcassets */,
 				BFBA5AF41EA858A3008D322E /* LaunchScreen.storyboard */,
 				BFBA5AF71EA858A3008D322E /* Info.plist */,
 			);
+			name = ClickDevTime;
 			path = TableTimerProgress;
 			sourceTree = "<group>";
 		};
-		BFBA5B1D1EAC1A7D008D322E /* Controllers */ = {
+		BFBA5B1D1EAC1A7D008D322E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				BF1BA7C51EB570FB0048B95B /* JobsVC.swift */,
 			);
-			name = Controllers;
+			name = Controller;
 			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BFBA5AE71EA858A3008D322E /* TableTimerProgress */ = {
+		BFBA5AE71EA858A3008D322E /* ClickDevTime */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BFBA5AFA1EA858A3008D322E /* Build configuration list for PBXNativeTarget "TableTimerProgress" */;
+			buildConfigurationList = BFBA5AFA1EA858A3008D322E /* Build configuration list for PBXNativeTarget "ClickDevTime" */;
 			buildPhases = (
 				BFBA5AE41EA858A3008D322E /* Sources */,
 				BFBA5AE51EA858A3008D322E /* Frameworks */,
@@ -88,9 +89,9 @@
 			);
 			dependencies = (
 			);
-			name = TableTimerProgress;
+			name = ClickDevTime;
 			productName = TableTimerProgress;
-			productReference = BFBA5AE81EA858A3008D322E /* TableTimerProgress.app */;
+			productReference = BFBA5AE81EA858A3008D322E /* ClickDevTime.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -110,7 +111,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BFBA5AE31EA858A3008D322E /* Build configuration list for PBXProject "TableTimerProgress" */;
+			buildConfigurationList = BFBA5AE31EA858A3008D322E /* Build configuration list for PBXProject "ClickDevTime" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -123,7 +124,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BFBA5AE71EA858A3008D322E /* TableTimerProgress */,
+				BFBA5AE71EA858A3008D322E /* ClickDevTime */,
 			);
 		};
 /* End PBXProject section */
@@ -146,7 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF1BA7C71EBABC960048B95B /* JobsVC.swift in Sources */,
+				BF0E17B31EFC5B5400E633B8 /* JobsVC.swift in Sources */,
 				BFBA5AEC1EA858A3008D322E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,7 +298,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BFBA5AE31EA858A3008D322E /* Build configuration list for PBXProject "TableTimerProgress" */ = {
+		BFBA5AE31EA858A3008D322E /* Build configuration list for PBXProject "ClickDevTime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BFBA5AF81EA858A3008D322E /* Debug */,
@@ -306,7 +307,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BFBA5AFA1EA858A3008D322E /* Build configuration list for PBXNativeTarget "TableTimerProgress" */ = {
+		BFBA5AFA1EA858A3008D322E /* Build configuration list for PBXNativeTarget "ClickDevTime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BFBA5AFB1EA858A3008D322E /* Debug */,
