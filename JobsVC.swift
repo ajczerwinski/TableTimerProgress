@@ -72,7 +72,7 @@ class JobsVC: UIViewController {
     var timesTapped: [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     
     // Multiplier for each role
-    var multiplier: [Double] = [10000000, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    var multiplier: [Double] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     
     // Array of Bools to determine if role should be visible/active or not
     var isRoleEnabled: [Bool] = [true, false, false, false, false, false, false, false, false, false]

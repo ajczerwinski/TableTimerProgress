@@ -86,6 +86,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "ClickDevTime"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
