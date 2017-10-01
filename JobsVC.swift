@@ -6,7 +6,9 @@
 //  Copyright © 2017 Allen Czerwinski. All rights reserved.
 //
 
+
 import UIKit
+import CoreData
 
 
 class JobsVC: UIViewController {
@@ -92,9 +94,9 @@ class JobsVC: UIViewController {
         formatImages()
         initialFormat()
         
-
+        
     }
-
+    
     // UIButton to increment the progress bar for roles to increase the score
     @IBAction func gameButton(_ sender: UIButton) {
         let buttonTag = sender.tag
@@ -131,7 +133,7 @@ class JobsVC: UIViewController {
                 if !repeats {
                     timer[0].invalidate()
                     return
-                
+                    
                 } else {
                     timer[0] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStudentTimer)), userInfo: nil, repeats: repeats)
                 }
@@ -206,7 +208,7 @@ class JobsVC: UIViewController {
             }
             
         }
-
+        
         
     }
     
@@ -245,7 +247,7 @@ class JobsVC: UIViewController {
     
     // Role-specific timer functions to update score labels and timer progress bars for respective roles
     
-    func updateStudentTimer() {
+    @objc func updateStudentTimer() {
         
         // If the countdown reaches 0, add score and reset countdown timer to original
         if updatingRoleTimeArray[0] < 1 {
@@ -260,17 +262,17 @@ class JobsVC: UIViewController {
             trackAvailableAssistants()
             formatUI()
             
-        // If countdown timer is 1 or higher, update timer progressBar and decrement countdown timer by 1
+            // If countdown timer is 1 or higher, update timer progressBar and decrement countdown timer by 1
         } else {
             
             timerBar[0].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[0]), role: 0)
             updatingRoleTimeArray[0] -= 1
-        
+            
         }
         
     }
     
-    func updateInternTimer() {
+    @objc func updateInternTimer() {
         
         if updatingRoleTimeArray[1] < 1 {
             
@@ -291,7 +293,7 @@ class JobsVC: UIViewController {
         
     }
     
-    func updateJuniorTimer() {
+    @objc func updateJuniorTimer() {
         
         if updatingRoleTimeArray[2] < 1 {
             
@@ -313,7 +315,7 @@ class JobsVC: UIViewController {
         
     }
     
-    func updateDevTimer() {
+    @objc func updateDevTimer() {
         
         if updatingRoleTimeArray[3] < 1 {
             
@@ -335,7 +337,7 @@ class JobsVC: UIViewController {
         
     }
     
-    func updateSeniorTimer() {
+    @objc func updateSeniorTimer() {
         
         if updatingRoleTimeArray[4] < 1 {
             
@@ -357,7 +359,7 @@ class JobsVC: UIViewController {
         
     }
     
-    func updateLeadTimer() {
+    @objc func updateLeadTimer() {
         
         if updatingRoleTimeArray[5] < 1 {
             
@@ -379,10 +381,10 @@ class JobsVC: UIViewController {
         
     }
     
-    func updateStaffTimer() {
+    @objc func updateStaffTimer() {
         
         if updatingRoleTimeArray[6] < 1 {
-
+            
             timerBar[6].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[6]), role: 6)
             
             runningScore += multiplier[6] * roleBase[6] * rolesOwned[6] * assistantsPurchasedMultiplier
@@ -401,10 +403,10 @@ class JobsVC: UIViewController {
         
     }
     
-    func updateSeniorStaffTimer() {
+    @objc func updateSeniorStaffTimer() {
         
         if updatingRoleTimeArray[7] < 1 {
-
+            
             timerBar[7].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[7]), role: 7)
             
             runningScore += multiplier[7] * roleBase[7] * rolesOwned[7] * assistantsPurchasedMultiplier
@@ -415,7 +417,7 @@ class JobsVC: UIViewController {
             formatUI()
             
         } else {
-
+            
             timerBar[7].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[7]), role: 7)
             updatingRoleTimeArray[7] -= 1
             
@@ -423,7 +425,7 @@ class JobsVC: UIViewController {
         
     }
     
-    func updateDistinguishedTimer() {
+    @objc func updateDistinguishedTimer() {
         
         if updatingRoleTimeArray[8] < 1 {
             
@@ -437,7 +439,7 @@ class JobsVC: UIViewController {
             formatUI()
             
         } else {
-
+            
             timerBar[8].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[8]), role: 8)
             updatingRoleTimeArray[8] -= 1
             
@@ -445,10 +447,10 @@ class JobsVC: UIViewController {
         
     }
     
-    func updateSuperDistinguishedTimer() {
+    @objc func updateSuperDistinguishedTimer() {
         
         if updatingRoleTimeArray[9] < 1 {
-
+            
             timerBar[9].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[9]), role: 9)
             
             runningScore += multiplier[9] * roleBase[9] * rolesOwned[9] * assistantsPurchasedMultiplier
@@ -504,7 +506,7 @@ class JobsVC: UIViewController {
             formatUI()
             progressBar[tag].progress = 0
             
-        // If the progress bar isn't full, increment it
+            // If the progress bar isn't full, increment it
         } else {
             progressBar[tag].progress += 0.1
         }
@@ -517,7 +519,7 @@ class JobsVC: UIViewController {
     func formatImages() {
         
         for role in 0...9 {
-
+            
             numRoles[role].layer.cornerRadius = numRoles[role].frame.height / 2
             numRoles[role].clipsToBounds = true
             
@@ -531,16 +533,16 @@ class JobsVC: UIViewController {
     // plus a 50% grayed out preview of the next role
     func formatUI() {
         
-       for role in 1...9 {
+        for role in 1...9 {
             
-        if runningScore >= purchasePrice[role] {
+            if runningScore >= purchasePrice[role] {
                 
                 isRoleEnabled[role] = true
                 
                 buttonLbl[role].isEnabled = isRoleEnabled[role]
                 buttonLbl[role].isHidden = !isRoleEnabled[role]
                 
-            
+                
                 
                 roleView[role].alpha = 1.0
             } else if (!isRoleEnabled[role] && isRoleEnabled[role - 1]) {
@@ -548,8 +550,8 @@ class JobsVC: UIViewController {
                 roleView[role].alpha = 0.5
                 buttonLbl[role].isHidden = true
                 buttonLbl[role].isEnabled = false
-            
-
+                
+                
                 
             } else if !isRoleEnabled[role] {
                 
@@ -560,7 +562,7 @@ class JobsVC: UIViewController {
             }
             
         }
-       
+        
         formatPurchaseBtn()
         formatbuttonLbl()
         manageAssistantsAvailableBtnAndLbl()
@@ -588,9 +590,9 @@ class JobsVC: UIViewController {
     
     // Keep track of number of roles owned and update the button label with the number
     func formatbuttonLbl() {
-    
+        
         for role in 0...9 {
-    
+            
             if rolesOwned[role] >= 1 {
                 
                 buttonLbl[role].isEnabled = true
@@ -602,9 +604,9 @@ class JobsVC: UIViewController {
                 buttonLbl[role].isEnabled = false
                 
             }
-    
+            
         }
-    
+        
     }
     
     // Set initial UIView formatting when the game is first loaded
@@ -651,18 +653,18 @@ class JobsVC: UIViewController {
             assistantButtonLbl.isHidden = false
             assistantsAvailableLbl.text = "\(intAvailableAssistants) assistants"
         }
-
+        
     }
     
     @IBAction func assistantsResetBtn(_ sender: UIButton) {
         
         /*if assistantsAvailable < 1 {
-            let assistantsAlert = UIAlertController(title: "No Assistants", message: "You can't reset assistants until you have some available!", preferredStyle: UIAlertControllerStyle.alert)
-            assistantsAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-                    self.dismiss(animated: true, completion: nil)
-            }))
-            present(assistantsAlert, animated: true, completion: nil)
-        } else {*/
+         let assistantsAlert = UIAlertController(title: "No Assistants", message: "You can't reset assistants until you have some available!", preferredStyle: UIAlertControllerStyle.alert)
+         assistantsAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+         self.dismiss(animated: true, completion: nil)
+         }))
+         present(assistantsAlert, animated: true, completion: nil)
+         } else {*/
         rolesOwned = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         timesTapped = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         multiplier = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
