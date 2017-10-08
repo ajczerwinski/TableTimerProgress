@@ -8,10 +8,15 @@
 
 import UIKit
 
-public class Score {
-//    
-//    let defaults = UserDefaults.standard
+struct Score {
     
+    let defaults = UserDefaults.standard
+    
+    var runningScore: Double = 0.0 {
+        didSet {
+            defaults.set(runningScore, forKey: "savedScore")
+        }
+    }
     
 }
 

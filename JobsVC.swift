@@ -56,11 +56,13 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     
     var assistantPrice: Double = 1000000
     
-    var runningScore: Double = 0.0 {
-        didSet {
-            defaults.set(runningScore, forKey: "savedScore")
-        }
-    }
+//    var runningScore: Double = 0.0 {
+//        didSet {
+//            defaults.set(runningScore, forKey: "savedScore")
+//        }
+//    }
+    
+    var score = Score()
     
     var totalScore: Double = 0.0
     
@@ -132,6 +134,8 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
 //        ad.saveContext()
         
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -392,9 +396,9 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
             //timerLbl.text = timerProgressFormatter(text: tenths)
             timerBar[0].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[0]), role: 0)
             
-            runningScore += multiplier[0] * roleBase[0] * rolesOwned[0] * assistantsPurchasedMultiplier
+            score.runningScore += multiplier[0] * roleBase[0] * rolesOwned[0] * assistantsPurchasedMultiplier
             totalScore += multiplier[0] * roleBase[0] * rolesOwned[0] * assistantsPurchasedMultiplier
-            scoreLbl.text = scoreFormatter(amount: runningScore)
+            scoreLbl.text = scoreFormatter(amount: score.runningScore)
             updatingRoleTimeArray[0] = startingRoleTimeArray[0]
             trackAvailableAssistants()
             formatUI()
@@ -414,9 +418,9 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
         if updatingRoleTimeArray[1] < 1 {
             
             timerBar[1].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[1]), role: 1)
-            runningScore += multiplier[1] * roleBase[1] * rolesOwned[1] * assistantsPurchasedMultiplier
+            score.runningScore += multiplier[1] * roleBase[1] * rolesOwned[1] * assistantsPurchasedMultiplier
             totalScore += multiplier[1] * roleBase[1] * rolesOwned[1] * assistantsPurchasedMultiplier
-            scoreLbl.text = scoreFormatter(amount: runningScore)
+            scoreLbl.text = scoreFormatter(amount: score.runningScore)
             updatingRoleTimeArray[1] = startingRoleTimeArray[1]
             trackAvailableAssistants()
             formatUI()
@@ -436,9 +440,9 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
             
             timerBar[2].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[2]), role: 2)
             
-            runningScore += multiplier[2] * roleBase[2] * rolesOwned[2] * assistantsPurchasedMultiplier
+            score.runningScore += multiplier[2] * roleBase[2] * rolesOwned[2] * assistantsPurchasedMultiplier
             totalScore += multiplier[2] * roleBase[2] * rolesOwned[2] * assistantsPurchasedMultiplier
-            scoreLbl.text = scoreFormatter(amount: runningScore)
+            scoreLbl.text = scoreFormatter(amount: score.runningScore)
             updatingRoleTimeArray[2] = startingRoleTimeArray[2]
             trackAvailableAssistants()
             formatUI()
@@ -458,9 +462,9 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
             
             timerBar[3].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[3]), role: 3)
             
-            runningScore += multiplier[3] * roleBase[3] * rolesOwned[3] * assistantsPurchasedMultiplier
+            score.runningScore += multiplier[3] * roleBase[3] * rolesOwned[3] * assistantsPurchasedMultiplier
             totalScore += multiplier[3] * roleBase[3] * rolesOwned[3] * assistantsPurchasedMultiplier
-            scoreLbl.text = scoreFormatter(amount: runningScore)
+            scoreLbl.text = scoreFormatter(amount: score.runningScore)
             updatingRoleTimeArray[3] = startingRoleTimeArray[3]
             trackAvailableAssistants()
             formatUI()
@@ -480,9 +484,9 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
             
             timerBar[4].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[4]), role: 4)
             
-            runningScore += multiplier[4] * roleBase[4] * rolesOwned[4] * assistantsPurchasedMultiplier
+            score.runningScore += multiplier[4] * roleBase[4] * rolesOwned[4] * assistantsPurchasedMultiplier
             totalScore += multiplier[4] * roleBase[4] * rolesOwned[4] * assistantsPurchasedMultiplier
-            scoreLbl.text = scoreFormatter(amount: runningScore)
+            scoreLbl.text = scoreFormatter(amount: score.runningScore)
             updatingRoleTimeArray[4] = startingRoleTimeArray[4]
             trackAvailableAssistants()
             formatUI()
@@ -502,9 +506,9 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
             
             timerBar[5].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[5]), role: 5)
             
-            runningScore += multiplier[5] * roleBase[5] * rolesOwned[5] * assistantsPurchasedMultiplier
+            score.runningScore += multiplier[5] * roleBase[5] * rolesOwned[5] * assistantsPurchasedMultiplier
             totalScore += multiplier[5] * roleBase[5] * rolesOwned[5] * assistantsPurchasedMultiplier
-            scoreLbl.text = scoreFormatter(amount: runningScore)
+            scoreLbl.text = scoreFormatter(amount: score.runningScore)
             updatingRoleTimeArray[5] = startingRoleTimeArray[5]
             trackAvailableAssistants()
             formatUI()
@@ -524,9 +528,9 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
             
             timerBar[6].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[6]), role: 6)
             
-            runningScore += multiplier[6] * roleBase[6] * rolesOwned[6] * assistantsPurchasedMultiplier
+            score.runningScore += multiplier[6] * roleBase[6] * rolesOwned[6] * assistantsPurchasedMultiplier
             totalScore += multiplier[6] * roleBase[6] * rolesOwned[6] * assistantsPurchasedMultiplier
-            scoreLbl.text = scoreFormatter(amount: runningScore)
+            scoreLbl.text = scoreFormatter(amount: score.runningScore)
             updatingRoleTimeArray[6] = startingRoleTimeArray[6]
             trackAvailableAssistants()
             formatUI()
@@ -546,9 +550,9 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
             
             timerBar[7].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[7]), role: 7)
             
-            runningScore += multiplier[7] * roleBase[7] * rolesOwned[7] * assistantsPurchasedMultiplier
+            score.runningScore += multiplier[7] * roleBase[7] * rolesOwned[7] * assistantsPurchasedMultiplier
             totalScore += multiplier[7] * roleBase[7] * rolesOwned[7] * assistantsPurchasedMultiplier
-            scoreLbl.text = scoreFormatter(amount: runningScore)
+            scoreLbl.text = scoreFormatter(amount: score.runningScore)
             updatingRoleTimeArray[7] = startingRoleTimeArray[7]
             trackAvailableAssistants()
             formatUI()
@@ -568,9 +572,9 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
             
             timerBar[8].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[8]), role: 8)
             
-            runningScore += multiplier[8] * roleBase[8] * rolesOwned[8] * assistantsPurchasedMultiplier
+            score.runningScore += multiplier[8] * roleBase[8] * rolesOwned[8] * assistantsPurchasedMultiplier
             totalScore += multiplier[8] * roleBase[8] * rolesOwned[8] * assistantsPurchasedMultiplier
-            scoreLbl.text = scoreFormatter(amount: runningScore)
+            scoreLbl.text = scoreFormatter(amount: score.runningScore)
             updatingRoleTimeArray[8] = startingRoleTimeArray[8]
             trackAvailableAssistants()
             formatUI()
@@ -590,9 +594,9 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
             
             timerBar[9].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[9]), role: 9)
             
-            runningScore += multiplier[9] * roleBase[9] * rolesOwned[9] * assistantsPurchasedMultiplier
+            score.runningScore += multiplier[9] * roleBase[9] * rolesOwned[9] * assistantsPurchasedMultiplier
             totalScore += multiplier[9] * roleBase[9] * rolesOwned[9] * assistantsPurchasedMultiplier
-            scoreLbl.text = scoreFormatter(amount: runningScore)
+            scoreLbl.text = scoreFormatter(amount: score.runningScore)
             updatingRoleTimeArray[9] = startingRoleTimeArray[9]
             trackAvailableAssistants()
             formatUI()
@@ -619,10 +623,10 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     // of role by 20%, update score label and UI
     func spendMoney(tag: Int) {
         
-        runningScore -= purchasePrice[tag]
+        score.runningScore -= purchasePrice[tag]
         rolesOwned[tag] += 1
         purchasePrice[tag] *= 1.2
-        scoreLbl.text = scoreFormatter(amount: runningScore)
+        scoreLbl.text = scoreFormatter(amount: score.runningScore)
         formatUI()
         
     }
@@ -636,9 +640,9 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
         // If the progress bar has filled up, increment score by the amount for the role, update score label
         // then reset the progress bar back to 0
         if progressBar[tag].progress == 1.0 {
-            runningScore += multiplier[tag] * roleBase[tag] * rolesOwned[tag] * assistantsPurchasedMultiplier
+            score.runningScore += multiplier[tag] * roleBase[tag] * rolesOwned[tag] * assistantsPurchasedMultiplier
             totalScore += multiplier[tag] * roleBase[tag] * rolesOwned[tag] * assistantsPurchasedMultiplier
-            scoreLbl.text = scoreFormatter(amount: runningScore)
+            scoreLbl.text = scoreFormatter(amount: score.runningScore)
             
             formatUI()
             progressBar[tag].progress = 0
@@ -672,7 +676,7 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
         
         for role in 1...9 {
             
-            if runningScore >= purchasePrice[role] {
+            if score.runningScore >= purchasePrice[role] {
                 
                 isRoleEnabled[role] = true
                 
@@ -711,7 +715,7 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
         
         for role in 0...9 {
             
-            if runningScore >= purchasePrice[role] {
+            if score.runningScore >= purchasePrice[role] {
                 
                 numRoles[role].isEnabled = true
                 numRoles[role].isHidden = false
@@ -810,9 +814,9 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
         assistantsPurchased = assistantsAvailable + assistantsPurchased
         assistantsAvailable = 0
         assistantsPurchasedMultiplier = (1 + assistantsPurchased / 100)
-        runningScore = 0
+        score.runningScore = 0
         totalScore = 0
-        scoreLbl.text = scoreFormatter(amount: runningScore)
+        scoreLbl.text = scoreFormatter(amount: score.runningScore)
         let formattedAssistantsPurchased = Int(assistantsPurchased)
         assistantsLbl.text = "\(formattedAssistantsPurchased) assistants"
         
