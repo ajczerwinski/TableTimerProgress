@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF0E17B31EFC5B5400E633B8 /* JobsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BA7C51EB570FB0048B95B /* JobsVC.swift */; };
-		BF3C47A91F81946A0055E090 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C47A71F81946A0055E090 /* Score.swift */; };
-		BF3C47AA1F81946A0055E090 /* Score+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3C47A81F81946A0055E090 /* Score+CoreDataProperties.swift */; };
-		BF89AB291F041DD5006B667D /* Score1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89AB281F041DD5006B667D /* Score1.swift */; };
+		BF89AB291F041DD5006B667D /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89AB281F041DD5006B667D /* Score.swift */; };
 		BFBA5AEC1EA858A3008D322E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBA5AEB1EA858A3008D322E /* AppDelegate.swift */; };
 		BFBA5AF11EA858A3008D322E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBA5AEF1EA858A3008D322E /* Main.storyboard */; };
 		BFBA5AF31EA858A3008D322E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBA5AF21EA858A3008D322E /* Assets.xcassets */; };
@@ -20,9 +18,7 @@
 
 /* Begin PBXFileReference section */
 		BF1BA7C51EB570FB0048B95B /* JobsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsVC.swift; sourceTree = "<group>"; };
-		BF3C47A71F81946A0055E090 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
-		BF3C47A81F81946A0055E090 /* Score+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Score+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BF89AB281F041DD5006B667D /* Score1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score1.swift; sourceTree = "<group>"; };
+		BF89AB281F041DD5006B667D /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		BFBA5AE81EA858A3008D322E /* ClickDevTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClickDevTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBA5AEB1EA858A3008D322E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFBA5AF01EA858A3008D322E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,8 +42,6 @@
 		BFBA5ADF1EA858A3008D322E = {
 			isa = PBXGroup;
 			children = (
-				BF3C47A71F81946A0055E090 /* Score.swift */,
-				BF3C47A81F81946A0055E090 /* Score+CoreDataProperties.swift */,
 				BFBA5AEA1EA858A3008D322E /* ClickDevTime */,
 				BFBA5AE91EA858A3008D322E /* Products */,
 			);
@@ -64,6 +58,8 @@
 		BFBA5AEA1EA858A3008D322E /* ClickDevTime */ = {
 			isa = PBXGroup;
 			children = (
+				BFC8A9331F89AF8900F4BDAD /* Model */,
+				BFC8A9321F89AF8000F4BDAD /* View */,
 				BFBA5B1D1EAC1A7D008D322E /* Controller */,
 				BFBA5AEB1EA858A3008D322E /* AppDelegate.swift */,
 				BFBA5AEF1EA858A3008D322E /* Main.storyboard */,
@@ -80,10 +76,24 @@
 			isa = PBXGroup;
 			children = (
 				BF1BA7C51EB570FB0048B95B /* JobsVC.swift */,
-				BF89AB281F041DD5006B667D /* Score1.swift */,
 			);
 			name = Controller;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		BFC8A9321F89AF8000F4BDAD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BFC8A9331F89AF8900F4BDAD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF89AB281F041DD5006B667D /* Score.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,10 +171,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF0E17B31EFC5B5400E633B8 /* JobsVC.swift in Sources */,
-				BF89AB291F041DD5006B667D /* Score1.swift in Sources */,
+				BF89AB291F041DD5006B667D /* Score.swift in Sources */,
 				BFE9A6E61F7B0AB6008559D8 /* ClickDevTime.xcdatamodeld in Sources */,
-				BF3C47A91F81946A0055E090 /* Score.swift in Sources */,
-				BF3C47AA1F81946A0055E090 /* Score+CoreDataProperties.swift in Sources */,
 				BFBA5AEC1EA858A3008D322E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

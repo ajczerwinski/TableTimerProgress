@@ -8,7 +8,12 @@
 
 import UIKit
 
-
+public class Score {
+//    
+//    let defaults = UserDefaults.standard
+    
+    
+}
 
 
 

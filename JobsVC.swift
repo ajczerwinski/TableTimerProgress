@@ -10,8 +10,7 @@
 import UIKit
 import CoreData
 
-
-class JobsVC: UIViewController {
+class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -57,7 +56,11 @@ class JobsVC: UIViewController {
     
     var assistantPrice: Double = 1000000
     
-    var runningScore: Double = 0.0
+    var runningScore: Double = 0.0 {
+        didSet {
+            defaults.set(runningScore, forKey: "savedScore")
+        }
+    }
     
     var totalScore: Double = 0.0
     
@@ -88,8 +91,116 @@ class JobsVC: UIViewController {
     // Number of roles owned
     var rolesOwned: [Double] = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     
+//    var gameObject: [NSManagedObject] = []
+    //let scoreToManage = NSEntityDescription.insertNewObject(forEntityName: "Score", into: context)
+    
+    let defaults = UserDefaults.standard
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+//        let savedScore = defaults.setValue(Double, forKey: "savedScore")
+        
+        
+        
+//        if let entity = NSEntityDescription.entity(forEntityName: "Score", in: context) {
+//            let score = NSManagedObject(entity: entity, insertInto: context)
+//            
+//            score.setValue(runningScore, forKey: "savedScore")
+//            
+//            gameObject[0] = score
+//        }
+//        
+//        
+//        
+//        ad.saveContext()
+        
+        //print(gameToManage)
+//        let scoreAtLogout = Score(context: context)
+//        scoreAtLogout.savedScore = runningScore
+//        scoreAtLogout.logoutStamp = Double(Date().timeIntervalSince1970)
+//        ad.saveContext()
+        
+        
+//        let scoreObjectToFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Score")
+//
+//        do {
+//            let fetchedScoreObject = try context.execute(scoreObjectToFetch) as! [Score]
+//        } catch {
+//            fatalError("Failed to fetch score object: \(error)")
+//        }
+        
+//        ad.saveContext()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let savedScore = defaults.value(forKey: "savedScore") as? Double
+        
+        if savedScore != nil {
+            scoreLbl.text = scoreFormatter(amount: savedScore!)
+        }
+        
+//        if let savedScore = defaults.object(forKey: "runningScore") as! Double {
+//            runningScore = savedScore
+//        }
+//        if runningScore > 0 {
+//            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Score")
+//
+//            do {
+//                gameObject = try context.fetch(fetchRequest)
+//            } catch let error as NSError {
+//                print("Could not fetch. \(error)")
+//            }
+//
+//            for object in gameObject {
+//                let scoreLblToDisplay = object.value(forKey: "savedScore")
+//                scoreLbl.text = "\(scoreLblToDisplay)"
+//            }
+        
+//            if gameObject[0].value(forKey: "savedScore") != nil {
+//                let startingRunningScore = gameObject[0].value(forKey: "savedScore") as! Double
+//                scoreLbl.text = "\(startingRunningScore)"
+//            }
+//        }
+        
+//        if gameObject != nil {
+//            let startingRunningScore = gameObject.value(forKey: "savedScore") as! Double
+//            scoreLbl.text = "\(startingRunningScore)"
+//        }
+//        if let startingRunningScore = gameObject[0].value(forKey: "savedScore") as? Double {
+//
+//        }
+        
+        //attemptFetch()
+        
+//        let savedScore = Score(context: context)
+//        if let scoreToSave = savedScore.value(forKey: "savedScore") as? Double {
+//            runningScore = scoreToSave
+//            print(runningScore)
+//        }
+//        if savedScore.value(forKey: "savedScore") as? Double > 0 {
+//            runningScore = savedScore.savedScore
+//            print(runningScore)
+//        }
+//        if let previousSavedScore = savedScore.savedScore {
+//            runningScore = previousSavedScore
+//        }
+        
+//            let loginTime = Double(Date().timeIntervalSince1970)
+//            if let loggedOutTime = savedScore.logoutStamp {
+//                let timeSinceLogout = loginTime - savedScore.logoutStamp
+//            }
+        
+//        }
+        
+        
+        
+//        runningScore = savedScore.savedScore
+        
+//        print(timeSinceLogout)
+        
         
         formatImages()
         initialFormat()
@@ -118,6 +229,32 @@ class JobsVC: UIViewController {
         toggleTimer(counter: timeCounter, buttonTag: buttonTag, repeats: true)
         
     }
+    
+//    func attemptFetch() {
+//
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Score")
+//        do {
+//
+//        }
+//        let dateSort = NSSortDescriptor(key: "savedScore", ascending: false)
+//        fetchRequest.sortDescriptors = [dateSort]
+//
+//        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+//
+//        //self.controller = controller
+//
+//        do {
+//
+//            try controller.performFetch()
+//
+//        } catch {
+//
+//            let error = error as NSError
+//            print("\(error)")
+//
+//        }
+//
+//    }
     
     // If more 25 or more of a given role are owned, disable clickable progress bar enable timer
     
