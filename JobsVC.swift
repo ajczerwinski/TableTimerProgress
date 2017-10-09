@@ -55,16 +55,18 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let savedRunningScore = Score.defaults.value(forKey: "runningScore") as? Double
-        let numberOfStudentsPurchased = Score.defaults.value(forKey: "rolesOwned") as? [Double]
-        if numberOfStudentsPurchased != nil {
-            print(numberOfStudentsPurchased![0])
-        }
+        restoreFromDefaults()
         
-        if savedRunningScore != nil {
-            scoreLbl.text = scoreFormatter(amount: savedRunningScore!)
-            score.runningScore = savedRunningScore!
-        }
+//        let savedRunningScore = Score.defaults.value(forKey: "runningScore") as? Double
+//        let numberOfStudentsPurchased = Score.defaults.value(forKey: "rolesOwned") as? [Double]
+//        if numberOfStudentsPurchased != nil {
+//            print("This is the number of roles purchased: \(numberOfStudentsPurchased![0])")
+//        }
+        
+//        if savedRunningScore != nil {
+//            scoreLbl.text = scoreFormatter(amount: savedRunningScore!)
+//            score.runningScore = savedRunningScore!
+//        }
         
         formatImages()
         initialFormat()
@@ -669,4 +671,77 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
         formatbuttonLbl()
         formatPurchaseBtn()
     }
+    
+    func restoreFromDefaults() {
+        
+        guard let savedRunningScore = Score.defaults.value(forKey: "runningScore") as? Double else {
+            print("Couldn't get defaults for runningScore")
+            return
+        }
+        
+        scoreLbl.text = scoreFormatter(amount: savedRunningScore)
+        score.runningScore = savedRunningScore
+        
+        guard let savedRolesOwned = Score.defaults.value(forKey: "rolesOwned") as? [Double] else {
+            print("Couldn't get defaults for rolesOwned")
+            return
+        }
+        score.rolesOwned = savedRolesOwned
+        
+        guard let savedTimesTapped = Score.defaults.value(forKey: "timesTapped") as? [Double] else {
+            print("Couldn't get defaults for timesTapped")
+            return
+        }
+        score.timesTapped = savedTimesTapped
+        
+        guard let savedMultiplier = Score.defaults.value(forKey: "multiplier") as? [Double] else {
+            print("Couldn't get defaults for multiplier")
+            return
+        }
+        score.multiplier = savedMultiplier
+        
+        guard let savedIsRoleEnabled = Score.defaults.value(forKey: "isRoleEnabled") as? [Bool] else {
+            print("Couldn't get defaults for isRoleEnabled")
+            return
+        }
+        score.isRoleEnabled = savedIsRoleEnabled
+        
+        guard let savedPurchasePrice = Score.defaults.value(forKey: "purchasePrice") as? [Double] else {
+            print("Couldn't get defaults for purchasePrice")
+            return
+        }
+        score.purchasePrice = savedPurchasePrice
+        
+        guard let savedAssistantsPurchased = Score.defaults.value(forKey: "assistantsPurchased") as? Double else {
+            print("Couldn't get defaults for assistantsPurchased")
+            return
+        }
+        score.assistantsPurchased = savedAssistantsPurchased
+        
+        guard let savedAssistantsAvailable = Score.defaults.value(forKey: "assistantsAvailable") as? Double else {
+            print("Couldn't get defaults for assistantsAvailable")
+            return
+        }
+        score.assistantsAvailable = savedAssistantsAvailable
+        
+        guard let savedAssistantsPurchasedMultiplier = Score.defaults.value(forKey: "assistantsPurchasedMultiplier") as? Double else {
+            print("Couldn't get defaults for assistantsPurchasedMultiplier")
+            return
+        }
+        score.assistantsPurchasedMultiplier = savedAssistantsPurchasedMultiplier
+        
+        guard let savedTotalScore = Score.defaults.value(forKey: "totalScore") as? Double else {
+            print("Couldn't get defaults for totalScore")
+            return
+        }
+        score.totalScore = savedTotalScore
+        
+        formatImages()
+        formatUI()
+        formatbuttonLbl()
+        formatPurchaseBtn()
+        
+    }
+    
+    
 }
