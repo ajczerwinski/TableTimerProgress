@@ -46,165 +46,29 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     
     @IBOutlet var timerBar: [UIProgressView]!
     
-    var timer: [Timer] = [Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer()]
+//    var timer: [Timer] = [Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer()]
+//
+//    // Array of Doubles to store original countdown number to reset when counter gets to 0
+//    var startingRoleTimeArray: [Double] = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+//
+//    // Array of Doubles to store countdown timer numbers
+//    var updatingRoleTimeArray: [Double] = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
     
-    // Array of Doubles to store original countdown number to reset when counter gets to 0
-    var startingRoleTimeArray: [Double] = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
-    
-    // Array of Doubles to store countdown timer numbers
-    var updatingRoleTimeArray: [Double] = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
-    
-    var assistantPrice: Double = 1000000
-    
-//    var runningScore: Double = 0.0 {
-//        didSet {
-//            defaults.set(runningScore, forKey: "savedScore")
-//        }
-//    }
     
     var score = Score()
     
-    var totalScore: Double = 0.0
-    
-    var assistantsAvailable: Double = 0.0
-    
-    var assistantsPurchased: Double = 0.0
-    
-    var assistantsPurchasedMultiplier: Double = 1.0
     
     var roleImages = [#imageLiteral(resourceName: "studentDev"), #imageLiteral(resourceName: "internDev"), #imageLiteral(resourceName: "juniorDev"), #imageLiteral(resourceName: "dev"), #imageLiteral(resourceName: "seniorDev"), #imageLiteral(resourceName: "leadDev"), #imageLiteral(resourceName: "staffEng"), #imageLiteral(resourceName: "seniorStaffEng"), #imageLiteral(resourceName: "distinguishedEng"), #imageLiteral(resourceName: "superDistinguishedEng")]
-    
-    // Store # of times tapped for each role
-    
-    var timesTapped: [Double] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    
-    // Multiplier for each role
-    var multiplier: [Double] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-    
-    // Array of Bools to determine if role should be visible/active or not
-    var isRoleEnabled: [Bool] = [true, false, false, false, false, false, false, false, false, false]
-    
-    // Purchase price for each role
-    var purchasePrice: [Double] = [1, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
-    
-    // Base score that each role gives when progressBar or progressTimer completes
-    var roleBase: [Double] = [1, 5, 10, 20, 50, 100, 500, 1000, 2000, 10000]
-    
-    // Number of roles owned
-    var rolesOwned: [Double] = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    
-//    var gameObject: [NSManagedObject] = []
-    //let scoreToManage = NSEntityDescription.insertNewObject(forEntityName: "Score", into: context)
-    
-    let defaults = UserDefaults.standard
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        
-//        let savedScore = defaults.setValue(Double, forKey: "savedScore")
-        
-        
-        
-//        if let entity = NSEntityDescription.entity(forEntityName: "Score", in: context) {
-//            let score = NSManagedObject(entity: entity, insertInto: context)
-//            
-//            score.setValue(runningScore, forKey: "savedScore")
-//            
-//            gameObject[0] = score
-//        }
-//        
-//        
-//        
-//        ad.saveContext()
-        
-        //print(gameToManage)
-//        let scoreAtLogout = Score(context: context)
-//        scoreAtLogout.savedScore = runningScore
-//        scoreAtLogout.logoutStamp = Double(Date().timeIntervalSince1970)
-//        ad.saveContext()
-        
-        
-//        let scoreObjectToFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Score")
-//
-//        do {
-//            let fetchedScoreObject = try context.execute(scoreObjectToFetch) as! [Score]
-//        } catch {
-//            fatalError("Failed to fetch score object: \(error)")
-//        }
-        
-//        ad.saveContext()
-        
-    }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let savedScore = defaults.value(forKey: "savedScore") as? Double
+        let savedScore = Score.defaults.value(forKey: "savedScore") as? Double
         
         if savedScore != nil {
             scoreLbl.text = scoreFormatter(amount: savedScore!)
+            score.runningScore = savedScore!
         }
-        
-//        if let savedScore = defaults.object(forKey: "runningScore") as! Double {
-//            runningScore = savedScore
-//        }
-//        if runningScore > 0 {
-//            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Score")
-//
-//            do {
-//                gameObject = try context.fetch(fetchRequest)
-//            } catch let error as NSError {
-//                print("Could not fetch. \(error)")
-//            }
-//
-//            for object in gameObject {
-//                let scoreLblToDisplay = object.value(forKey: "savedScore")
-//                scoreLbl.text = "\(scoreLblToDisplay)"
-//            }
-        
-//            if gameObject[0].value(forKey: "savedScore") != nil {
-//                let startingRunningScore = gameObject[0].value(forKey: "savedScore") as! Double
-//                scoreLbl.text = "\(startingRunningScore)"
-//            }
-//        }
-        
-//        if gameObject != nil {
-//            let startingRunningScore = gameObject.value(forKey: "savedScore") as! Double
-//            scoreLbl.text = "\(startingRunningScore)"
-//        }
-//        if let startingRunningScore = gameObject[0].value(forKey: "savedScore") as? Double {
-//
-//        }
-        
-        //attemptFetch()
-        
-//        let savedScore = Score(context: context)
-//        if let scoreToSave = savedScore.value(forKey: "savedScore") as? Double {
-//            runningScore = scoreToSave
-//            print(runningScore)
-//        }
-//        if savedScore.value(forKey: "savedScore") as? Double > 0 {
-//            runningScore = savedScore.savedScore
-//            print(runningScore)
-//        }
-//        if let previousSavedScore = savedScore.savedScore {
-//            runningScore = previousSavedScore
-//        }
-        
-//            let loginTime = Double(Date().timeIntervalSince1970)
-//            if let loggedOutTime = savedScore.logoutStamp {
-//                let timeSinceLogout = loginTime - savedScore.logoutStamp
-//            }
-        
-//        }
-        
-        
-        
-//        runningScore = savedScore.savedScore
-        
-//        print(timeSinceLogout)
-        
         
         formatImages()
         initialFormat()
@@ -228,39 +92,11 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
         
         spendMoney(tag: buttonTag)
         
-        let timeCounter: Int = Int(rolesOwned[buttonTag])
+        let timeCounter: Int = Int(score.rolesOwned[buttonTag])
         
         toggleTimer(counter: timeCounter, buttonTag: buttonTag, repeats: true)
         
     }
-    
-//    func attemptFetch() {
-//
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Score")
-//        do {
-//
-//        }
-//        let dateSort = NSSortDescriptor(key: "savedScore", ascending: false)
-//        fetchRequest.sortDescriptors = [dateSort]
-//
-//        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-//
-//        //self.controller = controller
-//
-//        do {
-//
-//            try controller.performFetch()
-//
-//        } catch {
-//
-//            let error = error as NSError
-//            print("\(error)")
-//
-//        }
-//
-//    }
-    
-    // If more 25 or more of a given role are owned, disable clickable progress bar enable timer
     
     func toggleTimer(counter: Int, buttonTag: Int, repeats: Bool) {
         
@@ -272,77 +108,77 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
             switch buttonTag {
             case 0:
                 if !repeats {
-                    timer[0].invalidate()
+                    score.timer[0].invalidate()
                     return
                     
                 } else {
-                    timer[0] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStudentTimer)), userInfo: nil, repeats: repeats)
+                    score.timer[0] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStudentTimer)), userInfo: nil, repeats: repeats)
                 }
                 
             case 1:
                 if !repeats {
-                    timer[1].invalidate()
+                    score.timer[1].invalidate()
                     return
                     
                 } else {
-                    timer[1] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateInternTimer)), userInfo: nil, repeats: repeats)
+                    score.timer[1] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateInternTimer)), userInfo: nil, repeats: repeats)
                 }
             case 2:
                 if !repeats {
-                    timer[2].invalidate()
+                    score.timer[2].invalidate()
                     return
                     
                 } else {
-                    timer[2] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateJuniorTimer)), userInfo: nil, repeats: repeats)
+                    score.timer[2] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateJuniorTimer)), userInfo: nil, repeats: repeats)
                 }
             case 3:
                 if !repeats {
-                    timer[3].invalidate()
+                    score.timer[3].invalidate()
                     
                 } else {
-                    timer[3] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateDevTimer)), userInfo: nil, repeats: repeats)
+                    score.timer[3] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateDevTimer)), userInfo: nil, repeats: repeats)
                 }
             case 4:
                 if !repeats {
-                    timer[4].invalidate()
+                    score.timer[4].invalidate()
                     
                 } else {
-                    timer[4] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSeniorTimer)), userInfo: nil, repeats: repeats)
+                    score.timer[4] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSeniorTimer)), userInfo: nil, repeats: repeats)
                 }
             case 5:
                 if !repeats {
-                    timer[5].invalidate()
+                    score.timer[5].invalidate()
                     
                 } else {
-                    timer[5] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateLeadTimer)), userInfo: nil, repeats: repeats)
+                    score.timer[5] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateLeadTimer)), userInfo: nil, repeats: repeats)
                 }
             case 6:
                 if !repeats {
-                    timer[6].invalidate()
+                    score.timer[6].invalidate()
                     
                 } else {
-                    timer[6] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStaffTimer)), userInfo: nil, repeats: repeats)
+                    score.timer[6] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateStaffTimer)), userInfo: nil, repeats: repeats)
                 }
             case 7:
                 if !repeats {
-                    timer[7].invalidate()
+                    score.timer[7].invalidate()
                     
                 } else {
-                    timer[7] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSeniorStaffTimer)), userInfo: nil, repeats: repeats)
+                    score.timer[7] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSeniorStaffTimer)), userInfo: nil, repeats: repeats)
                 }
             case 8:
                 if !repeats {
-                    timer[8].invalidate()
+                    score.timer[8].invalidate()
                     
                 } else {
-                    timer[8] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateDistinguishedTimer)), userInfo: nil, repeats: repeats)
+                    score.timer[8] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateDistinguishedTimer)), userInfo: nil, repeats: repeats)
                 }
             case 9:
                 if !repeats {
-                    timer[9].invalidate()
+                    score.timer[9].invalidate()
                     
                 } else {
-                    timer[9] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSuperDistinguishedTimer)), userInfo: nil, repeats: repeats)
+                    score.timer[9] = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(updateSuperDistinguishedTimer)), userInfo: nil, repeats: repeats)
                 }
             default:
                 return
@@ -391,44 +227,44 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     @objc func updateStudentTimer() {
         
         // If the countdown reaches 0, add score and reset countdown timer to original
-        if updatingRoleTimeArray[0] < 1 {
+        if score.updatingRoleTimeArray[0] < 1 {
             
             //timerLbl.text = timerProgressFormatter(text: tenths)
-            timerBar[0].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[0]), role: 0)
+            timerBar[0].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[0]), role: 0)
             
-            score.runningScore += multiplier[0] * roleBase[0] * rolesOwned[0] * assistantsPurchasedMultiplier
-            totalScore += multiplier[0] * roleBase[0] * rolesOwned[0] * assistantsPurchasedMultiplier
+            score.runningScore += score.multiplier[0] * score.roleBase[0] * score.rolesOwned[0] * score.assistantsPurchasedMultiplier
+            score.totalScore += score.multiplier[0] * score.roleBase[0] * score.rolesOwned[0] * score.assistantsPurchasedMultiplier
             scoreLbl.text = scoreFormatter(amount: score.runningScore)
-            updatingRoleTimeArray[0] = startingRoleTimeArray[0]
+            score.updatingRoleTimeArray[0] = score.startingRoleTimeArray[0]
             trackAvailableAssistants()
             formatUI()
             
             // If countdown timer is 1 or higher, update timer progressBar and decrement countdown timer by 1
         } else {
             
-            timerBar[0].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[0]), role: 0)
-            updatingRoleTimeArray[0] -= 1
+            timerBar[0].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[0]), role: 0)
+            score.updatingRoleTimeArray[0] -= 1
             
         }
         
     }
-    
+
     @objc func updateInternTimer() {
         
-        if updatingRoleTimeArray[1] < 1 {
+        if score.updatingRoleTimeArray[1] < 1 {
             
-            timerBar[1].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[1]), role: 1)
-            score.runningScore += multiplier[1] * roleBase[1] * rolesOwned[1] * assistantsPurchasedMultiplier
-            totalScore += multiplier[1] * roleBase[1] * rolesOwned[1] * assistantsPurchasedMultiplier
+            timerBar[1].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[1]), role: 1)
+            score.runningScore += score.multiplier[1] * score.roleBase[1] * score.rolesOwned[1] * score.assistantsPurchasedMultiplier
+            score.totalScore += score.multiplier[1] * score.roleBase[1] * score.rolesOwned[1] * score.assistantsPurchasedMultiplier
             scoreLbl.text = scoreFormatter(amount: score.runningScore)
-            updatingRoleTimeArray[1] = startingRoleTimeArray[1]
+            score.updatingRoleTimeArray[1] = score.startingRoleTimeArray[1]
             trackAvailableAssistants()
             formatUI()
             
         } else {
             
-            timerBar[1].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[1]), role: 1)
-            updatingRoleTimeArray[1] -= 1
+            timerBar[1].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[1]), role: 1)
+            score.updatingRoleTimeArray[1] -= 1
             
         }
         
@@ -436,21 +272,21 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     
     @objc func updateJuniorTimer() {
         
-        if updatingRoleTimeArray[2] < 1 {
+        if score.updatingRoleTimeArray[2] < 1 {
             
-            timerBar[2].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[2]), role: 2)
+            timerBar[2].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[2]), role: 2)
             
-            score.runningScore += multiplier[2] * roleBase[2] * rolesOwned[2] * assistantsPurchasedMultiplier
-            totalScore += multiplier[2] * roleBase[2] * rolesOwned[2] * assistantsPurchasedMultiplier
+            score.runningScore += score.multiplier[2] * score.roleBase[2] * score.rolesOwned[2] * score.assistantsPurchasedMultiplier
+            score.totalScore += score.multiplier[2] * score.roleBase[2] * score.rolesOwned[2] * score.assistantsPurchasedMultiplier
             scoreLbl.text = scoreFormatter(amount: score.runningScore)
-            updatingRoleTimeArray[2] = startingRoleTimeArray[2]
+            score.updatingRoleTimeArray[2] = score.startingRoleTimeArray[2]
             trackAvailableAssistants()
             formatUI()
             
         } else {
             
-            timerBar[2].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[2]), role: 2)
-            updatingRoleTimeArray[2] -= 1
+            timerBar[2].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[2]), role: 2)
+            score.updatingRoleTimeArray[2] -= 1
             
         }
         
@@ -458,21 +294,21 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     
     @objc func updateDevTimer() {
         
-        if updatingRoleTimeArray[3] < 1 {
+        if score.updatingRoleTimeArray[3] < 1 {
             
-            timerBar[3].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[3]), role: 3)
+            timerBar[3].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[3]), role: 3)
             
-            score.runningScore += multiplier[3] * roleBase[3] * rolesOwned[3] * assistantsPurchasedMultiplier
-            totalScore += multiplier[3] * roleBase[3] * rolesOwned[3] * assistantsPurchasedMultiplier
+            score.runningScore += score.multiplier[3] * score.roleBase[3] * score.rolesOwned[3] * score.assistantsPurchasedMultiplier
+            score.totalScore += score.multiplier[3] * score.roleBase[3] * score.rolesOwned[3] * score.assistantsPurchasedMultiplier
             scoreLbl.text = scoreFormatter(amount: score.runningScore)
-            updatingRoleTimeArray[3] = startingRoleTimeArray[3]
+            score.updatingRoleTimeArray[3] = score.startingRoleTimeArray[3]
             trackAvailableAssistants()
             formatUI()
             
         } else {
             
-            timerBar[3].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[3]), role: 3)
-            updatingRoleTimeArray[3] -= 1
+            timerBar[3].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[3]), role: 3)
+            score.updatingRoleTimeArray[3] -= 1
             
         }
         
@@ -480,21 +316,21 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     
     @objc func updateSeniorTimer() {
         
-        if updatingRoleTimeArray[4] < 1 {
+        if score.updatingRoleTimeArray[4] < 1 {
             
-            timerBar[4].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[4]), role: 4)
+            timerBar[4].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[4]), role: 4)
             
-            score.runningScore += multiplier[4] * roleBase[4] * rolesOwned[4] * assistantsPurchasedMultiplier
-            totalScore += multiplier[4] * roleBase[4] * rolesOwned[4] * assistantsPurchasedMultiplier
+            score.runningScore += score.multiplier[4] * score.roleBase[4] * score.rolesOwned[4] * score.assistantsPurchasedMultiplier
+            score.totalScore += score.multiplier[4] * score.roleBase[4] * score.rolesOwned[4] * score.assistantsPurchasedMultiplier
             scoreLbl.text = scoreFormatter(amount: score.runningScore)
-            updatingRoleTimeArray[4] = startingRoleTimeArray[4]
+            score.updatingRoleTimeArray[4] = score.startingRoleTimeArray[4]
             trackAvailableAssistants()
             formatUI()
             
         } else {
             
-            timerBar[4].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[4]), role: 4)
-            updatingRoleTimeArray[4] -= 1
+            timerBar[4].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[4]), role: 4)
+            score.updatingRoleTimeArray[4] -= 1
             
         }
         
@@ -502,21 +338,21 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     
     @objc func updateLeadTimer() {
         
-        if updatingRoleTimeArray[5] < 1 {
+        if score.updatingRoleTimeArray[5] < 1 {
             
-            timerBar[5].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[5]), role: 5)
+            timerBar[5].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[5]), role: 5)
             
-            score.runningScore += multiplier[5] * roleBase[5] * rolesOwned[5] * assistantsPurchasedMultiplier
-            totalScore += multiplier[5] * roleBase[5] * rolesOwned[5] * assistantsPurchasedMultiplier
+            score.runningScore += score.multiplier[5] * score.roleBase[5] * score.rolesOwned[5] * score.assistantsPurchasedMultiplier
+            score.totalScore += score.multiplier[5] * score.roleBase[5] * score.rolesOwned[5] * score.assistantsPurchasedMultiplier
             scoreLbl.text = scoreFormatter(amount: score.runningScore)
-            updatingRoleTimeArray[5] = startingRoleTimeArray[5]
+            score.updatingRoleTimeArray[5] = score.startingRoleTimeArray[5]
             trackAvailableAssistants()
             formatUI()
             
         } else {
             
-            timerBar[5].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[5]), role: 5)
-            updatingRoleTimeArray[5] -= 1
+            timerBar[5].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[5]), role: 5)
+            score.updatingRoleTimeArray[5] -= 1
             
         }
         
@@ -524,21 +360,21 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     
     @objc func updateStaffTimer() {
         
-        if updatingRoleTimeArray[6] < 1 {
+        if score.updatingRoleTimeArray[6] < 1 {
             
-            timerBar[6].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[6]), role: 6)
+            timerBar[6].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[6]), role: 6)
             
-            score.runningScore += multiplier[6] * roleBase[6] * rolesOwned[6] * assistantsPurchasedMultiplier
-            totalScore += multiplier[6] * roleBase[6] * rolesOwned[6] * assistantsPurchasedMultiplier
+            score.runningScore += score.multiplier[6] * score.roleBase[6] * score.rolesOwned[6] * score.assistantsPurchasedMultiplier
+            score.totalScore += score.multiplier[6] * score.roleBase[6] * score.rolesOwned[6] * score.assistantsPurchasedMultiplier
             scoreLbl.text = scoreFormatter(amount: score.runningScore)
-            updatingRoleTimeArray[6] = startingRoleTimeArray[6]
+            score.updatingRoleTimeArray[6] = score.startingRoleTimeArray[6]
             trackAvailableAssistants()
             formatUI()
             
         } else {
             
-            timerBar[6].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[6]), role: 6)
-            updatingRoleTimeArray[6] -= 1
+            timerBar[6].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[6]), role: 6)
+            score.updatingRoleTimeArray[6] -= 1
             
         }
         
@@ -546,21 +382,21 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     
     @objc func updateSeniorStaffTimer() {
         
-        if updatingRoleTimeArray[7] < 1 {
+        if score.updatingRoleTimeArray[7] < 1 {
             
-            timerBar[7].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[7]), role: 7)
+            timerBar[7].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[7]), role: 7)
             
-            score.runningScore += multiplier[7] * roleBase[7] * rolesOwned[7] * assistantsPurchasedMultiplier
-            totalScore += multiplier[7] * roleBase[7] * rolesOwned[7] * assistantsPurchasedMultiplier
+            score.runningScore += score.multiplier[7] * score.roleBase[7] * score.rolesOwned[7] * score.assistantsPurchasedMultiplier
+            score.totalScore += score.multiplier[7] * score.roleBase[7] * score.rolesOwned[7] * score.assistantsPurchasedMultiplier
             scoreLbl.text = scoreFormatter(amount: score.runningScore)
-            updatingRoleTimeArray[7] = startingRoleTimeArray[7]
+            score.updatingRoleTimeArray[7] = score.startingRoleTimeArray[7]
             trackAvailableAssistants()
             formatUI()
             
         } else {
             
-            timerBar[7].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[7]), role: 7)
-            updatingRoleTimeArray[7] -= 1
+            timerBar[7].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[7]), role: 7)
+            score.updatingRoleTimeArray[7] -= 1
             
         }
         
@@ -568,21 +404,21 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     
     @objc func updateDistinguishedTimer() {
         
-        if updatingRoleTimeArray[8] < 1 {
+        if score.updatingRoleTimeArray[8] < 1 {
             
-            timerBar[8].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[8]), role: 8)
+            timerBar[8].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[8]), role: 8)
             
-            score.runningScore += multiplier[8] * roleBase[8] * rolesOwned[8] * assistantsPurchasedMultiplier
-            totalScore += multiplier[8] * roleBase[8] * rolesOwned[8] * assistantsPurchasedMultiplier
+            score.runningScore += score.multiplier[8] * score.roleBase[8] * score.rolesOwned[8] * score.assistantsPurchasedMultiplier
+            score.totalScore += score.multiplier[8] * score.roleBase[8] * score.rolesOwned[8] * score.assistantsPurchasedMultiplier
             scoreLbl.text = scoreFormatter(amount: score.runningScore)
-            updatingRoleTimeArray[8] = startingRoleTimeArray[8]
+            score.updatingRoleTimeArray[8] = score.startingRoleTimeArray[8]
             trackAvailableAssistants()
             formatUI()
             
         } else {
             
-            timerBar[8].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[8]), role: 8)
-            updatingRoleTimeArray[8] -= 1
+            timerBar[8].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[8]), role: 8)
+            score.updatingRoleTimeArray[8] -= 1
             
         }
         
@@ -590,21 +426,21 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     
     @objc func updateSuperDistinguishedTimer() {
         
-        if updatingRoleTimeArray[9] < 1 {
+        if score.updatingRoleTimeArray[9] < 1 {
             
-            timerBar[9].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[9]), role: 9)
+            timerBar[9].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[9]), role: 9)
             
-            score.runningScore += multiplier[9] * roleBase[9] * rolesOwned[9] * assistantsPurchasedMultiplier
-            totalScore += multiplier[9] * roleBase[9] * rolesOwned[9] * assistantsPurchasedMultiplier
+            score.runningScore += score.multiplier[9] * score.roleBase[9] * score.rolesOwned[9] * score.assistantsPurchasedMultiplier
+            score.totalScore += score.multiplier[9] * score.roleBase[9] * score.rolesOwned[9] * score.assistantsPurchasedMultiplier
             scoreLbl.text = scoreFormatter(amount: score.runningScore)
-            updatingRoleTimeArray[9] = startingRoleTimeArray[9]
+            score.updatingRoleTimeArray[9] = score.startingRoleTimeArray[9]
             trackAvailableAssistants()
             formatUI()
             
         } else {
             
-            timerBar[9].progress = updateTimerProgressBar(progress: Int(updatingRoleTimeArray[9]), role: 9)
-            updatingRoleTimeArray[9] -= 1
+            timerBar[9].progress = updateTimerProgressBar(progress: Int(score.updatingRoleTimeArray[9]), role: 9)
+            score.updatingRoleTimeArray[9] -= 1
             
         }
         
@@ -613,7 +449,7 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     func updateTimerProgressBar(progress: Int, role: Int) -> Float {
         
         var progressStatus: Float = 0.0
-        progressStatus = 1 - Float(updatingRoleTimeArray[role] / startingRoleTimeArray[role])
+        progressStatus = 1 - Float(score.updatingRoleTimeArray[role] / score.startingRoleTimeArray[role])
         
         return progressStatus
         
@@ -623,9 +459,9 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     // of role by 20%, update score label and UI
     func spendMoney(tag: Int) {
         
-        score.runningScore -= purchasePrice[tag]
-        rolesOwned[tag] += 1
-        purchasePrice[tag] *= 1.2
+        score.runningScore -= score.purchasePrice[tag]
+        score.rolesOwned[tag] += 1
+        score.purchasePrice[tag] *= 1.2
         scoreLbl.text = scoreFormatter(amount: score.runningScore)
         formatUI()
         
@@ -635,13 +471,13 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     func addMoney(tag: Int) {
         
         // Increment the number of times tapped for given role by 1
-        timesTapped[tag] += 0.1
+        score.timesTapped[tag] += 0.1
         
         // If the progress bar has filled up, increment score by the amount for the role, update score label
         // then reset the progress bar back to 0
         if progressBar[tag].progress == 1.0 {
-            score.runningScore += multiplier[tag] * roleBase[tag] * rolesOwned[tag] * assistantsPurchasedMultiplier
-            totalScore += multiplier[tag] * roleBase[tag] * rolesOwned[tag] * assistantsPurchasedMultiplier
+            score.runningScore += score.multiplier[tag] * score.roleBase[tag] * score.rolesOwned[tag] * score.assistantsPurchasedMultiplier
+            score.totalScore += score.multiplier[tag] * score.roleBase[tag] * score.rolesOwned[tag] * score.assistantsPurchasedMultiplier
             scoreLbl.text = scoreFormatter(amount: score.runningScore)
             
             formatUI()
@@ -676,17 +512,17 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
         
         for role in 1...9 {
             
-            if score.runningScore >= purchasePrice[role] {
+            if score.runningScore >= score.purchasePrice[role] {
                 
-                isRoleEnabled[role] = true
+                score.isRoleEnabled[role] = true
                 
-                buttonLbl[role].isEnabled = isRoleEnabled[role]
-                buttonLbl[role].isHidden = !isRoleEnabled[role]
+                buttonLbl[role].isEnabled = score.isRoleEnabled[role]
+                buttonLbl[role].isHidden = !score.isRoleEnabled[role]
                 
                 
                 
                 roleView[role].alpha = 1.0
-            } else if (!isRoleEnabled[role] && isRoleEnabled[role - 1]) {
+            } else if (!score.isRoleEnabled[role] && score.isRoleEnabled[role - 1]) {
                 
                 roleView[role].alpha = 0.5
                 buttonLbl[role].isHidden = true
@@ -694,7 +530,7 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
                 
                 
                 
-            } else if !isRoleEnabled[role] {
+            } else if !score.isRoleEnabled[role] {
                 
                 roleView[role].alpha = 0
                 buttonLbl[role].isHidden = true
@@ -715,7 +551,7 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
         
         for role in 0...9 {
             
-            if score.runningScore >= purchasePrice[role] {
+            if score.runningScore >= score.purchasePrice[role] {
                 
                 numRoles[role].isEnabled = true
                 numRoles[role].isHidden = false
@@ -734,11 +570,11 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
         
         for role in 0...9 {
             
-            if rolesOwned[role] >= 1 {
+            if score.rolesOwned[role] >= 1 {
                 
                 buttonLbl[role].isEnabled = true
-                rolesOwnedLbl[role].text = "\(Int(rolesOwned[role]))"
-                priceToPurchaseLbl[role].text = scoreFormatter(amount: purchasePrice[role])
+                rolesOwnedLbl[role].text = "\(Int(score.rolesOwned[role]))"
+                priceToPurchaseLbl[role].text = scoreFormatter(amount: score.purchasePrice[role])
                 
             } else {
                 
@@ -756,9 +592,9 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
             timerBar[role].isHidden = true
             
         }
-        isRoleEnabled[0] = true
-        buttonLbl[0].isEnabled = isRoleEnabled[0]
-        buttonLbl[0].isHidden = !isRoleEnabled[0]
+        score.isRoleEnabled[0] = true
+        buttonLbl[0].isEnabled = score.isRoleEnabled[0]
+        buttonLbl[0].isHidden = !score.isRoleEnabled[0]
         roleView[0].alpha = 1.0
         
         roleView[1].alpha = 0.5
@@ -772,16 +608,16 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     // Helper function to increment assistants available and increase
     // assistantPrice if score is >= assistantPrice
     func trackAvailableAssistants() {
-        while totalScore >= assistantPrice {
-            assistantsAvailable += 1
-            assistantPrice *= 1.1
+        while score.totalScore >= score.assistantPrice {
+            score.assistantsAvailable += 1
+            score.assistantPrice *= 1.1
         }
         
         manageAssistantsAvailableBtnAndLbl()
     }
     
     func manageAssistantsAvailableBtnAndLbl() {
-        let intAvailableAssistants = Int(assistantsAvailable)
+        let intAvailableAssistants = Int(score.assistantsAvailable)
         
         if intAvailableAssistants < 1 {
             assistantButtonLbl.isHidden = true
@@ -806,18 +642,18 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
          }))
          present(assistantsAlert, animated: true, completion: nil)
          } else {*/
-        rolesOwned = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        timesTapped = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        multiplier = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-        isRoleEnabled = [true, false, false, false, false, false, false, false, false, false]
-        purchasePrice = [1, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
-        assistantsPurchased = assistantsAvailable + assistantsPurchased
-        assistantsAvailable = 0
-        assistantsPurchasedMultiplier = (1 + assistantsPurchased / 100)
+        score.rolesOwned = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        score.timesTapped = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        score.multiplier = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        score.isRoleEnabled = [true, false, false, false, false, false, false, false, false, false]
+        score.purchasePrice = [1, 10, 50, 100, 500, 1200, 30000, 400000, 4000000, 10000000]
+        score.assistantsPurchased = score.assistantsAvailable + score.assistantsPurchased
+        score.assistantsAvailable = 0
+        score.assistantsPurchasedMultiplier = (1 + score.assistantsPurchased / 100)
         score.runningScore = 0
-        totalScore = 0
+        score.totalScore = 0
         scoreLbl.text = scoreFormatter(amount: score.runningScore)
-        let formattedAssistantsPurchased = Int(assistantsPurchased)
+        let formattedAssistantsPurchased = Int(score.assistantsPurchased)
         assistantsLbl.text = "\(formattedAssistantsPurchased) assistants"
         
         for role in 0...9 {
@@ -826,10 +662,10 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
             progressBar[role].progress = 0.0
             progressBar[role].isHidden = false
             timerBar[role].progress = 0.0
-            rolesOwnedLbl[role].text = "\(Int(rolesOwned[role]))"
-            priceToPurchaseLbl[role].text = scoreFormatter(amount: purchasePrice[role])
-            updatingRoleTimeArray[role] = startingRoleTimeArray[role]
-            timer[role].invalidate()
+            rolesOwnedLbl[role].text = "\(Int(score.rolesOwned[role]))"
+            priceToPurchaseLbl[role].text = scoreFormatter(amount: score.purchasePrice[role])
+            score.updatingRoleTimeArray[role] = score.startingRoleTimeArray[role]
+            score.timer[role].invalidate()
         }
         formatImages()
         initialFormat()
