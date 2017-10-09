@@ -46,28 +46,24 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     
     @IBOutlet var timerBar: [UIProgressView]!
     
-//    var timer: [Timer] = [Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer(), Timer()]
-//
-//    // Array of Doubles to store original countdown number to reset when counter gets to 0
-//    var startingRoleTimeArray: [Double] = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
-//
-//    // Array of Doubles to store countdown timer numbers
-//    var updatingRoleTimeArray: [Double] = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
-    
-    
+    // Initialize Score model object
     var score = Score()
     
-    
+    // Images for roles
     var roleImages = [#imageLiteral(resourceName: "studentDev"), #imageLiteral(resourceName: "internDev"), #imageLiteral(resourceName: "juniorDev"), #imageLiteral(resourceName: "dev"), #imageLiteral(resourceName: "seniorDev"), #imageLiteral(resourceName: "leadDev"), #imageLiteral(resourceName: "staffEng"), #imageLiteral(resourceName: "seniorStaffEng"), #imageLiteral(resourceName: "distinguishedEng"), #imageLiteral(resourceName: "superDistinguishedEng")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let savedScore = Score.defaults.value(forKey: "savedScore") as? Double
+        let savedRunningScore = Score.defaults.value(forKey: "runningScore") as? Double
+        let numberOfStudentsPurchased = Score.defaults.value(forKey: "rolesOwned") as? [Double]
+        if numberOfStudentsPurchased != nil {
+            print(numberOfStudentsPurchased![0])
+        }
         
-        if savedScore != nil {
-            scoreLbl.text = scoreFormatter(amount: savedScore!)
-            score.runningScore = savedScore!
+        if savedRunningScore != nil {
+            scoreLbl.text = scoreFormatter(amount: savedRunningScore!)
+            score.runningScore = savedRunningScore!
         }
         
         formatImages()
