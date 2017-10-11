@@ -10,7 +10,7 @@
 import UIKit
 import CoreData
 
-class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
+class JobsVC: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -55,18 +55,8 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Check if there is data saved in User Defaults and load if there is
         restoreFromDefaults()
-        
-//        let savedRunningScore = Score.defaults.value(forKey: "runningScore") as? Double
-//        let numberOfStudentsPurchased = Score.defaults.value(forKey: "rolesOwned") as? [Double]
-//        if numberOfStudentsPurchased != nil {
-//            print("This is the number of roles purchased: \(numberOfStudentsPurchased![0])")
-//        }
-        
-//        if savedRunningScore != nil {
-//            scoreLbl.text = scoreFormatter(amount: savedRunningScore!)
-//            score.runningScore = savedRunningScore!
-//        }
         
         formatImages()
         initialFormat()
@@ -584,6 +574,15 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
         
     }
     
+    func formatSavedPurchasePrice() {
+        if let savedPurchasePrice = Score.defaults.value(forKey: "purchasePrice") as? [Double] {
+            for role in 0...9 {
+                priceToPurchaseLbl[role].text = scoreFormatter(amount: savedPurchasePrice[role])
+                print(savedPurchasePrice[role])
+            }
+        }
+    }
+    
     // Set initial UIView formatting when the game is first loaded
     func initialFormat() {
         for role in 0...9 {
@@ -694,12 +693,6 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
         }
         score.timesTapped = savedTimesTapped
         
-        guard let savedMultiplier = Score.defaults.value(forKey: "multiplier") as? [Double] else {
-            print("Couldn't get defaults for multiplier")
-            return
-        }
-        score.multiplier = savedMultiplier
-        
         guard let savedIsRoleEnabled = Score.defaults.value(forKey: "isRoleEnabled") as? [Bool] else {
             print("Couldn't get defaults for isRoleEnabled")
             return
@@ -740,6 +733,13 @@ class JobsVC: UIViewController, NSFetchedResultsControllerDelegate {
         formatUI()
         formatbuttonLbl()
         formatPurchaseBtn()
+        formatSavedPurchasePrice()
+        
+        guard let savedMultiplier = Score.defaults.value(forKey: "multiplier") as? [Double] else {
+            print("Couldn't get defaults for multiplier")
+            return
+        }
+        score.multiplier = savedMultiplier
         
     }
     
