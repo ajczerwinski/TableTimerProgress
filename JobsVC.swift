@@ -673,73 +673,124 @@ class JobsVC: UIViewController {
     
     func restoreFromDefaults() {
         
-        guard let savedRunningScore = Score.defaults.value(forKey: "runningScore") as? Double else {
-            print("Couldn't get defaults for runningScore")
-            return
+//        guard let savedRunningScore = Score.defaults.value(forKey: "runningScore") as? Double else {
+//            print("Couldn't get defaults for runningScore")
+//            return
+//        }
+        
+        if let savedRunningScore = Score.defaults.value(forKey: "runningScore") as? Double {
+            print("Here is the savedRunningScore: \(savedRunningScore)")
+            score.runningScore = savedRunningScore
+            scoreLbl.text = scoreFormatter(amount: score.runningScore)
         }
         
-        scoreLbl.text = scoreFormatter(amount: savedRunningScore)
-        score.runningScore = savedRunningScore
         
-        guard let savedRolesOwned = Score.defaults.value(forKey: "rolesOwned") as? [Double] else {
-            print("Couldn't get defaults for rolesOwned")
-            return
-        }
-        score.rolesOwned = savedRolesOwned
+//        score.runningScore = savedRunningScore
         
-        guard let savedTimesTapped = Score.defaults.value(forKey: "timesTapped") as? [Double] else {
-            print("Couldn't get defaults for timesTapped")
-            return
-        }
-        score.timesTapped = savedTimesTapped
+//        guard let savedRolesOwned = Score.defaults.value(forKey: "rolesOwned") as? [Double] else {
+//            print("Couldn't get defaults for rolesOwned")
+//            return
+//        }
+//        score.rolesOwned = savedRolesOwned
         
-        guard let savedIsRoleEnabled = Score.defaults.value(forKey: "isRoleEnabled") as? [Bool] else {
-            print("Couldn't get defaults for isRoleEnabled")
-            return
+        if let savedRolesOwned = Score.defaults.value(forKey: "rolesOwned") as? [Double] {
+            print("Here is the savedRolesOwned: \(savedRolesOwned)")
+            score.rolesOwned = savedRolesOwned
         }
-        score.isRoleEnabled = savedIsRoleEnabled
         
-        guard let savedPurchasePrice = Score.defaults.value(forKey: "purchasePrice") as? [Double] else {
-            print("Couldn't get defaults for purchasePrice")
-            return
-        }
-        score.purchasePrice = savedPurchasePrice
+//        guard let savedMultiplier = Score.defaults.value(forKey: "multiplier") as? [Double] else {
+//            print("Couldn't get defaults for multiplier")
+//            return
+//        }
+//        score.multiplier = savedMultiplier
         
-        guard let savedAssistantsPurchased = Score.defaults.value(forKey: "assistantsPurchased") as? Double else {
-            print("Couldn't get defaults for assistantsPurchased")
-            return
+        if let savedMultiplier = Score.defaults.value(forKey: "multiplier") as? [Double] {
+            print("Here is the savedMultiplier: \(savedMultiplier)")
+            score.multiplier = savedMultiplier
         }
-        score.assistantsPurchased = savedAssistantsPurchased
         
-        guard let savedAssistantsAvailable = Score.defaults.value(forKey: "assistantsAvailable") as? Double else {
-            print("Couldn't get defaults for assistantsAvailable")
-            return
-        }
-        score.assistantsAvailable = savedAssistantsAvailable
+//        guard let savedTimesTapped = Score.defaults.value(forKey: "timesTapped") as? [Double] else {
+//            print("Couldn't get defaults for timesTapped")
+//            return
+//        }
+//        score.timesTapped = savedTimesTapped
         
-        guard let savedAssistantsPurchasedMultiplier = Score.defaults.value(forKey: "assistantsPurchasedMultiplier") as? Double else {
-            print("Couldn't get defaults for assistantsPurchasedMultiplier")
-            return
+        if let savedTimesTapped = Score.defaults.value(forKey: "timesTapped") as? [Double] {
+            print("Here is the savedTimesTapped: \(savedTimesTapped)")
+            score.timesTapped = savedTimesTapped
         }
-        score.assistantsPurchasedMultiplier = savedAssistantsPurchasedMultiplier
         
-        guard let savedTotalScore = Score.defaults.value(forKey: "totalScore") as? Double else {
-            print("Couldn't get defaults for totalScore")
-            return
+//        guard let savedIsRoleEnabled = Score.defaults.value(forKey: "isRoleEnabled") as? [Bool] else {
+//            print("Couldn't get defaults for isRoleEnabled")
+//            return
+//        }
+//        score.isRoleEnabled = savedIsRoleEnabled
+        
+        if let savedIsRoleEnabled = Score.defaults.value(forKey: "isRoleEnabled") as? [Bool] {
+            print("Here is the savedIsRoleEnabled: \(savedIsRoleEnabled)")
+            score.isRoleEnabled = savedIsRoleEnabled
         }
-        score.totalScore = savedTotalScore
+        
+//        guard let savedPurchasePrice = Score.defaults.value(forKey: "purchasePrice") as? [Double] else {
+//            print("Couldn't get defaults for purchasePrice")
+//            return
+//        }
+//        score.purchasePrice = savedPurchasePrice
+        
+        if let savedPurchasePrice = Score.defaults.value(forKey: "purchasePrice") as? [Double] {
+            print("Here is the savedPurchasePrice: \(savedPurchasePrice)")
+            score.purchasePrice = savedPurchasePrice
+        }
+        
+//        guard let savedAssistantsPurchased = Score.defaults.value(forKey: "assistantsPurchased") as? Double else {
+//            print("Couldn't get defaults for assistantsPurchased")
+//            return
+//        }
+//        score.assistantsPurchased = savedAssistantsPurchased
+
+        if let savedAssistantsPurchased = Score.defaults.value(forKey: "assistantsPurchased") as? Double {
+            print("Here is the savedAssistantsPurchased: \(savedAssistantsPurchased)")
+            score.assistantsPurchased = savedAssistantsPurchased
+        }
+        
+//        guard let savedAssistantsAvailable = Score.defaults.value(forKey: "assistantsAvailable") as? Double else {
+//            print("Couldn't get defaults for assistantsAvailable")
+//            return
+//        }
+//        score.assistantsAvailable = savedAssistantsAvailable
+
+        if let savedAssistantsAvailable = Score.defaults.value(forKey: "assistantsAvailable") as? Double {
+            print("Here is the savedAssistantsAvailable: \(savedAssistantsAvailable)")
+            score.assistantsAvailable = savedAssistantsAvailable
+        }
+        
+//        guard let savedAssistantsPurchasedMultiplier = Score.defaults.value(forKey: "assistantsPurchasedMultiplier") as? Double else {
+//            print("Couldn't get defaults for assistantsPurchasedMultiplier")
+//            return
+//        }
+//        score.assistantsPurchasedMultiplier = savedAssistantsPurchasedMultiplier
+
+        if let savedAssistantsPurchasedMultiplier = Score.defaults.value(forKey: "assistantsPurchasedMultiplier") as? Double {
+            print("Here is the savedAssistantsPurchasedMultiplier: \(savedAssistantsPurchasedMultiplier)")
+            score.assistantsPurchasedMultiplier = savedAssistantsPurchasedMultiplier
+        }
+        
+//        guard let savedTotalScore = Score.defaults.value(forKey: "totalScore") as? Double else {
+//            print("Couldn't get defaults for totalScore")
+//            return
+//        }
+//        score.totalScore = savedTotalScore
+
+        if let savedTotalScore = Score.defaults.value(forKey: "totalScore") as? Double {
+            print("Here is the savedTotalScore: \(savedTotalScore)")
+            score.totalScore = savedTotalScore
+        }
         
         formatImages()
         formatUI()
         formatbuttonLbl()
         formatPurchaseBtn()
         formatSavedPurchasePrice()
-        
-        guard let savedMultiplier = Score.defaults.value(forKey: "multiplier") as? [Double] else {
-            print("Couldn't get defaults for multiplier")
-            return
-        }
-        score.multiplier = savedMultiplier
         
     }
     
