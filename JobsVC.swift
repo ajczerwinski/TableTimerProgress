@@ -470,6 +470,7 @@ class JobsVC: UIViewController {
             
             formatUI()
             progressBar[tag].progress = 0
+            score.timesTapped[tag] = 0
             
             // If the progress bar isn't full, increment it
         } else {
@@ -692,6 +693,9 @@ class JobsVC: UIViewController {
         if let savedTimesTapped = Score.defaults.value(forKey: "timesTapped") as? [Double] {
             print("Here is the savedTimesTapped: \(savedTimesTapped)")
             score.timesTapped = savedTimesTapped
+            for role in 0..<10 {
+                progressBar[role].progress = Float(savedTimesTapped[role])
+            }
         }
         
         if let savedIsRoleEnabled = Score.defaults.value(forKey: "isRoleEnabled") as? [Bool] {
